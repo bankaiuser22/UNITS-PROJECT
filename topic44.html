@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XML Syntax Rules</title>
+</head>
+<body>
+
+    <h1>XML Syntax Rules</h1>
+
+    <h2>Introduction</h2>
+    <p>
+        XML follows certain syntax rules to create a properly
+        structured document. Every XML document must follow
+        these rules to be well-formed.
+    </p>
+
+    <h2>1. XML Tags Are Case-Sensitive</h2>
+    <p>
+        XML element names are case-sensitive. This means
+        uppercase and lowercase letters are treated
+        differently.
+    </p>
+
+    <h3>Example:</h3>
+    <pre>
+<Name>Rahul</Name>
+<name>Rahul</name>
+    </pre>
+    <p>
+        Both Name and name are considered different
+        element names.
+    </p>
+
+    <h2>2. Every Opening Tag Must Be Closed</h2>
+    <p>
+        Every XML element must have a matching closing tag.
+        If an element is opened, it must be closed properly.
+    </p>
+
+    <h3>Correct Example:</h3>
+    <pre>
+<student>
+    <name>Rahul</name>
+</student>
+    </pre>
+
+    <h3>Incorrect Example:</h3>
+    <pre>
+<student>
+    <name>Rahul
+</student>
+    </pre>
+
+    <h2>3. Empty Elements</h2>
+    <p>
+        XML also allows empty elements. An empty element
+        does not contain any text or child elements.
+        It can be written using a self-closing tag.
+    </p>
+
+    <h3>Example:</h3>
+    <pre>
+<image/>
+    </pre>
+
+    <h2>4. Elements Must Be Properly Nested</h2>
+    <p>
+        XML elements must be closed in the correct order.
+        The inner element must be closed before the outer
+        element is closed.
+    </p>
+
+    <h3>Correct Example:</h3>
+    <pre>
+<b>
+    <i>Hello World</i>
+</b>
+    </pre>
+
+    <h3>Incorrect Example:</h3>
+    <pre>
+<b>
+    <i>Hello World
+</b>
+</i>
+    </pre>
+
+    <h2>5. Attribute Values Must Be Quoted</h2>
+    <p>
+        Attribute values must always be written inside
+        single or double quotation marks.
+    </p>
+
+    <h3>Correct Example:</h3>
+    <pre>
+<student id="101">
+    <name>Rahul</name>
+</student>
+    </pre>
+
+    <h3>Incorrect Example:</h3>
+    <pre>
+<student id=101>
+    <name>Rahul</name>
+</student>
+    </pre>
+
+    <h2>6. XML Must Have One Root Element</h2>
+    <p>
+        Every XML document must contain exactly one
+        outermost root element. All other elements
+        must be placed inside it.
+    </p>
+
+    <h3>Example:</h3>
+    <pre>
+<students>
+    <student>
+        <name>Rahul</name>
+    </student>
+    <student>
+        <name>Amit</name>
+    </student>
+</students>
+    </pre>
+
+    <h2>7. Special Characters Must Be Escaped</h2>
+    <p>
+        Some special characters have a reserved meaning
+        in XML. They must be written using entity references.
+    </p>
+
+    <table border="1">
+        <tr>
+            <th>Character</th>
+            <th>Entity Reference</th>
+        </tr>
+        <tr>
+            <td>&amp;</td>
+            <td>&amp;amp;</td>
+        </tr>
+        <tr>
+            <td>&lt;</td>
+            <td>&amp;lt;</td>
+        </tr>
+        <tr>
+            <td>&gt;</td>
+            <td>&amp;gt;</td>
+        </tr>
+    </table>
+
+    <h3>Example:</h3>
+    <pre>
+<message>
+    XML is easy &amp; useful.
+</message>
+    </pre>
+
+    <h2>Conclusion</h2>
+    <p>
+        XML syntax rules help create well-formed documents.
+        Proper closing tags, correct nesting, quoted
+        attributes, one root element and escaped special
+        characters are important rules of XML.
+    </p>
+
+</body>
+</html>

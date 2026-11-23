@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Processing in PHP</title>
+</head>
+<body>
+
+    <h1>07. String Processing in PHP</h1>
+
+    <h2>1. Introduction to Strings</h2>
+    <p>
+        A string is a sequence of characters used to store text.
+        PHP provides different built-in functions to work with
+        strings. These functions help us inspect, trim, search,
+        replace and format text.
+    </p>
+
+    <h2>2. Creating Strings in PHP</h2>
+    <p>
+        Strings can be created using single or double quotation
+        marks. Double-quoted strings can directly display
+        variable values.
+    </p>
+
+    <pre>
+&lt;?php
+$name = "Amit";
+$city = 'Vadodara';
+
+echo $name;
+echo $city;
+?&gt;
+    </pre>
+
+    <h2>3. trim() Function</h2>
+    <p>
+        The trim() function removes extra whitespace from
+        the beginning and end of a string.
+    </p>
+
+    <pre>
+&lt;?php
+$text = "   Hello PHP   ";
+
+$result = trim($text);
+
+echo $result;
+?&gt;
+    </pre>
+
+    <h2>4. strlen() Function</h2>
+    <p>
+        The strlen() function returns the length of a string
+        in bytes. It is commonly used to count characters
+        in basic English text.
+    </p>
+
+    <pre>
+&lt;?php
+$name = "Programming";
+
+echo strlen($name);
+?&gt;
+    </pre>
+
+    <h2>5. mb_strlen() Function</h2>
+    <p>
+        The mb_strlen() function counts characters in a string
+        and is useful for Unicode text. It requires the
+        mbstring extension to be enabled.
+    </p>
+
+    <pre>
+&lt;?php
+$text = "Hello World";
+
+echo mb_strlen($text);
+?&gt;
+    </pre>
+
+    <h2>6. str_replace() Function</h2>
+    <p>
+        The str_replace() function replaces specific text
+        with another text inside a string.
+    </p>
+
+    <pre>
+&lt;?php
+$text = "I like Java";
+
+$result = str_replace("Java", "PHP", $text);
+
+echo $result;
+?&gt;
+    </pre>
+
+    <h2>7. strtoupper() Function</h2>
+    <p>
+        The strtoupper() function converts all lowercase
+        English letters in a string into uppercase letters.
+    </p>
+
+    <pre>
+&lt;?php
+$text = "hello php";
+
+echo strtoupper($text);
+?&gt;
+    </pre>
+
+    <h2>8. strtolower() Function</h2>
+    <p>
+        The strtolower() function converts uppercase
+        English letters into lowercase letters.
+    </p>
+
+    <pre>
+&lt;?php
+$text = "HELLO PHP";
+
+echo strtolower($text);
+?&gt;
+    </pre>
+
+    <h2>9. substr() Function</h2>
+    <p>
+        The substr() function is used to extract a part
+        of a string. It accepts the string, starting
+        position and optional length.
+    </p>
+
+    <pre>
+&lt;?php
+$text = "Hello Programming";
+
+$result = substr($text, 0, 5);
+
+echo $result;
+?&gt;
+    </pre>
+
+    <h2>10. strpos() Function</h2>
+    <p>
+        The strpos() function finds the position of the
+        first occurrence of a particular text inside
+        another string. It returns false if the text
+        is not found.
+    </p>
+
+    <pre>
+&lt;?php
+$text = "Welcome to PHP";
+
+$position = strpos($text, "PHP");
+
+if ($position !== false) {
+    echo "Text found at position " . $position;
+} else {
+    echo "Text not found";
+}
+?&gt;
+    </pre>
+
+    <h2>11. String Concatenation</h2>
+    <p>
+        String concatenation means joining two or more
+        strings together. PHP uses the dot (.) operator
+        to join strings.
+    </p>
+
+    <pre>
+&lt;?php
+$first = "Hello";
+$second = "World";
+
+$result = $first . " " . $second;
+
+echo $result;
+?&gt;
+    </pre>
+
+    <h2>12. Complete String Processing Example</h2>
+    <p>
+        This example uses different string functions
+        to process and modify text.
+    </p>
+
+    <pre>
+&lt;?php
+$raw = "      Contact: learner@example.edu      ";
+
+$clean = trim($raw);
+
+$normalized = str_replace(
+    "Contact:",
+    "Email:",
+    $clean
+);
+
+echo $normalized . PHP_EOL;
+
+$text = "Hello PHP";
+
+echo strtoupper($text) . PHP_EOL;
+echo strtolower($text) . PHP_EOL;
+echo strlen($text) . PHP_EOL;
+echo substr($text, 0, 5) . PHP_EOL;
+?&gt;
+    </pre>
+
+    <h2>13. Common String Functions</h2>
+    <ul>
+        <li>trim() – Removes whitespace from the ends.</li>
+        <li>strlen() – Returns the string length in bytes.</li>
+        <li>mb_strlen() – Counts Unicode characters.</li>
+        <li>str_replace() – Replaces text in a string.</li>
+        <li>strtoupper() – Converts text to uppercase.</li>
+        <li>strtolower() – Converts text to lowercase.</li>
+        <li>substr() – Extracts part of a string.</li>
+        <li>strpos() – Finds the position of text.</li>
+    </ul>
+
+    <h2>14. Conclusion</h2>
+    <p>
+        String processing is an important feature of PHP.
+        It allows programmers to manipulate and manage
+        text using built-in functions. Functions such as
+        trim(), strlen() and str_replace() make string
+        operations easier and faster.
+    </p>
+
+</body>
+</html>

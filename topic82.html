@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 8 - Text, Fonts and Borders</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #174f78;
+        }
+
+        h2 {
+            color: #174f78;
+            border-bottom: 2px solid #174f78;
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            color: #31765e;
+        }
+
+        pre {
+            background-color: #172033;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .example {
+            background-color: #e8f2f8;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .note {
+            background-color: #e8f2f8;
+            border-left: 5px solid #174f78;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>8. CSS Text, Fonts and Borders</h1>
+
+    <h2>1. Introduction</h2>
+
+    <p>
+        CSS provides different properties to style text, fonts
+        and borders of HTML elements.
+    </p>
+
+    <p>
+        Text properties control the appearance and alignment
+        of text. Font properties control the typeface, size
+        and weight of text. Border properties add borders
+        around HTML elements.
+    </p>
+
+    <h2>2. CSS Typography and Text Properties</h2>
+
+    <p>
+        Typography means the way text is displayed on a web page.
+        CSS typography properties help make text clear,
+        readable and attractive.
+    </p>
+
+    <h2>3. Font Family</h2>
+
+    <p>
+        The font-family property is used to specify the typeface
+        of text.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+selector {
+    font-family: Arial, sans-serif;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+p {
+    font-family: Georgia, serif;
+}
+    </pre>
+
+    <div class="example">
+        <p style="font-family:Georgia,serif;">
+            This text uses the Georgia font family.
+        </p>
+    </div>
+
+    <p>
+        We can also provide fallback font families. If the
+        first font is unavailable, the browser can use
+        another available font.
+    </p>
+
+    <h2>4. Font Size</h2>
+
+    <p>
+        The font-size property is used to set the size of text.
+        It controls how large or small the text appears.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+selector {
+    font-size: 20px;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
+}
+    </pre>
+
+    <div class="example">
+        <p style="font-size:30px;">
+            This is large text.
+        </p>
+
+        <p style="font-size:14px;">
+            This is small text.
+        </p>
+    </div>
+
+    <p>
+        The rem unit can also be used for font size.
+        It is relative to the root element's font size.
+    </p>
+
+    <h2>5. Font Weight</h2>
+
+    <p>
+        The font-weight property is used to control the
+        thickness or boldness of text.
+    </p>
+
+    <h3>Common Values:</h3>
+
+    <ul>
+        <li>normal</li>
+        <li>bold</li>
+        <li>100 to 900</li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+p {
+    font-weight: bold;
+}
+
+h1 {
+    font-weight: 700;
+}
+    </pre>
+
+    <div class="example">
+        <p style="font-weight:normal;">
+            This is normal text.
+        </p>
+
+        <p style="font-weight:bold;">
+            This is bold text.
+        </p>
+
+        <p style="font-weight:900;">
+            This is extra bold text.
+        </p>
+    </div>
+
+    <h2>6. Text Align</h2>
+
+    <p>
+        The text-align property is used to align text
+        horizontally inside an element.
+    </p>
+
+    <h3>Common Values:</h3>
+
+    <ul>
+        <li>left</li>
+        <li>right</li>
+        <li>center</li>
+        <li>justify</li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+    </pre>
+
+    <div class="example">
+        <p style="text-align:left;">
+            This text is aligned to the left.
+        </p>
+
+        <p style="text-align:center;">
+            This text is aligned to the center.
+        </p>
+
+        <p style="text-align:right;">
+            This text is aligned to the right.
+        </p>
+    </div>
+
+    <h2>7. Line Height</h2>
+
+    <p>
+        The line-height property controls the vertical space
+        between lines of text.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+selector {
+    line-height: 1.6;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+p {
+    line-height: 1.6;
+}
+    </pre>
+
+    <div class="example" style="line-height:1.6;">
+        CSS makes long passages easier to read.
+        Line height provides proper vertical spacing
+        between lines of text.
+    </div>
+
+    <h2>8. Text Decoration</h2>
+
+    <p>
+        The text-decoration property is used to add decorative
+        lines to text.
+    </p>
+
+    <h3>Common Values:</h3>
+
+    <ul>
+        <li>underline - Adds a line below the text.</li>
+        <li>overline - Adds a line above the text.</li>
+        <li>line-through - Adds a line through the text.</li>
+        <li>none - Removes text decoration.</li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+p {
+    text-decoration: underline;
+}
+    </pre>
+
+    <div class="example">
+        <p style="text-decoration:underline;">
+            Underlined Text
+        </p>
+
+        <p style="text-decoration:overline;">
+            Overline Text
+        </p>
+
+        <p style="text-decoration:line-through;">
+            Line Through Text
+        </p>
+
+        <p style="text-decoration:none;">
+            Normal Text
+        </p>
+    </div>
+
+    <h2>9. Text Transform</h2>
+
+    <p>
+        The text-transform property is used to change the
+        visual letter case of text without changing the
+        original source text.
+    </p>
+
+    <h3>Common Values:</h3>
+
+    <ul>
+        <li>uppercase - Converts text into capital letters.</li>
+        <li>lowercase - Converts text into small letters.</li>
+        <li>capitalize - Makes the first letter of each word capital.</li>
+        <li>none - Keeps the normal text appearance.</li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+p {
+    text-transform: uppercase;
+}
+    </pre>
+
+    <div class="example">
+        <p style="text-transform:uppercase;">
+            This is uppercase text.
+        </p>
+
+        <p style="text-transform:lowercase;">
+            THIS IS LOWERCASE TEXT.
+        </p>
+
+        <p style="text-transform:capitalize;">
+            this is capitalized text.
+        </p>
+    </div>
+
+    <h2>10. CSS Borders</h2>
+
+    <p>
+        The CSS border property is used to create a border
+        around an HTML element.
+    </p>
+
+    <p>
+        A border needs a border style, such as solid or dashed,
+        to become visible.
+    </p>
+
+    <h3>Border Properties:</h3>
+
+    <ul>
+        <li>border-width - Sets the thickness of the border.</li>
+        <li>border-style - Sets the style of the border.</li>
+        <li>border-color - Sets the color of the border.</li>
+    </ul>
+
+    <h2>11. Border Width</h2>
+
+    <p>
+        The border-width property is used to set the thickness
+        of a border.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    border-width: 3px;
+}
+    </pre>
+
+    <h2>12. Border Style</h2>
+
+    <p>
+        The border-style property is used to specify the
+        appearance of a border.
+    </p>
+
+    <h3>Common Border Styles:</h3>
+
+    <ul>
+        <li>solid</li>
+        <li>dotted</li>
+        <li>dashed</li>
+        <li>double</li>
+        <li>none</li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    border-style: solid;
+}
+    </pre>
+
+    <div class="example">
+        <p style="border:3px dotted #174f78;padding:10px;">
+            Dotted Border
+        </p>
+
+        <p style="border:3px dashed #174f78;padding:10px;">
+            Dashed Border
+        </p>
+
+        <p style="border:3px solid #174f78;padding:10px;">
+            Solid Border
+        </p>
+
+        <p style="border:5px double #174f78;padding:10px;">
+            Double Border
+        </p>
+    </div>
+
+    <h2>13. Border Color</h2>
+
+    <p>
+        The border-color property is used to set the color
+        of a border.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    border-style: solid;
+    border-width: 3px;
+    border-color: blue;
+}
+    </pre>
+
+    <h2>14. Border Shorthand Property</h2>
+
+    <p>
+        The border shorthand property is used to set border
+        width, style and color in a single declaration.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+selector {
+    border: width style color;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    border: 3px solid #174f78;
+}
+    </pre>
+
+    <div class="example"
+         style="border:3px solid #174f78;">
+        This is an example of the border shorthand property.
+    </div>
+
+    <p>
+        CSS also allows one to four values to specify the
+        top, right, bottom and left border sides in that order.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    border-style: solid;
+    border-width: 2px 4px 6px 8px;
+}
+    </pre>
+
+    <h2>15. Importance of Text, Fonts and Borders</h2>
+
+    <ul>
+        <li>Make text easy to read.</li>
+        <li>Control font type, size and weight.</li>
+        <li>Align text properly.</li>
+        <li>Improve the appearance of headings and paragraphs.</li>
+        <li>Create borders around HTML elements.</li>
+        <li>Make web pages more attractive and organized.</li>
+    </ul>
+
+    <div class="note">
+        <b>Exam Point:</b>
+        CSS text and font properties control the appearance
+        of text. Important properties include font-family,
+        font-size, font-weight, text-align, line-height,
+        text-decoration and text-transform. Border properties
+        include border-width, border-style and border-color.
+    </div>
+
+    <h2>16. Conclusion</h2>
+
+    <p>
+        CSS Text, Fonts and Borders are important parts of
+        web designing. They help control the appearance,
+        readability and presentation of content on a web page.
+    </p>
+
+</div>
+
+</body>
+</html>

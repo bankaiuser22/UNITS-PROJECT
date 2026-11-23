@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 6 - AJAX</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #174ea6;
+        }
+
+        h3 {
+            color: #087e8b;
+        }
+
+        p, li {
+            font-size: 17px;
+        }
+
+        pre {
+            background: #172033;
+            color: white;
+            padding: 18px;
+            border-radius: 7px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        button {
+            background: #174ea6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+            max-width: 400px;
+            margin: 8px 0;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        .note {
+            background: #e8f2ff;
+            padding: 15px;
+            border-left: 5px solid #174ea6;
+            margin: 20px 0;
+        }
+
+        .demo {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>UNIT 4: JAVASCRIPT AND JQUERY</h1>
+
+<h2>TOPIC 6: AJAX AND ASYNCHRONOUS WEB APPLICATIONS</h2>
+
+<hr>
+
+<h2>1. Introduction to AJAX</h2>
+
+<p>
+AJAX stands for Asynchronous JavaScript and XML.
+It is a web development technique used to send
+HTTP requests from JavaScript and update a part
+of a web page without loading a completely new page.
+</p>
+
+<p>
+AJAX allows a web application to communicate
+with a server in the background. JavaScript receives
+the response and updates the required part of
+the web page.
+</p>
+
+<p>
+The name AJAX comes from an earlier period when
+XML was commonly used as a response format.
+Today, JSON is commonly used, but AJAX can also
+work with text, HTML, XML and other resources.
+</p>
+
+<h3>Example:</h3>
+
+<p>
+Suppose you are using a website and click a button
+to load course information.
+</p>
+
+<p>
+Instead of refreshing the entire page, JavaScript
+can request the course information from the server
+and display it in a particular section.
+</p>
+
+<h3>Uses of AJAX:</h3>
+
+<ul>
+    <li>Searching products in an online store.</li>
+    <li>Refreshing messages.</li>
+    <li>Checking whether a username is available.</li>
+    <li>Submitting a form without reloading the page.</li>
+    <li>Loading new information from a server.</li>
+</ul>
+
+<div class="note">
+<b>Remember:</b><br>
+AJAX = Asynchronous JavaScript and XML.<br>
+It updates parts of a web page using data received
+from a server without loading a new document.
+</div>
+
+<hr>
+
+<h2>2. Why is AJAX Used?</h2>
+
+<p>
+In traditional web applications, a new page may
+need to load whenever the user requests new information.
+This can cause unnecessary page reloads.
+</p>
+
+<p>
+AJAX helps avoid unnecessary full-page reloads.
+It allows JavaScript to request only the required
+information and update a particular part of the page.
+</p>
+
+<h3>Advantages of AJAX:</h3>
+
+<ul>
+    <li>Reduces unnecessary page reloads.</li>
+    <li>Can reduce unnecessary data transfer.</li>
+    <li>Makes web applications more interactive.</li>
+    <li>Allows background communication with a server.</li>
+    <li>Helps display updated information quickly.</li>
+    <li>Keeps the rest of the page in place while updating a section.</li>
+</ul>
+
+<h3>Example:</h3>
+
+<p>
+On a shopping website, when a user searches for
+a product, AJAX can request matching products
+and update only the search results section.
+</p>
+
+<hr>
+
+<h2>3. How AJAX Works</h2>
+
+<p>
+AJAX works through communication between the
+browser and a server.
+JavaScript sends a request, receives a response
+and updates the required part of the web page.
+</p>
+
+<h3>Request and Response Cycle:</h3>
+
+<ol>
+    <li>
+        <b>User Action:</b>
+        A user performs an action, such as clicking
+        a button or searching for a product.
+    </li>
+
+    <li>
+        <b>Send Request:</b>
+        JavaScript sends an HTTP request to a server URL.
+        This URL is often called an endpoint.
+    </li>
+
+    <li>
+        <b>Server Processing:</b>
+        The server receives the request and processes it.
+    </li>
+
+    <li>
+        <b>Server Response:</b>
+        The server returns a response containing a
+        status and, when appropriate, data such as JSON or text.
+    </li>
+
+    <li>
+        <b>JavaScript Reads Response:</b>
+        JavaScript checks the response and reads its data.
+    </li>
+
+    <li>
+        <b>Update Web Page:</b>
+        JavaScript updates the required DOM elements
+        with the received information.
+    </li>
+</ol>
+
+<h3>Simple Flow Diagram:</h3>
+
+<pre>
+       USER ACTION
+            |
+            v
+      JavaScript Code
+            |
+            v
+      HTTP REQUEST
+            |
+            v
+          SERVER
+            |
+            v
+     SERVER PROCESSES
+        THE REQUEST
+            |
+            v
+      HTTP RESPONSE
+            |
+            v
+      JavaScript Reads
+         the Data
+            |
+            v
+       DOM UPDATE
+            |
+            v
+      UPDATED WEB PAGE
+</pre>
+
+<div class="note">
+<b>Important:</b><br>
+The rest of the document stays in place.
+Only the required part of the web page is updated.
+</div>
+
+<hr>
+
+<h2>4. HTTP Methods Used in AJAX</h2>
+
+<p>
+HTTP methods describe what action the browser
+wants the server to perform.
+Two commonly used methods in AJAX are GET and POST.
+</p>
+
+<h3>1. GET Method</h3>
+
+<p>
+The GET method is used to request or retrieve
+information from a server.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+fetch("/api/courses", {
+    method: "GET"
+});
+</pre>
+
+<p>
+Here, JavaScript requests course information
+from the server.
+</p>
+
+<h3>2. POST Method</h3>
+
+<p>
+The POST method is commonly used to send data
+to a server, for example when submitting a form.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+fetch("/api/students", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name: "Rahul"
+    })
+});
+</pre>
+
+<p>
+Here, JavaScript sends student information
+to the server in JSON format.
+</p>
+
+<div class="note">
+<b>Difference:</b><br>
+GET = Used to retrieve data.<br>
+POST = Commonly used to send data.
+</div>
+
+<hr>
+
+<h2>5. Understanding Asynchronous Operations</h2>
+
+<p>
+Asynchronous means that an operation can start
+and finish later without forcing the entire
+browser interface to wait.
+</p>
+
+<p>
+Network requests can take time. JavaScript uses
+asynchronous browser APIs such as fetch() so that
+the page can remain interactive while the request
+is being processed.
+</p>
+
+<h3>What is Synchronous?</h3>
+
+<p>
+A synchronous operation makes the next step wait
+until the current operation finishes.
+</p>
+
+<h3>What is Asynchronous?</h3>
+
+<p>
+An asynchronous operation allows other work
+to continue while the operation is waiting
+to finish.
+</p>
+
+<h3>Difference:</h3>
+
+<pre>
+SYNCHRONOUS:
+
+Task 1 starts
+     |
+     v
+Task 1 finishes
+     |
+     v
+Task 2 starts
+     |
+     v
+Task 2 finishes
+
+
+ASYNCHRONOUS:
+
+Task 1 starts
+     |
+     v
+Task 1 waits for result
+
+Other work can continue
+
+     |
+     v
+Task 1 result arrives
+     |
+     v
+JavaScript handles result
+</pre>
+
+<h3>Example from Daily Life:</h3>
+
+<p>
+Imagine you order food online.
+After placing the order, you do not have to
+stand still and wait without doing anything.
+You can continue using your phone while the
+order is being prepared.
+</p>
+
+<p>
+Similarly, an asynchronous request allows
+the browser to continue responding while
+network activity is in progress.
+</p>
+
+<div class="note">
+<b>Important:</b><br>
+Asynchronous does not mean that every JavaScript
+instruction runs in parallel. It means that
+JavaScript can continue other work while waiting
+for an asynchronous operation.
+</div>
+
+<hr>
+
+<h2>6. What is a Promise?</h2>
+
+<p>
+A Promise is a JavaScript object that represents
+the eventual result of an asynchronous operation.
+</p>
+
+<p>
+For example, when JavaScript sends a request
+to a server, the result may not be available
+immediately. A Promise represents the work
+that will finish later.
+</p>
+
+<h3>Three States of a Promise:</h3>
+
+<h3>1. Pending</h3>
+
+<p>
+The operation is still in progress and its
+final result is not available yet.
+</p>
+
+<h3>2. Fulfilled</h3>
+
+<p>
+The operation has completed successfully
+and produced a result.
+</p>
+
+<h3>3. Rejected</h3>
+
+<p>
+The operation failed and produced an error.
+</p>
+
+<h3>Simple Diagram:</h3>
+
+<pre>
+           PROMISE
+              |
+       ----------------
+       |       |      |
+       v       v      v
+    PENDING FULFILLED REJECTED
+              |        |
+              v        v
+           SUCCESS   FAILURE
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+const myPromise = new Promise((resolve, reject) => {
+
+    let success = true;
+
+    if (success) {
+
+        resolve("Task completed");
+
+    } else {
+
+        reject("Task failed");
+
+    }
+
+});
+
+myPromise.then((result) => {
+
+    console.log(result);
+
+}).catch((error) => {
+
+    console.log(error);
+
+});
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li>new Promise() creates a Promise.</li>
+    <li>resolve() marks the Promise as fulfilled.</li>
+    <li>reject() marks the Promise as rejected.</li>
+    <li>then() handles a fulfilled result.</li>
+    <li>catch() handles a rejected result.</li>
+</ul>
+
+<hr>
+
+<h2>7. What is Fetch API?</h2>
+
+<p>
+The Fetch API is a modern JavaScript browser API
+used to make HTTP requests and communicate
+with servers.
+</p>
+
+<p>
+The fetch() method sends a request to a URL
+and returns a Promise.
+When the response arrives, JavaScript can
+read the response body.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+fetch("URL")
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li><b>fetch("URL"):</b> Sends an HTTP request.</li>
+    <li><b>then():</b> Handles the Promise result.</li>
+    <li><b>response:</b> Represents the server response.</li>
+    <li><b>response.json():</b> Reads and parses JSON response data.</li>
+    <li><b>data:</b> Contains the parsed response data.</li>
+    <li><b>catch():</b> Handles errors in the Promise chain.</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>
+fetch("https://example.com/data")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+</pre>
+
+<p>
+This is a syntax example. The URL must point
+to a real endpoint that returns JSON for it to work.
+</p>
+
+<hr>
+
+<h2>8. Understanding async and await</h2>
+
+<p>
+async and await are JavaScript keywords that
+make asynchronous code easier to read and write.
+</p>
+
+<h3>1. async Keyword</h3>
+
+<p>
+The async keyword is used before a function
+to make it return a Promise.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+async function myFunction() {
+
+    // Asynchronous code
+
+}
+</pre>
+
+<h3>2. await Keyword</h3>
+
+<p>
+The await keyword is used inside an async function
+to wait for a Promise to settle before continuing
+that function.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+const result = await somePromise;
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+async function getData() {
+
+    const response = await fetch("/api/data");
+
+    const data = await response.json();
+
+    console.log(data);
+
+}
+
+getData();
+</pre>
+
+<h3>Explanation:</h3>
+
+<ol>
+    <li>async declares an asynchronous function.</li>
+    <li>fetch() sends a request and returns a Promise.</li>
+    <li>await waits for the response Promise to settle.</li>
+    <li>response.json() reads the response body.</li>
+    <li>The second await waits for the body parsing Promise.</li>
+    <li>console.log() displays the received data.</li>
+</ol>
+
+<div class="note">
+<b>Remember:</b><br>
+async = Declares an asynchronous function.<br>
+await = Waits for a Promise inside that function.
+It does not freeze the whole browser interface.
+</div>
+
+<hr>
+
+<h2>9. Error Handling in AJAX</h2>
+
+<p>
+Errors can occur while sending requests or
+reading the response from a server.
+JavaScript should handle these errors so that
+the user receives proper feedback.
+</p>
+
+<h3>Common Problems:</h3>
+
+<ul>
+    <li>Network connection failure.</li>
+    <li>Server not responding.</li>
+    <li>HTTP error status such as 404 or 500.</li>
+    <li>Invalid JSON response.</li>
+</ul>
+
+<h3>Important: response.ok</h3>
+
+<p>
+The response.ok property tells whether the HTTP
+response status is in the successful range
+(200 to 299).
+</p>
+
+<p>
+Important: fetch() normally does not reject its
+Promise just because the server returned an HTTP
+error status such as 404 or 500. We must check
+response.ok ourselves.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+async function getData() {
+
+    try {
+
+        const response = await fetch("/api/data");
+
+        if (!response.ok) {
+
+            throw new Error("HTTP error: " + response.status);
+
+        }
+
+        const data = await response.json();
+
+        console.log(data);
+
+    } catch (error) {
+
+        console.log("Error:", error);
+
+    }
+
+}
+
+getData();
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li>try contains the code that may cause an error.</li>
+    <li>fetch() sends the request.</li>
+    <li>response.ok checks the HTTP status.</li>
+    <li>throw creates an error if the response is not successful.</li>
+    <li>response.json() reads the JSON data.</li>
+    <li>catch handles errors and displays them.</li>
+</ul>
+
+<div class="note">
+<b>Important:</b><br>
+try...catch can handle network errors, errors
+we explicitly create for unsuccessful HTTP statuses,
+and errors while reading or parsing the response.
+</div>
+
+<hr>
+
+<h2>10. Complete Example: Loading Courses with Fetch</h2>
+
+<p>
+This example demonstrates how a web application
+can request course information from a server
+and display it on a page.
+</p>
+
+<h3>HTML:</h3>
+
+<pre>
+<h2>Course List</h2>
+
+<p id="status">Waiting for data...</p>
+
+<div id="output"></div>
+
+<button onclick="loadCourses()">
+    Load Courses
+</button>
+</pre>
+
+<h3>JavaScript:</h3>
+
+<pre>
+async function loadCourses() {
+
+    const status = document.getElementById("status");
+
+    const output = document.getElementById("output");
+
+    status.textContent = "Loading courses...";
+
+    try {
+
+        const response = await fetch("/api/courses");
+
+        if (!response.ok) {
+
+            throw new Error("HTTP error: " + response.status);
+
+        }
+
+        const courses = await response.json();
+
+        output.textContent = courses
+            .map(course => course.name)
+            .join(", ");
+
+        status.textContent = "Courses loaded.";
+
+    } catch (error) {
+
+        status.textContent =
+            "Could not load courses. Check the connection.";
+
+        console.error(error);
+
+    }
+
+}
+</pre>
+
+<h3>Explanation:</h3>
+
+<ol>
+    <li>First, the page displays a waiting message.</li>
+    <li>The user clicks the Load Courses button.</li>
+    <li>loadCourses() starts running.</li>
+    <li>JavaScript displays "Loading courses...".</li>
+    <li>fetch() sends a request to /api/courses.</li>
+    <li>The response status is checked using response.ok.</li>
+    <li>response.json() converts the response body into JavaScript data.</li>
+    <li>map() extracts the course names.</li>
+    <li>The course names are displayed on the page.</li>
+    <li>If an error occurs, catch displays an error message.</li>
+</ol>
+
+<div class="note">
+<b>Important:</b><br>
+/api/courses is a placeholder endpoint.
+It must exist on a server and return JSON containing
+an array of course objects with a name property.
+This example will not load real courses without
+a working endpoint.
+</div>
+
+<hr>
+
+<h2>11. AJAX-Style Update Without a Server</h2>
+
+<p>
+We can also understand the idea of an asynchronous
+page update using a small local demonstration.
+This example uses setTimeout() to simulate a delay.
+It does not send a real HTTP request.
+</p>
+
+<div class="demo">
+
+    <h3>Sample Course Loader</h3>
+
+    <button id="sampleButton">
+        Load Sample Course Data
+    </button>
+
+    <p id="sampleStatus">Waiting for a request.</p>
+
+    <div id="sampleOutput">
+        No data loaded yet.
+    </div>
+
+</div>
+
+<h3>JavaScript Code:</h3>
+
+<pre>
+const sampleButton =
+document.getElementById("sampleButton");
+
+const sampleStatus =
+document.getElementById("sampleStatus");
+
+const sampleOutput =
+document.getElementById("sampleOutput");
+
+sampleButton.addEventListener("click", function() {
+
+    sampleStatus.textContent = "Loading...";
+
+    sampleOutput.textContent = "Please wait.";
+
+    setTimeout(function() {
+
+        const course = {
+            name: "JavaScript",
+            duration: "One Semester"
+        };
+
+        sampleOutput.textContent =
+            course.name + " - " + course.duration;
+
+        sampleStatus.textContent = "Data loaded.";
+
+    }, 650);
+
+});
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li>The user clicks the button.</li>
+    <li>The status changes to Loading.</li>
+    <li>setTimeout() waits for 650 milliseconds.</li>
+    <li>A sample JavaScript object is created.</li>
+    <li>The course information is displayed.</li>
+    <li>The status changes to Data loaded.</li>
+</ul>
+
+<div class="note">
+<b>Remember:</b><br>
+This is only a simulation of an AJAX-style update.
+It uses hard-coded data and setTimeout().
+A real AJAX request communicates with a server.
+</div>
+
+<hr>
+
+<h2>12. Difference Between Traditional Requests and AJAX</h2>
+
+<h3>Traditional Web Request</h3>
+
+<ul>
+    <li>A new page or document is commonly loaded.</li>
+    <li>The browser may refresh the entire page.</li>
+    <li>More page content may need to be transferred.</li>
+</ul>
+
+<h3>AJAX Request</h3>
+
+<ul>
+    <li>JavaScript sends a request in the background.</li>
+    <li>The response can update only the required page section.</li>
+    <li>The rest of the page stays in place.</li>
+    <li>The page can remain interactive during the request.</li>
+</ul>
+
+<hr>
+
+<h2>13. Advantages of AJAX</h2>
+
+<ul>
+    <li>Reduces unnecessary full-page reloads.</li>
+    <li>Improves the interactive experience.</li>
+    <li>Allows background communication with servers.</li>
+    <li>Can reduce unnecessary data transfer.</li>
+    <li>Updates only the required part of the page.</li>
+    <li>Supports modern web application features.</li>
+</ul>
+
+<h2>14. Limitations of AJAX</h2>
+
+<ul>
+    <li>It requires a server or API for real server data.</li>
+    <li>Network failures can prevent requests from completing.</li>
+    <li>Developers must handle errors and loading states.</li>
+    <li>Security must be handled properly on the server.</li>
+    <li>Cross-origin requests may require suitable server permissions.</li>
+</ul>
+
+<hr>
+
+<h2>15. Important Exam Points</h2>
+
+<ul>
+    <li>AJAX stands for Asynchronous JavaScript and XML.</li>
+    <li>AJAX is a technique for sending HTTP requests and updating parts of a page.</li>
+    <li>JSON is commonly used as a response format today.</li>
+    <li>AJAX does not require a full-page reload for every update.</li>
+    <li>GET is commonly used to retrieve data.</li>
+    <li>POST is commonly used to send data.</li>
+    <li>Asynchronous operations allow other work to continue while waiting.</li>
+    <li>A Promise represents the eventual result of an asynchronous operation.</li>
+    <li>Promise states are pending, fulfilled and rejected.</li>
+    <li>fetch() is a modern browser API for HTTP requests.</li>
+    <li>response.json() reads and parses JSON response data.</li>
+    <li>async declares an asynchronous function.</li>
+    <li>await waits for a Promise inside an async function.</li>
+    <li>response.ok checks whether the HTTP status is successful.</li>
+    <li>try...catch is used for error handling.</li>
+</ul>
+
+<hr>
+
+<h2>16. Conclusion</h2>
+
+<p>
+AJAX is an important web development technique
+that allows JavaScript to communicate with a server
+without loading a completely new page.
+</p>
+
+<p>
+It uses HTTP requests and responses to receive
+information and update the required part of
+a web page.
+</p>
+
+<p>
+Modern JavaScript provides the Fetch API,
+Promises and async/await to make asynchronous
+communication easier to write and manage.
+</p>
+
+<p>
+Therefore, AJAX helps developers create
+interactive web applications that can update
+information without unnecessary page reloads.
+</p>
+
+</div>
+
+<script>
+
+const sampleButton =
+document.getElementById("sampleButton");
+
+const sampleStatus =
+document.getElementById("sampleStatus");
+
+const sampleOutput =
+document.getElementById("sampleOutput");
+
+sampleButton.addEventListener("click", function() {
+
+    sampleStatus.textContent = "Loading...";
+
+    sampleOutput.textContent = "Please wait.";
+
+    setTimeout(function() {
+
+        const course = {
+            name: "JavaScript",
+            duration: "One Semester"
+        };
+
+        sampleOutput.textContent =
+            course.name + " - " + course.duration;
+
+        sampleStatus.textContent = "Data loaded.";
+
+    }, 650);
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DTD in XML</title>
+</head>
+<body>
+
+    <h1>DTD (Document Type Definition)</h1>
+
+    <h2>1. Introduction</h2>
+    <p>
+        DTD stands for Document Type Definition.
+        It is used to define the structure and rules
+        of an XML document.
+    </p>
+
+    <p>
+        DTD tells us which elements and attributes
+        are allowed in an XML document and how
+        they should be arranged.
+    </p>
+
+    <h2>2. Purpose of DTD</h2>
+    <ul>
+        <li>It defines the structure of XML documents.</li>
+        <li>It declares the elements used in XML.</li>
+        <li>It defines attributes of elements.</li>
+        <li>It specifies the order of child elements.</li>
+        <li>It helps validate XML documents.</li>
+    </ul>
+
+    <h2>3. Features of DTD</h2>
+    <ul>
+        <li>DTD defines the legal building blocks of XML.</li>
+        <li>It describes allowed elements and attributes.</li>
+        <li>It defines content models.</li>
+        <li>It can be written inside an XML document.</li>
+        <li>It can also be stored in an external .dtd file.</li>
+    </ul>
+
+    <h2>4. Types of DTD</h2>
+
+    <h3>A. Internal DTD</h3>
+    <p>
+        Internal DTD is declared inside the XML document.
+        It is written within the DOCTYPE declaration.
+    </p>
+
+    <h3>Example:</h3>
+    <pre>
+&lt;!DOCTYPE student [
+    &lt;!ELEMENT student (name, age)&gt;
+    &lt;!ELEMENT name (#PCDATA)&gt;
+    &lt;!ELEMENT age (#PCDATA)&gt;
+]&gt;
+
+&lt;student&gt;
+    &lt;name&gt;Rahul&lt;/name&gt;
+    &lt;age&gt;18&lt;/age&gt;
+&lt;/student&gt;
+    </pre>
+
+    <h3>B. External DTD</h3>
+    <p>
+        External DTD is stored in a separate file
+        having the .dtd extension.
+        The XML document connects to it using
+        the DOCTYPE declaration.
+    </p>
+
+    <h3>5. DTD Syntax</h3>
+    <p>Some important DTD declarations are:</p>
+
+    <pre>
+&lt;!ELEMENT element-name content-model&gt;
+    </pre>
+
+    <p>
+        ELEMENT declaration defines an element
+        and its allowed content.
+    </p>
+
+    <pre>
+&lt;!ATTLIST element-name attribute-name type default&gt;
+    </pre>
+
+    <p>
+        ATTLIST declaration defines attributes
+        for an element.
+    </p>
+
+    <h2>6. DTD Example: Catalog</h2>
+
+    <p>
+        Create an external file named catalog.dtd.
+        It requires one or more product elements.
+        Each product contains a name followed by
+        a price and must have an id attribute.
+    </p>
+
+    <h3>catalog.dtd</h3>
+
+    <pre>
+&lt;!ELEMENT catalog (product+)&gt;
+&lt;!ELEMENT product (name, price)&gt;
+&lt;!ATTLIST product id ID #REQUIRED&gt;
+&lt;!ELEMENT name (#PCDATA)&gt;
+&lt;!ELEMENT price (#PCDATA)&gt;
+    </pre>
+
+    <h2>7. Matching XML Document</h2>
+
+    <p>
+        Save the following XML document as
+        catalog.xml. It connects to the external
+        DTD using the SYSTEM keyword.
+    </p>
+
+    <h3>catalog.xml</h3>
+
+    <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE catalog SYSTEM "catalog.dtd"&gt;
+
+&lt;catalog&gt;
+    &lt;product id="p101"&gt;
+        &lt;name&gt;Notebook&lt;/name&gt;
+        &lt;price&gt;45.50&lt;/price&gt;
+    &lt;/product&gt;
+
+    &lt;product id="p102"&gt;
+        &lt;name&gt;Pen set&lt;/name&gt;
+        &lt;price&gt;30.00&lt;/price&gt;
+    &lt;/product&gt;
+&lt;/catalog&gt;
+    </pre>
+
+    <h2>8. Explanation of the Example</h2>
+    <ul>
+        <li>catalog is the root element.</li>
+        <li>product+ means one or more product elements.</li>
+        <li>Each product contains name and price.</li>
+        <li>id is an attribute of product.</li>
+        <li>ID defines the attribute as an identifier.</li>
+        <li>#REQUIRED means the id attribute is compulsory.</li>
+        <li>#PCDATA means parsed character data or text content.</li>
+    </ul>
+
+    <h2>9. Advantages of DTD</h2>
+    <ul>
+        <li>It defines a clear XML document structure.</li>
+        <li>It helps check whether XML follows expected rules.</li>
+        <li>It can be reused by multiple XML documents.</li>
+        <li>It supports both internal and external declarations.</li>
+    </ul>
+
+    <h2>10. Limitations of DTD</h2>
+    <ul>
+        <li>DTD has limited data typing.</li>
+        <li>DTD syntax is not itself XML.</li>
+        <li>It is less expressive than XML Schema (XSD).</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        DTD is used to define the allowed structure
+        of an XML document. It declares elements,
+        attributes and content models. It can be
+        internal or external and helps validate
+        XML documents according to defined rules.
+    </p>
+
+</body>
+</html>

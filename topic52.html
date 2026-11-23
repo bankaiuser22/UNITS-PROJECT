@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Positioning and CSS3 Features</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightyellow;
+            margin: 20px;
+        }
+
+        h1 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        h2 {
+            color: darkred;
+        }
+
+        h3 {
+            color: darkgreen;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .box {
+            background-color: lightblue;
+            border: 2px solid blue;
+            padding: 20px;
+            margin: 15px;
+        }
+
+        .static {
+            position: static;
+            background-color: lightgreen;
+            padding: 15px;
+        }
+
+        .relative {
+            position: relative;
+            left: 30px;
+            background-color: lightpink;
+            padding: 15px;
+        }
+
+        .parent {
+            position: relative;
+            height: 120px;
+            background-color: lightgray;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 45px;
+            right: 15px;
+            background-color: orange;
+            padding: 10px;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: darkblue;
+            color: white;
+            padding: 10px;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            background-color: yellow;
+            padding: 15px;
+            border: 2px solid red;
+        }
+
+        .rounded {
+            background-color: lightblue;
+            border: 2px solid blue;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .shadow {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 5px 5px 10px gray;
+        }
+
+        .gradient {
+            background-image: linear-gradient(to right, blue, green);
+            color: white;
+            padding: 25px;
+        }
+
+        .hover {
+            background-color: green;
+            color: white;
+            padding: 15px;
+            transition: 0.5s;
+        }
+
+        .hover:hover {
+            background-color: red;
+            transform: scale(1.05);
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 10px;
+            background-color: lightgray;
+            padding: 15px;
+        }
+
+        .flex-item {
+            background-color: lightblue;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .grid-item {
+            background-color: lightgreen;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .flex-container {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS POSITIONING AND CSS3 FEATURES</h1>
+
+    <div class="box">
+
+        <h2>1. Introduction to CSS Positioning</h2>
+
+        <p>
+            CSS positioning is used to control the
+            placement of HTML elements on a webpage.
+            It helps to arrange elements at different
+            positions such as top, bottom, left and right.
+        </p>
+
+        <h2>2. Types of CSS Positioning</h2>
+
+        <h3>A. Static Position</h3>
+
+        <p>
+            Static is the default position of every
+            HTML element. Elements appear in their
+            normal document flow.
+        </p>
+
+        <div class="static">
+            This element has static positioning.
+        </div>
+
+        <p>
+            Example: position: static;
+        </p>
+
+        <h3>B. Relative Position</h3>
+
+        <p>
+            Relative positioning moves an element
+            from its original position. Its original
+            space remains reserved in the document.
+        </p>
+
+        <div class="relative">
+            This element has relative positioning.
+        </div>
+
+        <p>
+            Example: position: relative;
+        </p>
+
+        <h3>C. Absolute Position</h3>
+
+        <p>
+            Absolute positioning places an element
+            relative to its nearest positioned ancestor.
+            It is removed from the normal document flow.
+        </p>
+
+        <div class="parent">
+            Parent Element
+
+            <div class="absolute">
+                Absolute Element
+            </div>
+        </div>
+
+        <p>
+            Example: position: absolute;
+        </p>
+
+        <h3>D. Fixed Position</h3>
+
+        <p>
+            Fixed positioning places an element
+            relative to the browser viewport.
+            It stays at the same position even
+            when the page is scrolled.
+        </p>
+
+        <p>
+            Example: position: fixed;
+        </p>
+
+        <h3>E. Sticky Position</h3>
+
+        <p>
+            Sticky positioning combines relative
+            and fixed positioning. The element
+            behaves normally until it reaches
+            a specified scrolling position.
+        </p>
+
+        <div class="sticky">
+            This is a sticky element.
+        </div>
+
+        <p>
+            Example: position: sticky;
+        </p>
+
+        <h2>3. CSS3 and Modern CSS Features</h2>
+
+        <p>
+            CSS3 is commonly used as a classroom
+            term for modern CSS features. CSS is
+            developed through different modules
+            such as Colors, Selectors, Grid and
+            Media Queries.
+        </p>
+
+        <h2>4. Border Radius</h2>
+
+        <p>
+            The border-radius property is used
+            to create rounded corners of an
+            HTML element.
+        </p>
+
+        <div class="rounded">
+            This box has rounded corners.
+        </div>
+
+        <p>
+            Example: border-radius: 15px;
+        </p>
+
+        <h2>5. Box Shadow</h2>
+
+        <p>
+            The box-shadow property is used
+            to add shadow effects around an
+            HTML element.
+        </p>
+
+        <div class="shadow">
+            This box has a shadow effect.
+        </div>
+
+        <p>
+            Example: box-shadow: 5px 5px 10px gray;
+        </p>
+
+        <h2>6. CSS Gradient</h2>
+
+        <p>
+            A gradient is a smooth transition
+            between two or more colors.
+            Linear gradient changes colors
+            along a straight direction.
+        </p>
+
+        <div class="gradient">
+            This box shows a linear gradient.
+        </div>
+
+        <p>
+            Example: background-image:
+            linear-gradient(to right, blue, green);
+        </p>
+
+        <h2>7. Transform Property</h2>
+
+        <p>
+            The transform property is used
+            to change the appearance or position
+            of an element. It can rotate, scale,
+            move or skew an element.
+        </p>
+
+        <p>
+            Example: transform: scale(1.05);
+        </p>
+
+        <h2>8. Transition Property</h2>
+
+        <p>
+            The transition property is used
+            to create a smooth change between
+            different CSS property values.
+        </p>
+
+        <div class="hover">
+            Move your mouse over this box.
+        </div>
+
+        <p>
+            Example: transition: 0.5s;
+        </p>
+
+        <h2>9. CSS Flexbox</h2>
+
+        <p>
+            Flexbox is a CSS layout method used
+            to arrange items in one direction,
+            either in a row or a column.
+        </p>
+
+        <div class="flex-container">
+
+            <div class="flex-item">Item A</div>
+            <div class="flex-item">Item B</div>
+            <div class="flex-item">Item C</div>
+
+        </div>
+
+        <p>
+            Example: display: flex;
+        </p>
+
+        <h2>10. CSS Grid</h2>
+
+        <p>
+            CSS Grid is a layout system used
+            to arrange elements in rows and
+            columns. It is useful for creating
+            complex webpage layouts.
+        </p>
+
+        <div class="grid-container">
+
+            <div class="grid-item">Item 1</div>
+            <div class="grid-item">Item 2</div>
+            <div class="grid-item">Item 3</div>
+            <div class="grid-item">Item 4</div>
+
+        </div>
+
+        <p>
+            Example: display: grid;
+        </p>
+
+        <h2>11. CSS Media Queries</h2>
+
+        <p>
+            Media queries are used to create
+            responsive webpages. They apply
+            different CSS styles according to
+            screen size or device conditions.
+        </p>
+
+        <p>
+            Example:
+            @media (max-width: 600px) {
+                body {
+                    background-color: lightblue;
+                }
+            }
+        </p>
+
+        <h2>12. Responsive Web Design</h2>
+
+        <p>
+            Responsive web design means creating
+            webpages that automatically adjust
+            their layout according to mobile,
+            tablet and desktop screen sizes.
+        </p>
+
+        <p>
+            Flexible layouts, CSS Grid, Flexbox
+            and Media Queries help create
+            responsive webpages.
+        </p>
+
+    </div>
+
+    <div class="fixed">
+        Fixed Position
+    </div>
+
+</body>
+</html>

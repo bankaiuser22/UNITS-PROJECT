@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Text, Fonts, Borders and Box Model</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightyellow;
+            margin: 20px;
+        }
+
+        h1 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        h2 {
+            color: darkred;
+        }
+
+        h3 {
+            color: darkgreen;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .box {
+            background-color: lightblue;
+            border: 2px solid blue;
+            padding: 20px;
+            margin: 15px;
+        }
+
+        .text1 {
+            font-family: Georgia;
+            font-size: 22px;
+            font-weight: bold;
+            color: blue;
+        }
+
+        .text2 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        .text3 {
+            text-transform: uppercase;
+        }
+
+        .border1 {
+            border: 3px solid red;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .border2 {
+            border: 3px dashed blue;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .border3 {
+            border: 3px dotted green;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .border4 {
+            border: 5px double purple;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .rounded {
+            border: 3px solid black;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .content-box {
+            box-sizing: content-box;
+            width: 300px;
+            padding: 20px;
+            border: 5px solid red;
+            margin: 10px;
+            background-color: lightgreen;
+        }
+
+        .border-box {
+            box-sizing: border-box;
+            width: 300px;
+            padding: 20px;
+            border: 5px solid blue;
+            margin: 10px;
+            background-color: lightpink;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS TEXT, FONTS, BORDERS AND BOX MODEL</h1>
+
+    <div class="box">
+
+        <h2>1. Typography and Text</h2>
+
+        <p>
+            CSS typography is used to control the
+            appearance of text on a webpage.
+            It helps to change font style, size,
+            weight and text alignment.
+        </p>
+
+        <h2>2. CSS Font Properties</h2>
+
+        <h3>A. Font Family</h3>
+
+        <p>
+            The font-family property is used to
+            specify the typeface of the text.
+        </p>
+
+        <p class="text1">
+            This text uses Georgia font family.
+        </p>
+
+        <p>
+            Example: font-family: Georgia, serif;
+        </p>
+
+        <h3>B. Font Size</h3>
+
+        <p>
+            The font-size property is used to
+            change the size of the text.
+        </p>
+
+        <p style="font-size: 25px;">
+            This text has a font size of 25px.
+        </p>
+
+        <p>
+            Example: font-size: 20px;
+        </p>
+
+        <h3>C. Font Weight</h3>
+
+        <p>
+            The font-weight property is used
+            to control the thickness of text.
+        </p>
+
+        <p style="font-weight: bold;">
+            This text is bold.
+        </p>
+
+        <p>
+            Example: font-weight: bold;
+        </p>
+
+        <h2>3. CSS Text Properties</h2>
+
+        <h3>A. Text Align</h3>
+
+        <p>
+            The text-align property is used to
+            align text horizontally.
+        </p>
+
+        <p style="text-align: center;">
+            This text is aligned in the center.
+        </p>
+
+        <p>
+            Values: left, right, center and justify.
+        </p>
+
+        <h3>B. Text Decoration</h3>
+
+        <p>
+            The text-decoration property is used
+            to add or remove decorative lines
+            from text.
+        </p>
+
+        <p style="text-decoration: underline;">
+            This text is underlined.
+        </p>
+
+        <p style="text-decoration: overline;">
+            This text has an overline.
+        </p>
+
+        <p style="text-decoration: line-through;">
+            This text has a line through it.
+        </p>
+
+        <h3>C. Text Transform</h3>
+
+        <p>
+            The text-transform property is used
+            to change the appearance of letters.
+        </p>
+
+        <p class="text3">
+            This sentence is displayed in uppercase.
+        </p>
+
+        <p>
+            Values: uppercase, lowercase and capitalize.
+        </p>
+
+        <h3>D. Line Height</h3>
+
+        <p>
+            The line-height property controls
+            the vertical space between lines
+            of text.
+        </p>
+
+        <p style="line-height: 2;">
+            CSS makes webpages attractive.
+            It also improves readability.
+            Line height adds space between lines.
+        </p>
+
+        <h2>4. CSS Borders</h2>
+
+        <p>
+            The border property is used to create
+            a boundary around an HTML element.
+            It can have width, style and color.
+        </p>
+
+        <h3>A. Solid Border</h3>
+
+        <div class="border1">
+            This is a solid border.
+        </div>
+
+        <h3>B. Dashed Border</h3>
+
+        <div class="border2">
+            This is a dashed border.
+        </div>
+
+        <h3>C. Dotted Border</h3>
+
+        <div class="border3">
+            This is a dotted border.
+        </div>
+
+        <h3>D. Double Border</h3>
+
+        <div class="border4">
+            This is a double border.
+        </div>
+
+        <h3>E. Rounded Border</h3>
+
+        <div class="rounded">
+            This box has rounded corners.
+        </div>
+
+        <h2>5. CSS Box Model</h2>
+
+        <p>
+            The CSS Box Model describes how every
+            HTML element is displayed as a rectangular
+            box. It consists of four parts:
+            Content, Padding, Border and Margin.
+        </p>
+
+        <h3>A. Content</h3>
+
+        <p>
+            Content is the actual text, image or
+            other information present inside
+            an HTML element.
+        </p>
+
+        <h3>B. Padding</h3>
+
+        <p>
+            Padding is the space between the
+            content and the border of an element.
+        </p>
+
+        <h3>C. Border</h3>
+
+        <p>
+            Border is the line surrounding the
+            padding and content of an element.
+        </p>
+
+        <h3>D. Margin</h3>
+
+        <p>
+            Margin is the outer space outside
+            the border. It separates one element
+            from another element.
+        </p>
+
+        <h2>6. Example of CSS Box Model</h2>
+
+        <h3>Content Box</h3>
+
+        <p>
+            In content-box, the given width applies
+            only to the content. Padding and border
+            are added to the total width.
+        </p>
+
+        <div class="content-box">
+            Content Box Example
+        </div>
+
+        <h3>Border Box</h3>
+
+        <p>
+            In border-box, the given width includes
+            content, padding and border.
+        </p>
+
+        <div class="border-box">
+            Border Box Example
+        </div>
+
+        <h2>7. Difference Between Content-box and Border-box</h2>
+
+        <p>
+            Content-box: Total width increases
+            when padding and border are added.
+        </p>
+
+        <p>
+            Border-box: Total width remains the
+            same because padding and border are
+            included in the declared width.
+        </p>
+
+        <h2>8. CSS Box Sizing Property</h2>
+
+        <p>
+            The box-sizing property controls
+            how the width and height of an
+            element are calculated.
+        </p>
+
+        <p>
+            Example:
+            box-sizing: border-box;
+        </p>
+
+    </div>
+
+</body>
+</html>

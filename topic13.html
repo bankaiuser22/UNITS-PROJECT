@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 1 - JavaScript</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #174ea6;
+        }
+
+        h3 {
+            color: #087e8b;
+        }
+
+        p, li {
+            font-size: 17px;
+        }
+
+        pre {
+            background: #172033;
+            color: white;
+            padding: 18px;
+            border-radius: 7px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        code {
+            color: #d14;
+        }
+
+        .note {
+            background: #e8f2ff;
+            padding: 15px;
+            border-left: 5px solid #174ea6;
+            margin: 20px 0;
+        }
+
+        button {
+            background: #174ea6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #087e8b;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>UNIT 4: JAVASCRIPT AND JQUERY</h1>
+
+<h2>TOPIC 1: CLIENT-SIDE SCRIPTING WITH JAVASCRIPT</h2>
+
+<hr>
+
+<h2>1. Introduction to JavaScript</h2>
+
+<p>
+JavaScript is a high-level and dynamic scripting language
+used to make web pages interactive and responsive.
+It runs in the web browser and responds to user actions.
+</p>
+
+<p>
+JavaScript helps us perform calculations, validate forms,
+change text, display messages, create animations and
+update web pages without reloading the complete page.
+</p>
+
+<h3>Example:</h3>
+
+<p>
+When we click a button and a message appears on the screen,
+JavaScript is responsible for that action.
+</p>
+
+<h3>Why is JavaScript Used?</h3>
+
+<ul>
+    <li>To make web pages interactive.</li>
+    <li>To perform calculations.</li>
+    <li>To validate user input.</li>
+    <li>To display popup messages.</li>
+    <li>To respond to button clicks.</li>
+    <li>To change HTML content dynamically.</li>
+    <li>To communicate with servers and fetch data.</li>
+</ul>
+
+<h2>2. Difference Between HTML, CSS and JavaScript</h2>
+
+<p>
+HTML, CSS and JavaScript are the three core technologies
+used in web development.
+</p>
+
+<ul>
+    <li><b>HTML:</b> Provides the structure of a web page.</li>
+    <li><b>CSS:</b> Controls the design and appearance.</li>
+    <li><b>JavaScript:</b> Adds behaviour and interactivity.</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>
+HTML       = Creates a button.
+CSS        = Changes the button colour.
+JavaScript = Performs an action when clicked.
+</pre>
+
+<div class="note">
+<b>Remember:</b><br>
+HTML = Structure<br>
+CSS = Presentation<br>
+JavaScript = Behaviour
+</div>
+
+<h2>3. Basic Building Blocks of JavaScript</h2>
+
+<p>
+JavaScript contains different building blocks that help
+us write programs and perform different tasks.
+</p>
+
+<h3>1. Values</h3>
+
+<p>
+Values are the data used in a JavaScript program.
+They can be numbers, text or true/false values.
+</p>
+
+<pre>
+let age = 20;
+let name = "Asha";
+let isStudent = true;
+</pre>
+
+<h3>2. Variables</h3>
+
+<p>
+A variable is a named container used to store data.
+We can use that data later in our program.
+</p>
+
+<pre>
+let marks = 80;
+const name = "Asha";
+</pre>
+
+<h3>3. Operators</h3>
+
+<p>
+Operators are symbols used to perform operations
+on values and variables.
+</p>
+
+<pre>
+let a = 10;
+let b = 5;
+
+let sum = a + b;
+
+console.log(sum);
+</pre>
+
+<p>Output: 15</p>
+
+<h3>4. Expressions</h3>
+
+<p>
+An expression is a combination of values, variables
+and operators that produces a result.
+</p>
+
+<pre>
+let result = 10 + 20;
+</pre>
+
+<p>Output: 30</p>
+
+<h3>5. Control Flow</h3>
+
+<p>
+Control flow decides the order in which instructions
+are executed in a program.
+Conditions and loops are used for this purpose.
+</p>
+
+<h3>6. Functions</h3>
+
+<p>
+A function is a reusable block of code that performs
+a particular task.
+</p>
+
+<pre>
+function greet() {
+    console.log("Hello Student");
+}
+
+greet();
+</pre>
+
+<p>Output: Hello Student</p>
+
+<h3>7. Objects and Arrays</h3>
+
+<p>
+An object stores related information using properties.
+An array stores multiple values in a single variable.
+</p>
+
+<pre>
+let subjects = ["HTML", "CSS", "JavaScript"];
+
+let student = {
+    name: "Asha",
+    marks: 85
+};
+</pre>
+
+<hr>
+
+<h2>4. JavaScript Variables</h2>
+
+<p>
+A variable is a container used to store information.
+The stored value can be used or updated in a program.
+</p>
+
+<p>
+JavaScript provides three keywords to declare variables:
+var, let and const.
+</p>
+
+<h3>1. var</h3>
+
+<p>
+The var keyword is used to declare a variable.
+It can be reassigned and redeclared in the same scope.
+</p>
+
+<pre>
+var age = 20;
+
+age = 21;
+
+console.log(age);
+</pre>
+
+<p>Output: 21</p>
+
+<h3>2. let</h3>
+
+<p>
+The let keyword is used when the value of a variable
+may change during program execution.
+It can be reassigned but cannot be redeclared in
+the same block scope.
+</p>
+
+<pre>
+let marks = 70;
+
+marks = 90;
+
+console.log(marks);
+</pre>
+
+<p>Output: 90</p>
+
+<h3>3. const</h3>
+
+<p>
+The const keyword is used when a variable should not
+be reassigned after declaration.
+</p>
+
+<pre>
+const name = "Asha";
+
+console.log(name);
+</pre>
+
+<p>Output: Asha</p>
+
+<h3>Difference Between var, let and const</h3>
+
+<pre>
+var   - Can be reassigned and redeclared.
+let   - Can be reassigned, not redeclared
+        in the same block.
+const - Cannot be reassigned or redeclared
+        in the same block.
+</pre>
+
+<div class="note">
+<b>Important:</b> Prefer const when reassignment is
+not required. Use let when the value needs to change.
+</div>
+
+<hr>
+
+<h2>5. JavaScript Data Types</h2>
+
+<p>
+A data type describes the type of value stored in
+a variable. JavaScript is dynamically typed, which
+means a variable can hold different types of values
+at different times.
+</p>
+
+<p>
+JavaScript data types are mainly divided into
+two categories:
+</p>
+
+<h3>A. Primitive Data Types</h3>
+
+<p>
+Primitive data types represent simple values.
+JavaScript has seven primitive data types.
+</p>
+
+<h3>1. String</h3>
+
+<p>
+A string is used to store text. It is written inside
+single quotes, double quotes or backticks.
+</p>
+
+<pre>
+let name = "Asha";
+
+console.log(name);
+</pre>
+
+<p>Output: Asha</p>
+
+<h3>2. Number</h3>
+
+<p>
+The number data type stores integer and decimal values.
+</p>
+
+<pre>
+let age = 20;
+let price = 99.50;
+
+console.log(age);
+console.log(price);
+</pre>
+
+<p>Output: 20 and 99.5</p>
+
+<h3>3. BigInt</h3>
+
+<p>
+BigInt is used to store very large integer values
+that cannot be safely represented by the Number type.
+A number literal uses the letter n at the end.
+</p>
+
+<pre>
+let bigNumber = 9007199254740993n;
+
+console.log(bigNumber);
+</pre>
+
+<h3>4. Boolean</h3>
+
+<p>
+Boolean represents only two values:
+true or false.
+It is commonly used in conditions.
+</p>
+
+<pre>
+let isPass = true;
+
+console.log(isPass);
+</pre>
+
+<p>Output: true</p>
+
+<h3>5. Undefined</h3>
+
+<p>
+Undefined means a variable has been declared
+but no value has been assigned to it.
+</p>
+
+<pre>
+let result;
+
+console.log(result);
+</pre>
+
+<p>Output: undefined</p>
+
+<h3>6. Null</h3>
+
+<p>
+Null represents the intentional absence of a value.
+It means that a variable has no value assigned.
+</p>
+
+<pre>
+let student = null;
+
+console.log(student);
+</pre>
+
+<p>Output: null</p>
+
+<h3>7. Symbol</h3>
+
+<p>
+Symbol creates a unique value. It is mainly used
+as a unique property key in objects.
+</p>
+
+<pre>
+let id = Symbol("id");
+
+console.log(id);
+</pre>
+
+<h3>B. Non-Primitive Data Type</h3>
+
+<h3>Object</h3>
+
+<p>
+An object is a collection of related data stored
+in the form of properties and values.
+Arrays and functions are also object types
+in JavaScript.
+</p>
+
+<pre>
+let student = {
+    name: "Asha",
+    age: 20,
+    marks: 85
+};
+
+console.log(student.name);
+</pre>
+
+<p>Output: Asha</p>
+
+<h3>Array Example</h3>
+
+<p>
+An array is used to store multiple values in
+a single variable.
+</p>
+
+<pre>
+let subjects = ["HTML", "CSS", "JavaScript"];
+
+console.log(subjects[0]);
+</pre>
+
+<p>Output: HTML</p>
+
+<hr>
+
+<h2>6. typeof Operator</h2>
+
+<p>
+The typeof operator is used to check the data type
+of a value or variable.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+let name = "Asha";
+let age = 20;
+let isPass = true;
+
+console.log(typeof name);
+console.log(typeof age);
+console.log(typeof isPass);
+</pre>
+
+<p>Output:</p>
+
+<pre>
+string
+number
+boolean
+</pre>
+
+<h3>Important Points About typeof</h3>
+
+<ul>
+    <li>typeof "Hello" returns string.</li>
+    <li>typeof 20 returns number.</li>
+    <li>typeof true returns boolean.</li>
+    <li>typeof undefined returns undefined.</li>
+    <li>typeof null returns object due to a historical JavaScript behaviour.</li>
+    <li>typeof an array returns object.</li>
+    <li>typeof a function returns function.</li>
+</ul>
+
+<p>
+To check whether a value is an array, use:
+</p>
+
+<pre>
+Array.isArray(["HTML", "CSS"]);
+</pre>
+
+<p>Output: true</p>
+
+<hr>
+
+<h2>7. Conditions and Logic</h2>
+
+<p>
+Conditions are used to make decisions in a program.
+They execute different blocks of code depending
+on whether a condition is true or false.
+</p>
+
+<h3>1. if Statement</h3>
+
+<p>
+The if statement executes a block of code only
+when the given condition is true.
+</p>
+
+<pre>
+let age = 20;
+
+if (age >= 18) {
+    console.log("Eligible");
+}
+</pre>
+
+<p>Output: Eligible</p>
+
+<h3>2. if-else Statement</h3>
+
+<p>
+The if-else statement executes one block when
+the condition is true and another block when
+the condition is false.
+</p>
+
+<pre>
+let marks = 35;
+
+if (marks >= 40) {
+    console.log("Pass");
+} else {
+    console.log("Fail");
+}
+</pre>
+
+<p>Output: Fail</p>
+
+<h3>3. else-if Statement</h3>
+
+<p>
+The else-if statement is used when we need to
+check multiple conditions.
+</p>
+
+<pre>
+let marks = 75;
+
+if (marks >= 90) {
+    console.log("Grade A");
+} else if (marks >= 60) {
+    console.log("Grade B");
+} else {
+    console.log("Grade C");
+}
+</pre>
+
+<p>Output: Grade B</p>
+
+<h3>4. Ternary Operator</h3>
+
+<p>
+The ternary operator is a short way of writing
+a simple if-else condition.
+</p>
+
+<pre>
+let age = 20;
+
+let result = age >= 18 ? "Adult" : "Minor";
+
+console.log(result);
+</pre>
+
+<p>Output: Adult</p>
+
+<h3>Logical Operators</h3>
+
+<p>
+Logical operators are used to combine or reverse
+conditions.
+</p>
+
+<pre>
+&&  AND - Both conditions must be true.
+
+||  OR  - At least one condition must be true.
+
+!   NOT - Reverses the result.
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+let age = 20;
+let feesPaid = true;
+
+if (age >= 18 && feesPaid) {
+    console.log("Student can register");
+} else if (age >= 18 && !feesPaid) {
+    console.log("Please pay the fees");
+} else {
+    console.log("Student is not eligible");
+}
+</pre>
+
+<p>Output: Student can register</p>
+
+<hr>
+
+<h2>8. Loops in JavaScript</h2>
+
+<p>
+Loops are used to execute a block of code repeatedly
+until a particular condition becomes false.
+They reduce repetition and make programs shorter.
+</p>
+
+<h3>1. for Loop</h3>
+
+<p>
+A for loop is used when we know how many times
+we want to repeat a block of code.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+for (initialization; condition; update) {
+    // Code to execute
+}
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+</pre>
+
+<p>Output:</p>
+
+<pre>
+1
+2
+3
+4
+5
+</pre>
+
+<h3>2. while Loop</h3>
+
+<p>
+A while loop repeats a block of code as long as
+the given condition is true.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+while (condition) {
+    // Code to execute
+}
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+let i = 1;
+
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+</pre>
+
+<p>Output:</p>
+
+<pre>
+1
+2
+3
+4
+5
+</pre>
+
+<h3>3. for...of Loop</h3>
+
+<p>
+The for...of loop is used to access each value
+of an iterable such as an array.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+let subjects = ["HTML", "CSS", "JavaScript"];
+
+for (let subject of subjects) {
+    console.log(subject);
+}
+</pre>
+
+<p>Output:</p>
+
+<pre>
+HTML
+CSS
+JavaScript
+</pre>
+
+<h3>Difference Between for and while Loop</h3>
+
+<pre>
+for loop:
+Used when the number of repetitions is known.
+
+while loop:
+Used when repetition depends on a condition.
+</pre>
+
+<hr>
+
+<h2>9. Functions in JavaScript</h2>
+
+<p>
+A function is a reusable block of code that performs
+a particular task. It helps us avoid writing the
+same code again and again.
+</p>
+
+<h3>Advantages of Functions</h3>
+
+<ul>
+    <li>Reduces code repetition.</li>
+    <li>Makes code easier to understand.</li>
+    <li>Makes programs easier to maintain.</li>
+    <li>Allows code to be reused whenever needed.</li>
+</ul>
+
+<h3>Syntax:</h3>
+
+<pre>
+function functionName() {
+    // Statements
+}
+
+functionName();
+</pre>
+
+<h3>Example 1: Simple Function</h3>
+
+<pre>
+function greet() {
+    console.log("Welcome Student");
+}
+
+greet();
+</pre>
+
+<p>Output: Welcome Student</p>
+
+<h3>Example 2: Function with Parameters</h3>
+
+<p>
+Parameters are the values received by a function.
+They are written inside the parentheses.
+</p>
+
+<pre>
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+greet("Asha");
+</pre>
+
+<p>Output: Hello Asha</p>
+
+<h3>Example 3: Function with Return Value</h3>
+
+<p>
+The return statement sends a result back from
+the function to the place where it was called.
+</p>
+
+<pre>
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(10, 20);
+
+console.log(result);
+</pre>
+
+<p>Output: 30</p>
+
+<h3>Example 4: Calculate Total</h3>
+
+<pre>
+function calculateTotal(price, quantity) {
+    return price * quantity;
+}
+
+let bill = calculateTotal(120, 3);
+
+console.log(bill);
+</pre>
+
+<p>Output: 360</p>
+
+<hr>
+
+<h2>10. Popup Boxes in JavaScript</h2>
+
+<p>
+JavaScript provides popup boxes to interact with
+users through the browser.
+There are three commonly used popup methods:
+alert(), confirm() and prompt().
+</p>
+
+<h3>1. alert()</h3>
+
+<p>
+The alert() method displays a message in a popup box.
+It provides an OK button.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+alert("Message");
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+alert("Welcome to JavaScript");
+</pre>
+
+<button onclick="alert('Welcome to JavaScript!')">
+Try Alert
+</button>
+
+<h3>2. confirm()</h3>
+
+<p>
+The confirm() method displays a message with
+OK and Cancel buttons.
+It returns true if the user clicks OK and false
+if the user clicks Cancel.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+confirm("Do you want to continue?");
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+let answer = confirm("Do you want to continue?");
+
+if (answer) {
+    console.log("User clicked OK");
+} else {
+    console.log("User clicked Cancel");
+}
+</pre>
+
+<button onclick="showConfirm()">
+Try Confirm
+</button>
+
+<p id="confirmResult"></p>
+
+<h3>3. prompt()</h3>
+
+<p>
+The prompt() method displays a popup box that asks
+the user to enter some text.
+It returns the entered text or null if the user cancels.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+prompt("Enter your name:");
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+let name = prompt("Enter your name:");
+
+console.log("Hello " + name);
+</pre>
+
+<button onclick="showPrompt()">
+Try Prompt
+</button>
+
+<p id="promptResult"></p>
+
+<h3>Difference Between Popup Boxes</h3>
+
+<pre>
+alert():
+Displays a message with an OK button.
+
+confirm():
+Displays a message with OK and Cancel buttons.
+
+prompt():
+Asks the user to enter text.
+</pre>
+
+<hr>
+
+<h2>11. Complete JavaScript Example</h2>
+
+<p>
+The following example combines variables,
+conditions, loops and functions in one program.
+</p>
+
+<pre>
+const course = "Web Technologies";
+
+let score = 0;
+
+if (score >= 50) {
+    console.log("Pass");
+} else {
+    console.log("Keep practising");
+}
+
+for (const topic of ["variables", "loops", "functions"]) {
+    console.log(topic);
+}
+
+function addMarks(current, extra) {
+    return current + extra;
+}
+
+score = addMarks(score, 10);
+
+console.log(score);
+</pre>
+
+<p>Output:</p>
+
+<pre>
+Keep practising
+variables
+loops
+functions
+10
+</pre>
+
+<hr>
+
+<h2>12. Important Exam Points</h2>
+
+<ul>
+    <li>JavaScript is a high-level, dynamic scripting language.</li>
+    <li>JavaScript is used to make web pages interactive.</li>
+    <li>HTML provides structure, CSS provides presentation and JavaScript provides behaviour.</li>
+    <li>Variables store information in a program.</li>
+    <li>let and const are commonly used to declare variables.</li>
+    <li>JavaScript has seven primitive data types.</li>
+    <li>typeof is used to check the type of a value.</li>
+    <li>Conditions are used for decision-making.</li>
+    <li>Loops are used to repeat instructions.</li>
+    <li>Functions are reusable blocks of code.</li>
+    <li>alert(), confirm() and prompt() are popup methods.</li>
+</ul>
+
+<h2>13. Conclusion</h2>
+
+<p>
+JavaScript is an important programming language used
+to create interactive websites. It provides variables
+to store data, conditions to make decisions, loops to
+repeat tasks and functions to reuse code.
+It also provides popup boxes and other browser features
+to interact with users.
+</p>
+
+<p>
+By understanding these basic concepts, beginners can
+start creating dynamic and interactive web pages.
+</p>
+
+</div>
+
+<script>
+{
+function showConfirm() {
+
+    let answer = confirm("Do you want to continue?");
+
+    if (answer) {
+        document.getElementById("confirmResult").innerHTML =
+        "You clicked OK.";
+    } else {
+        document.getElementById("confirmResult").innerHTML =
+        "You clicked Cancel.";
+    }
+
+}
+
+function showPrompt() {
+
+    let name = prompt("Enter your name:");
+
+    if (name !== null) {
+        document.getElementById("promptResult").innerHTML =
+        "Hello " + name + "!";
+    }
+
+}
+}
+</script>
+
+</body>
+</html>

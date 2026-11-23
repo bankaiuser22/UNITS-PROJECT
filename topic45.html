@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP Arrays and Output</title>
+</head>
+<body>
+
+    <h1>04. PHP Arrays and Output</h1>
+
+    <h2>1. Introduction to Arrays</h2>
+    <p>
+        An array is a special variable used to store multiple
+        values in a single variable. Instead of creating
+        separate variables, we can store related values
+        together in an array.
+    </p>
+
+    <h2>2. Types of PHP Arrays</h2>
+    <p>PHP mainly supports three types of arrays:</p>
+    <ul>
+        <li>Indexed Array</li>
+        <li>Associative Array</li>
+        <li>Multidimensional Array</li>
+    </ul>
+
+    <h2>3. Indexed Array</h2>
+    <p>
+        An indexed array stores values using numeric indexes.
+        The index of an array normally starts from zero.
+    </p>
+
+    <pre>
+&lt;?php
+$subjects = ["PHP", "HTML", "CSS", "JavaScript"];
+
+echo $subjects[0];
+echo $subjects[1];
+echo $subjects[2];
+echo $subjects[3];
+?&gt;
+    </pre>
+
+    <h2>4. Creating an Indexed Array</h2>
+    <p>
+        We can create an indexed array using the array()
+        function or square brackets [].
+    </p>
+
+    <pre>
+&lt;?php
+$fruits = array("Apple", "Mango", "Banana");
+
+echo $fruits[0];
+echo $fruits[1];
+echo $fruits[2];
+?&gt;
+    </pre>
+
+    <h2>5. Associative Array</h2>
+    <p>
+        An associative array stores values using named keys
+        instead of numeric indexes. Each key is connected
+        with a particular value.
+    </p>
+
+    <pre>
+&lt;?php
+$marks = [
+    "Amit" => 85,
+    "Rahul" => 90,
+    "Neha" => 88
+];
+
+echo $marks["Amit"];
+echo $marks["Rahul"];
+echo $marks["Neha"];
+?&gt;
+    </pre>
+
+    <h2>6. Multidimensional Array</h2>
+    <p>
+        A multidimensional array is an array that contains
+        one or more arrays inside it. It is useful for
+        storing data in rows and columns.
+    </p>
+
+    <pre>
+&lt;?php
+$students = [
+    ["Amit", 85],
+    ["Rahul", 90],
+    ["Neha", 88]
+];
+
+echo $students[0][0];
+echo $students[0][1];
+
+echo $students[1][0];
+echo $students[1][1];
+?&gt;
+    </pre>
+
+    <h2>7. Displaying Output Using echo</h2>
+    <p>
+        The echo statement is used to display text,
+        variables and values on the screen.
+        It can output multiple strings.
+    </p>
+
+    <pre>
+&lt;?php
+$name = "Amit";
+$age = 20;
+
+echo "Student Name: ";
+echo $name;
+echo "Age: ";
+echo $age;
+?&gt;
+    </pre>
+
+    <h2>8. Displaying Output Using print</h2>
+    <p>
+        The print statement is also used to display
+        output. It returns the value 1 after execution.
+    </p>
+
+    <pre>
+&lt;?php
+$name = "Rahul";
+
+print "Welcome ";
+print $name;
+?&gt;
+    </pre>
+
+    <h2>9. Using foreach with Arrays</h2>
+    <p>
+        The foreach loop is used to access each element
+        of an array one by one. It works with indexed
+        and associative arrays.
+    </p>
+
+    <pre>
+&lt;?php
+$subjects = ["PHP", "HTML", "CSS"];
+
+foreach ($subjects as $subject) {
+    echo $subject . "&lt;br&gt;";
+}
+?&gt;
+    </pre>
+
+    <h2>10. Example of Indexed and Associative Arrays</h2>
+    <pre>
+&lt;?php
+$topics = ["Variables", "Arrays", "Loops"];
+
+$marks = [
+    "Amit" => 88,
+    "Dev" => 76
+];
+
+foreach ($topics as $index => $topic) {
+    echo ($index + 1) . ". " . $topic . "&lt;br&gt;";
+}
+
+foreach ($marks as $name => $score) {
+    echo $name . " scored " . $score . "&lt;br&gt;";
+}
+?&gt;
+    </pre>
+
+    <h2>11. Advantages of Arrays</h2>
+    <ul>
+        <li>Stores multiple values in one variable.</li>
+        <li>Reduces the need for many separate variables.</li>
+        <li>Makes data easier to manage.</li>
+        <li>Works easily with loops.</li>
+        <li>Helps organize related information.</li>
+    </ul>
+
+    <h2>12. Conclusion</h2>
+    <p>
+        Arrays are useful in PHP for storing and managing
+        multiple values. Indexed arrays use numeric indexes,
+        while associative arrays use named keys.
+        The echo and print statements are used to display
+        output, and foreach helps access array elements.
+    </p>
+
+</body>
+</html>

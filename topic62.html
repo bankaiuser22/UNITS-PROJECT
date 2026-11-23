@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 6 - CSS Colors</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            color: #174f78;
+            text-align: center;
+        }
+
+        h2 {
+            color: #174f78;
+            border-bottom: 2px solid #174f78;
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            color: #31765e;
+        }
+
+        p, li {
+            font-size: 16px;
+        }
+
+        pre {
+            background-color: #172033;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .color-box {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .note {
+            background-color: #e8f2f8;
+            padding: 15px;
+            border-left: 5px solid #174f78;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>6. CSS Colors</h1>
+
+    <h2>1. Introduction to CSS Colors</h2>
+
+    <p>
+        CSS Colors are used to add colors to HTML elements.
+        They make a website attractive and improve the appearance
+        of text, backgrounds, borders and other elements.
+    </p>
+
+    <p>
+        CSS provides different ways to define colors such as
+        color names, HEX, RGB, RGBA and HSL.
+    </p>
+
+    <h2>2. Color Property</h2>
+
+    <p>
+        The color property is used to change the color of text
+        inside an HTML element.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+p {
+    color: red;
+}
+    </pre>
+
+    <p style="color:red;">
+        This is an example of red colored text.
+    </p>
+
+    <h2>3. Background Color Property</h2>
+
+    <p>
+        The background-color property is used to change the
+        background color of an HTML element.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    background-color: yellow;
+}
+    </pre>
+
+    <div class="color-box" style="background-color:yellow;">
+        This box has a yellow background.
+    </div>
+
+    <h2>4. Different Ways to Apply Colors</h2>
+
+    <h3>A. Color Names</h3>
+
+    <p>
+        CSS allows us to use predefined color names such as
+        red, blue, green, yellow and black.
+    </p>
+
+    <pre>
+h1 {
+    color: blue;
+}
+
+p {
+    color: green;
+}
+    </pre>
+
+    <div class="color-box" style="background-color:blue;color:white;">
+        Blue Color Example
+    </div>
+
+    <div class="color-box" style="background-color:green;color:white;">
+        Green Color Example
+    </div>
+
+    <h3>B. HEX Color</h3>
+
+    <p>
+        HEX stands for Hexadecimal. It represents colors using
+        a six-digit code starting with the # symbol.
+    </p>
+
+    <p>
+        The first two digits represent Red, the next two represent
+        Green and the last two represent Blue.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+h1 {
+    color: #FF0000;
+}
+
+p {
+    color: #0000FF;
+}
+    </pre>
+
+    <div class="color-box" style="background-color:#FF0000;color:white;">
+        HEX Red: #FF0000
+    </div>
+
+    <div class="color-box" style="background-color:#0000FF;color:white;">
+        HEX Blue: #0000FF
+    </div>
+
+    <h3>C. RGB Color</h3>
+
+    <p>
+        RGB stands for Red, Green and Blue.
+        It defines a color using three values.
+        Each value ranges from 0 to 255.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+h1 {
+    color: rgb(255, 0, 0);
+}
+
+p {
+    color: rgb(0, 0, 255);
+}
+    </pre>
+
+    <div class="color-box" style="background-color:rgb(255,0,0);color:white;">
+        RGB Red
+    </div>
+
+    <div class="color-box" style="background-color:rgb(0,0,255);color:white;">
+        RGB Blue
+    </div>
+
+    <h3>D. RGBA Color</h3>
+
+    <p>
+        RGBA stands for Red, Green, Blue and Alpha.
+        It is similar to RGB but includes an extra alpha value.
+    </p>
+
+    <p>
+        Alpha controls the transparency of the color.
+        Its value ranges from 0 to 1.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+    </pre>
+
+    <div class="color-box"
+         style="background-color:rgba(255,0,0,0.5);">
+        RGBA Red with Transparency
+    </div>
+
+    <h3>E. HSL Color</h3>
+
+    <p>
+        HSL stands for Hue, Saturation and Lightness.
+        It is another way to define colors in CSS.
+    </p>
+
+    <ul>
+        <li><b>Hue:</b> Represents the type of color.</li>
+        <li><b>Saturation:</b> Represents the intensity of color.</li>
+        <li><b>Lightness:</b> Represents how light or dark the color is.</li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+h1 {
+    color: hsl(9, 100%, 64%);
+}
+    </pre>
+
+    <div class="color-box" style="background-color:hsl(9,100%,64%);">
+        HSL Color Example
+    </div>
+
+    <h2>5. Difference Between Color Formats</h2>
+
+    <ul>
+        <li><b>Color Name:</b> Uses predefined color names.</li>
+        <li><b>HEX:</b> Uses hexadecimal codes.</li>
+        <li><b>RGB:</b> Uses Red, Green and Blue values.</li>
+        <li><b>RGBA:</b> RGB with an alpha transparency value.</li>
+        <li><b>HSL:</b> Uses Hue, Saturation and Lightness.</li>
+    </ul>
+
+    <h2>6. Importance of CSS Colors</h2>
+
+    <ul>
+        <li>Makes websites attractive.</li>
+        <li>Improves the appearance of web pages.</li>
+        <li>Highlights important information.</li>
+        <li>Helps users understand different sections.</li>
+        <li>Improves readability when proper contrast is used.</li>
+    </ul>
+
+    <div class="note">
+        <b>Exam Point:</b>
+        CSS supports different color formats such as Named Colors,
+        HEX, RGB, RGBA and HSL. These formats are used to apply
+        colors to text and backgrounds.
+    </div>
+
+    <h2>7. Conclusion</h2>
+
+    <p>
+        CSS Colors are an important part of web designing.
+        They help developers change the color of text and
+        backgrounds. Different color formats provide different
+        ways to apply colors to HTML elements.
+    </p>
+
+</div>
+
+</body>
+</html>

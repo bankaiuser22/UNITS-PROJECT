@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transforming XML Using XSL and XSLT</title>
+</head>
+<body>
+
+    <h1>Transforming XML Using XSL and XSLT</h1>
+
+    <h2>1. Introduction to XSL</h2>
+
+    <p>
+        XSL stands for Extensible Stylesheet Language.
+        It is a family of technologies used for
+        working with XML documents.
+    </p>
+
+    <p>
+        XSL helps to transform and format XML data
+        into different output formats.
+    </p>
+
+    <h2>2. Key Parts of XSL</h2>
+
+    <ul>
+        <li>
+            <b>XSLT:</b> Rules used for transforming
+            XML documents.
+        </li>
+        <li>
+            <b>XPath:</b> Expressions used for selecting
+            nodes and values from XML documents.
+        </li>
+        <li>
+            <b>XSL-FO:</b> Formatting objects commonly
+            used for paginated output.
+        </li>
+    </ul>
+
+    <h2>3. What is XSLT?</h2>
+
+    <p>
+        XSLT stands for Extensible Stylesheet Language
+        Transformations.
+    </p>
+
+    <p>
+        XSLT is used to transform XML data into
+        HTML, another XML format or plain text.
+    </p>
+
+    <p>
+        It reads the source XML tree, selects nodes
+        using XPath and applies template rules
+        to produce the result.
+    </p>
+
+    <p>
+        XSLT changes the representation of data.
+        It does not change the original XML document.
+    </p>
+
+    <h2>4. What is XPath?</h2>
+
+    <p>
+        XPath is a language used to select elements,
+        attributes and values from an XML document.
+    </p>
+
+    <h3>Common XPath Expressions</h3>
+
+    <ul>
+        <li>/ - Selects the document root.</li>
+        <li>catalog/book - Selects book elements inside catalog.</li>
+        <li>@id - Selects the id attribute.</li>
+        <li>title - Selects the title element.</li>
+        <li>price - Selects the price element.</li>
+    </ul>
+
+    <h2>5. How XSLT Works</h2>
+
+    <ol>
+        <li>XSLT reads the source XML document.</li>
+        <li>XPath selects the required XML nodes.</li>
+        <li>Template rules are applied to selected nodes.</li>
+        <li>The transformation produces the result.</li>
+        <li>The result can be HTML, XML or plain text.</li>
+    </ol>
+
+    <h2>6. Source XML Example</h2>
+
+    <p>
+        Consider a catalog containing information
+        about two books.
+    </p>
+
+    <h3>catalog.xml</h3>
+
+    <pre>
+&lt;catalog&gt;
+    &lt;book id="b101"&gt;
+        &lt;title&gt;Learning XML&lt;/title&gt;
+        &lt;author&gt;Asha Rao&lt;/author&gt;
+        &lt;price&gt;450&lt;/price&gt;
+    &lt;/book&gt;
+
+    &lt;book id="b102"&gt;
+        &lt;title&gt;Data on the Web&lt;/title&gt;
+        &lt;author&gt;Neil Patel&lt;/author&gt;
+        &lt;price&gt;525&lt;/price&gt;
+    &lt;/book&gt;
+&lt;/catalog&gt;
+    </pre>
+
+    <h2>7. XSLT Stylesheet Example</h2>
+
+    <p>
+        The following XSLT stylesheet selects
+        each book and creates an HTML table.
+    </p>
+
+    <h3>catalog.xsl</h3>
+
+    <pre>
+&lt;xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+    &lt;xsl:output method="html" indent="yes"/&gt;
+
+    &lt;xsl:template match="/"&gt;
+
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;Title&lt;/th&gt;
+                &lt;th&gt;Author&lt;/th&gt;
+                &lt;th&gt;Price (INR)&lt;/th&gt;
+            &lt;/tr&gt;
+
+            &lt;xsl:for-each select="catalog/book"&gt;
+
+                &lt;tr&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@id"/&gt;
+                    &lt;/td&gt;
+
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="title"/&gt;
+                    &lt;/td&gt;
+
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="author"/&gt;
+                    &lt;/td&gt;
+
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="price"/&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+
+            &lt;/xsl:for-each&gt;
+
+        &lt;/table&gt;
+
+    &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+    </pre>
+
+    <h2>8. Explanation of XSLT Elements</h2>
+
+    <ul>
+        <li>
+            <b>xsl:stylesheet:</b>
+            Defines the XSLT stylesheet.
+        </li>
+        <li>
+            <b>xsl:output:</b>
+            Specifies the output format.
+        </li>
+        <li>
+            <b>xsl:template match="/":</b>
+            Begins the template at the document root.
+        </li>
+        <li>
+            <b>xsl:for-each:</b>
+            Selects each book and repeats the enclosed output.
+        </li>
+        <li>
+            <b>xsl:value-of:</b>
+            Reads the value of a selected element or attribute.
+        </li>
+    </ul>
+
+    <h2>9. Connecting XML with XSLT</h2>
+
+    <p>
+        An XML file can be connected to an XSLT
+        stylesheet using the xml-stylesheet
+        processing instruction.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;?xml-stylesheet type="text/xsl"
+href="catalog.xsl"?&gt;
+
+&lt;catalog&gt;
+    &lt;book id="b101"&gt;
+        &lt;title&gt;Learning XML&lt;/title&gt;
+        &lt;author&gt;Asha Rao&lt;/author&gt;
+        &lt;price&gt;450&lt;/price&gt;
+    &lt;/book&gt;
+&lt;/catalog&gt;
+    </pre>
+
+    <p>
+        Save the XML and XSLT files together.
+        Open the XML file in a browser that supports
+        this stylesheet instruction.
+    </p>
+
+    <h2>10. Transforming XML using Command Line</h2>
+
+    <p>
+        XML can also be transformed using the
+        xsltproc command-line utility.
+    </p>
+
+    <h3>Command:</h3>
+
+    <pre>
+xsltproc catalog.xsl catalog.xml
+    </pre>
+
+    <p>
+        The transformed HTML is written to
+        standard output. xsltproc is available
+        with libxslt.
+    </p>
+
+    <h2>11. Browser Compatibility</h2>
+
+    <p>
+        The interactive example uses XSLT 1.0
+        through the browser's XSLTProcessor API.
+    </p>
+
+    <p>
+        Some browsers still support this API.
+        However, Chromium warns that XSLT support
+        is deprecated and may be removed.
+    </p>
+
+    <p>
+        The xsltproc command is a durable option
+        for local demonstrations.
+    </p>
+
+    <h2>Conclusion</h2>
+
+    <p>
+        XSL is a family of technologies used
+        for working with XML. XSLT transforms
+        XML data into HTML, XML or plain text.
+        XPath selects the required nodes and
+        XSLT template rules create the output.
+    </p>
+
+</body>
+</html>

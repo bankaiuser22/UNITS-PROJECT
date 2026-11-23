@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP Variables and Data Types</title>
+</head>
+<body>
+
+    <h1>03. PHP Variables and Data Types</h1>
+
+    <h2>1. Introduction</h2>
+    <p>
+        Variables and data types are important parts of PHP programming.
+        Variables are used to store information, while data types
+        define the type of information stored in a variable.
+    </p>
+
+    <h2>2. What is a Variable?</h2>
+    <p>
+        A variable is a named container used to store data.
+        In PHP, every variable starts with the dollar ($) symbol.
+        The value of a variable can be changed during program execution.
+    </p>
+
+    <pre>
+&lt;?php
+$name = "Amit";
+$age = 20;
+
+echo $name;
+echo $age;
+?&gt;
+    </pre>
+
+    <h2>3. Rules for Declaring Variables</h2>
+    <ul>
+        <li>A variable must start with the $ symbol.</li>
+        <li>A variable name must start with a letter or underscore.</li>
+        <li>A variable name cannot start with a number.</li>
+        <li>Variable names cannot contain spaces.</li>
+        <li>Variable names are case-sensitive.</li>
+    </ul>
+
+    <pre>
+&lt;?php
+$name = "Rahul";
+$age = 21;
+$_city = "Vadodara";
+
+echo $name;
+echo $age;
+echo $_city;
+?&gt;
+    </pre>
+
+    <h2>4. PHP Data Types</h2>
+    <p>
+        A data type defines the kind of value that a variable stores.
+        PHP supports different types of data.
+    </p>
+
+    <h2>5. String Data Type</h2>
+    <p>
+        A string is a sequence of characters.
+        It is written inside single or double quotation marks.
+    </p>
+
+    <pre>
+&lt;?php
+$name = "Pankaj";
+$city = 'Vadodara';
+
+echo $name;
+echo $city;
+?&gt;
+    </pre>
+
+    <h2>6. Integer Data Type</h2>
+    <p>
+        An integer is a whole number without a decimal point.
+        It can be positive, negative or zero.
+    </p>
+
+    <pre>
+&lt;?php
+$age = 20;
+$marks = 85;
+
+echo $age;
+echo $marks;
+?&gt;
+    </pre>
+
+    <h2>7. Float Data Type</h2>
+    <p>
+        A float is a number that contains a decimal point.
+        It is used to store decimal values.
+    </p>
+
+    <pre>
+&lt;?php
+$price = 99.50;
+$percentage = 85.75;
+
+echo $price;
+echo $percentage;
+?&gt;
+    </pre>
+
+    <h2>8. Boolean Data Type</h2>
+    <p>
+        A Boolean data type stores only two values:
+        TRUE or FALSE. It is commonly used in conditions.
+    </p>
+
+    <pre>
+&lt;?php
+$isStudent = true;
+$isAbsent = false;
+
+var_dump($isStudent);
+var_dump($isAbsent);
+?&gt;
+    </pre>
+
+    <h2>9. Array Data Type</h2>
+    <p>
+        An array is used to store multiple values in a single variable.
+        PHP supports indexed and associative arrays.
+    </p>
+
+    <pre>
+&lt;?php
+$subjects = ["PHP", "HTML", "CSS"];
+
+echo $subjects[0];
+echo $subjects[1];
+echo $subjects[2];
+?&gt;
+    </pre>
+
+    <h2>10. NULL Data Type</h2>
+    <p>
+        NULL represents a variable with no value.
+        It is used when a variable is intentionally empty.
+    </p>
+
+    <pre>
+&lt;?php
+$address = NULL;
+
+var_dump($address);
+?&gt;
+    </pre>
+
+    <h2>11. Checking Data Types</h2>
+    <p>
+        PHP provides the var_dump() function to display
+        the data type and value of a variable.
+    </p>
+
+    <pre>
+&lt;?php
+$name = "Amit";
+$age = 20;
+$price = 45.50;
+$passed = true;
+
+var_dump($name);
+var_dump($age);
+var_dump($price);
+var_dump($passed);
+?&gt;
+    </pre>
+
+    <h2>12. Conclusion</h2>
+    <p>
+        Variables are used to store information in PHP programs.
+        Data types help identify the kind of value stored.
+        Understanding variables and data types is important
+        for writing correct PHP programs.
+    </p>
+
+</body>
+</html>

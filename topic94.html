@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Difference Between DTD and XSD</title>
+</head>
+<body>
+
+    <h1>Difference Between DTD and XSD</h1>
+
+    <h2>1. Introduction</h2>
+
+    <p>
+        DTD and XSD are used to define the structure
+        and rules of an XML document.
+    </p>
+
+    <p>
+        They specify which elements and attributes
+        are allowed in an XML document and help
+        validate the document.
+    </p>
+
+    <h2>2. What is DTD?</h2>
+
+    <p>
+        DTD stands for Document Type Definition.
+        It is a compact grammar used to declare
+        elements, attributes, entities and content
+        models of an XML document.
+    </p>
+
+    <p>
+        DTD can be embedded inside an XML document
+        or stored in an external .dtd file.
+    </p>
+
+    <h3>Example of DTD</h3>
+
+    <pre>
+&lt;!ELEMENT catalog (product+)&gt;
+&lt;!ELEMENT product (name, price)&gt;
+&lt;!ATTLIST product id ID #REQUIRED&gt;
+&lt;!ELEMENT name (#PCDATA)&gt;
+&lt;!ELEMENT price (#PCDATA)&gt;
+    </pre>
+
+    <h2>3. What is XSD?</h2>
+
+    <p>
+        XSD stands for XML Schema Definition.
+        It is an XML-based grammar used to define
+        the structure, data types and constraints
+        of an XML document.
+    </p>
+
+    <p>
+        XSD supports built-in data types such as
+        xs:string, xs:decimal and xs:ID.
+    </p>
+
+    <h3>Example of XSD</h3>
+
+    <pre>
+&lt;xs:schema xmlns:xs=
+"http://www.w3.org/2001/XMLSchema"&gt;
+
+    &lt;xs:element name="student"
+    type="xs:string"/&gt;
+
+&lt;/xs:schema&gt;
+    </pre>
+
+    <h2>4. Difference Between DTD and XSD</h2>
+
+    <table border="1">
+        <tr>
+            <th>Feature</th>
+            <th>DTD</th>
+            <th>XSD</th>
+        </tr>
+
+        <tr>
+            <td>Full Form</td>
+            <td>Document Type Definition</td>
+            <td>XML Schema Definition</td>
+        </tr>
+
+        <tr>
+            <td>Grammar Format</td>
+            <td>Uses specialized DTD syntax.</td>
+            <td>Uses XML document syntax.</td>
+        </tr>
+
+        <tr>
+            <td>Data Types</td>
+            <td>Limited data typing, such as text and ID.</td>
+            <td>Rich built-in and custom data types.</td>
+        </tr>
+
+        <tr>
+            <td>Namespaces</td>
+            <td>Limited support for namespaces.</td>
+            <td>Designed to support XML namespaces.</td>
+        </tr>
+
+        <tr>
+            <td>Validation</td>
+            <td>Validates XML structure using DTD rules.</td>
+            <td>Validates structure, data types and constraints.</td>
+        </tr>
+
+        <tr>
+            <td>File Extension</td>
+            <td>.dtd</td>
+            <td>.xsd</td>
+        </tr>
+
+        <tr>
+            <td>Typical Choice</td>
+            <td>Simple or legacy document formats.</td>
+            <td>When detailed constraints and typed values are important.</td>
+        </tr>
+    </table>
+
+    <h2>5. Important Differences Explained</h2>
+
+    <h3>A. Grammar Format</h3>
+    <p>
+        DTD uses its own specialized syntax,
+        whereas XSD is written using XML syntax.
+    </p>
+
+    <h3>B. Data Types</h3>
+    <p>
+        DTD has limited data typing.
+        XSD supports different built-in and
+        custom data types such as decimal and date.
+    </p>
+
+    <h3>C. Namespaces</h3>
+    <p>
+        DTD has limited namespace support,
+        whereas XSD is designed to support
+        XML namespaces.
+    </p>
+
+    <h3>D. Constraints</h3>
+    <p>
+        XSD provides more detailed rules and
+        constraints for XML elements and attributes.
+    </p>
+
+    <h2>6. Advantages of DTD</h2>
+
+    <ul>
+        <li>It provides a simple way to define XML structure.</li>
+        <li>It can be stored internally or externally.</li>
+        <li>It is useful for simple and legacy formats.</li>
+    </ul>
+
+    <h2>7. Advantages of XSD</h2>
+
+    <ul>
+        <li>It supports rich data types.</li>
+        <li>It supports XML namespaces.</li>
+        <li>It provides detailed validation constraints.</li>
+        <li>It supports reusable type definitions.</li>
+    </ul>
+
+    <h2>8. Conclusion</h2>
+
+    <p>
+        Both DTD and XSD define the structure
+        and rules of XML documents.
+        DTD is useful for simple document formats,
+        while XSD is more expressive and strongly
+        typed. XSD is preferred when detailed
+        constraints and typed values are important.
+    </p>
+
+</body>
+</html>

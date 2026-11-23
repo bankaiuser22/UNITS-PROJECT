@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction to XML</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1120;
+    color: #e2e8f0;
+    line-height: 1.8;
+    padding: 30px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+header {
+    background: linear-gradient(120deg, #164e63, #0e7490);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #a5f3fc;
+    font-size: 32px;
+}
+
+header p {
+    color: #e0f2fe;
+    margin-top: 8px;
+}
+
+section {
+    background: #172338;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    border: 1px solid #334155;
+}
+
+h2 {
+    color: #67e8f9;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #155e75;
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: #38bdf8;
+    margin: 15px 0 8px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+pre {
+    background: #020617;
+    color: #a7f3d0;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-top: 12px;
+    border-left: 4px solid #06b6d4;
+}
+
+.highlight {
+    background: #164e63;
+    padding: 15px;
+    border-left: 4px solid #22d3ee;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    color: #94a3b8;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>Introduction to XML</h1>
+    <p>Web Technologies | Unit 5</p>
+</header>
+
+<section>
+    <h2>1. What is XML?</h2>
+
+    <p>
+        XML stands for Extensible Markup Language.
+        It is a text-based markup language used for
+        representing, storing and transporting
+        structured data.
+    </p>
+
+    <p>
+        XML allows users to create their own descriptive
+        tags according to their requirements. It describes
+        the meaning of information rather than its
+        visual appearance.
+    </p>
+
+    <div class="highlight">
+        XML is mainly used to store and exchange
+        structured information between different
+        applications and systems.
+    </div>
+</section>
+
+<section>
+    <h2>2. Example of XML</h2>
+
+    <p>
+        The following example represents a course
+        record using XML elements and an attribute.
+    </p>
+
+    <pre>
+&lt;course code="WT205"&gt;
+    &lt;title&gt;Web Technologies&lt;/title&gt;
+    &lt;credits&gt;4&lt;/credits&gt;
+    &lt;instructor&gt;Dr. Mehta&lt;/instructor&gt;
+&lt;/course&gt;
+    </pre>
+
+    <p>
+        In this example, course is the main element.
+        Title, credits and instructor are child elements.
+        The code attribute provides additional information.
+    </p>
+</section>
+
+<section>
+    <h2>3. Important Features of XML</h2>
+
+    <h3>1. Extensible</h3>
+    <p>
+        XML allows users to create their own tags
+        according to the type of data.
+    </p>
+
+    <h3>2. Structured</h3>
+    <p>
+        XML organizes information in a tree structure
+        using parent and child elements.
+    </p>
+
+    <h3>3. Portable</h3>
+    <p>
+        XML documents can be read and processed by
+        different software on different platforms.
+    </p>
+
+    <h3>4. Human Readable</h3>
+    <p>
+        XML uses plain text and meaningful tag names,
+        making the information easier to understand.
+    </p>
+
+    <h3>5. Data-Oriented</h3>
+    <p>
+        XML focuses on describing and carrying data.
+        Another program or stylesheet decides how
+        the data should be displayed.
+    </p>
+</section>
+
+<section>
+    <h2>4. XML vs HTML</h2>
+
+    <p>
+        XML and HTML are both markup languages,
+        but they have different purposes.
+    </p>
+
+    <ul>
+        <li>XML is used to store and transport data.</li>
+        <li>HTML is used to display web pages.</li>
+        <li>XML allows custom tags.</li>
+        <li>HTML uses predefined tags.</li>
+        <li>XML focuses on the meaning of data.</li>
+        <li>HTML focuses on the presentation of content.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>5. Advantages of XML</h2>
+
+    <ul>
+        <li>Easy to read and understand.</li>
+        <li>Supports structured data.</li>
+        <li>Allows custom descriptive tags.</li>
+        <li>Helps applications exchange information.</li>
+        <li>Can be processed on different platforms.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>6. Conclusion</h2>
+
+    <p>
+        XML is an important technology used for
+        representing and exchanging structured data.
+        Its extensible nature, readable format and
+        tree structure make it useful in web technologies
+        and software applications.
+    </p>
+</section>
+
+<footer>
+    Web Technologies | Unit 5 | Introduction to XML
+</footer>
+
+</div>
+</body>
+</html>

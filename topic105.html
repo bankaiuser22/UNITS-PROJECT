@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP Frameworks</title>
+</head>
+<body>
+
+    <h1>10. PHP Frameworks</h1>
+
+    <h2>1. Introduction to PHP Frameworks</h2>
+
+    <p>
+        A PHP framework is a reusable foundation used to
+        develop web applications. It provides ready-made
+        tools, libraries and project structures that make
+        development easier and faster.
+    </p>
+
+    <p>
+        PHP frameworks help developers perform common tasks
+        without writing everything from the beginning.
+    </p>
+
+    <h2>2. Why Do We Use PHP Frameworks?</h2>
+
+    <ul>
+        <li>To organize application code.</li>
+        <li>To handle web requests and routing.</li>
+        <li>To validate user input.</li>
+        <li>To render HTML templates.</li>
+        <li>To access databases.</li>
+        <li>To handle user sessions.</li>
+        <li>To make testing and maintenance easier.</li>
+    </ul>
+
+    <h2>3. Laravel Framework</h2>
+
+    <p>
+        Laravel is a full-featured PHP framework used for
+        developing modern web applications. It provides
+        expressive routing, Blade templates, ORM,
+        migrations and a broad ecosystem.
+    </p>
+
+    <h3>Features of Laravel</h3>
+
+    <ul>
+        <li>Expressive routing.</li>
+        <li>Blade template engine.</li>
+        <li>Object Relational Mapper (ORM).</li>
+        <li>Database migrations.</li>
+        <li>Integrated development tools.</li>
+    </ul>
+
+    <h2>4. Symfony Framework</h2>
+
+    <p>
+        Symfony is a modular PHP framework that provides
+        reusable components. It offers flexible configuration
+        and supports long-term project development.
+    </p>
+
+    <h3>Features of Symfony</h3>
+
+    <ul>
+        <li>Modular architecture.</li>
+        <li>Reusable components.</li>
+        <li>Flexible configuration.</li>
+        <li>Supports complex applications.</li>
+        <li>Useful for long-term projects.</li>
+    </ul>
+
+    <h2>5. CodeIgniter Framework</h2>
+
+    <p>
+        CodeIgniter is a lightweight PHP framework with
+        a relatively small footprint and straightforward
+        setup. It is useful for projects that need a simpler
+        framework with fewer built-in components.
+    </p>
+
+    <h3>Features of CodeIgniter</h3>
+
+    <ul>
+        <li>Lightweight structure.</li>
+        <li>Simple setup.</li>
+        <li>Relatively small footprint.</li>
+        <li>Fewer built-in moving parts.</li>
+        <li>Suitable for simpler projects.</li>
+    </ul>
+
+    <h2>6. Difference Between Laravel, Symfony and CodeIgniter</h2>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Laravel</th>
+            <th>Symfony</th>
+            <th>CodeIgniter</th>
+        </tr>
+
+        <tr>
+            <td>Full-featured framework.</td>
+            <td>Modular framework.</td>
+            <td>Lightweight framework.</td>
+        </tr>
+
+        <tr>
+            <td>Expressive routing and Blade.</td>
+            <td>Reusable components.</td>
+            <td>Straightforward setup.</td>
+        </tr>
+
+        <tr>
+            <td>Modern web applications.</td>
+            <td>Large or complex applications.</td>
+            <td>Simpler projects.</td>
+        </tr>
+
+        <tr>
+            <td>Broad ecosystem.</td>
+            <td>Flexible configuration.</td>
+            <td>Fewer built-in components.</td>
+        </tr>
+    </table>
+
+    <h2>7. What is Composer?</h2>
+
+    <p>
+        Composer is a dependency manager for PHP.
+        It is used to download and manage libraries
+        and packages required by PHP projects.
+    </p>
+
+    <p>
+        Composer is used in the Laravel installation
+        process to download project dependencies.
+    </p>
+
+    <h2>8. Installing a Laravel Project</h2>
+
+    <p>
+        To create a Laravel project, a working PHP
+        installation and Composer are required.
+        Internet access is also needed to download
+        the project dependencies.
+    </p>
+
+    <p>Step 1: Create a new Laravel project.</p>
+
+    <pre>
+composer create-project laravel/laravel php-framework-demo
+    </pre>
+
+    <p>Step 2: Open the project folder.</p>
+
+    <pre>
+cd php-framework-demo
+    </pre>
+
+    <p>Step 3: Start the development server.</p>
+
+    <pre>
+php artisan serve
+    </pre>
+
+    <p>
+        Visit the local URL shown by Artisan.
+        It is usually http://127.0.0.1:8000
+    </p>
+
+    <h2>9. Laravel Route Example</h2>
+
+    <p>
+        A route defines how an application responds
+        to a particular URL. The following example
+        creates a route that accepts a name.
+    </p>
+
+    <p>
+        Replace the contents of routes/web.php
+        with the following code:
+    </p>
+
+    <pre>
+&lt;?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/hello/{name}', function (string $name) {
+    return view('hello', ['name' => $name]);
+});
+    </pre>
+
+    <h2>10. Creating a Laravel View</h2>
+
+    <p>
+        Create a file named hello.blade.php inside:
+    </p>
+
+    <pre>
+resources/views/hello.blade.php
+    </pre>
+
+    <p>Write the following HTML code:</p>
+
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Framework Greeting&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Hello, {{ $name }}!&lt;/h1&gt;
+
+    &lt;p&gt;
+        This page is returned through a
+        Laravel route and view.
+    &lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <p>
+        Blade is Laravel's template engine.
+        Its {{ }} output syntax escapes HTML by default.
+    </p>
+
+    <h2>11. When Should We Use a Framework?</h2>
+
+    <p>
+        A framework is useful when an application requires:
+    </p>
+
+    <ul>
+        <li>Routing.</li>
+        <li>Database access.</li>
+        <li>User authentication.</li>
+        <li>Input validation.</li>
+        <li>Ongoing maintenance.</li>
+    </ul>
+
+    <p>
+        For a very small script or learning exercise,
+        plain PHP may be enough.
+    </p>
+
+    <h2>12. Security and Maintenance</h2>
+
+    <ul>
+        <li>Use the framework's documented security features.</li>
+        <li>Keep dependencies updated.</li>
+        <li>Validate user input properly.</li>
+        <li>Do not assume that using a framework
+            automatically makes insecure code safe.</li>
+    </ul>
+
+    <h2>13. Unit 6 – Quick Revision</h2>
+
+    <ol>
+        <li>PHP executes on the server and sends a response
+            such as HTML to the browser.</li>
+
+        <li>PHP variables begin with the dollar ($) symbol.</li>
+
+        <li>PHP uses arrays, conditions, loops and functions
+            to perform application tasks.</li>
+
+        <li>String functions help process text.</li>
+
+        <li>Regular expressions are used for pattern matching.</li>
+
+        <li>Input should be validated and output should
+            be escaped appropriately.</li>
+
+        <li>MVC stands for Model, View and Controller.</li>
+
+        <li>Laravel, Symfony and CodeIgniter are
+            commonly used PHP frameworks.</li>
+    </ol>
+
+    <h2>14. Conclusion</h2>
+
+    <p>
+        PHP frameworks provide reusable tools and a
+        structured way to develop web applications.
+        Laravel, Symfony and CodeIgniter offer different
+        features according to project requirements.
+        Composer helps manage PHP dependencies, while
+        Laravel routes and views demonstrate how a
+        framework handles web requests and responses.
+    </p>
+
+</body>
+</html>

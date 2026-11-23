@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Colors and Backgrounds</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightyellow;
+            margin: 20px;
+        }
+
+        h1 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        h2 {
+            color: darkred;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .box {
+            background-color: lightblue;
+            border: 2px solid blue;
+            padding: 20px;
+            margin: 15px;
+        }
+
+        .red {
+            background-color: tomato;
+            padding: 15px;
+        }
+
+        .gradient {
+            background-image: linear-gradient(
+                to right, blue, green
+            );
+            color: white;
+            padding: 25px;
+        }
+
+        .image-bg {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS COLORS AND BACKGROUNDS</h1>
+
+    <div class="box">
+
+        <h2>1. Introduction to CSS Colors</h2>
+
+        <p>
+            CSS colors are used to change the color
+            of text, backgrounds, borders and other
+            HTML elements. Colors make a webpage
+            attractive and easy to understand.
+        </p>
+
+        <h2>2. Different Ways to Specify Colors</h2>
+
+        <h3>A. Named Colors</h3>
+
+        <p>
+            CSS provides predefined color names
+            such as red, blue, green, yellow and black.
+        </p>
+
+        <p style="color: red;">
+            This text uses the named color red.
+        </p>
+
+        <h3>B. HEX Colors</h3>
+
+        <p>
+            HEX stands for hexadecimal color code.
+            It starts with the # symbol and uses
+            six hexadecimal characters.
+        </p>
+
+        <p style="color: #0000FF;">
+            This text uses HEX color #0000FF.
+        </p>
+
+        <h3>C. RGB Colors</h3>
+
+        <p>
+            RGB stands for Red, Green and Blue.
+            It defines a color using three values.
+            Each value ranges from 0 to 255.
+        </p>
+
+        <p style="color: rgb(255, 0, 0);">
+            This text uses RGB red color.
+        </p>
+
+        <h3>D. RGBA Colors</h3>
+
+        <p>
+            RGBA stands for Red, Green, Blue and Alpha.
+            Alpha controls the transparency of the color.
+            Its value ranges from 0 to 1.
+        </p>
+
+        <p style="background-color: rgba(0, 0, 255, 0.3);">
+            This paragraph uses RGBA background color.
+        </p>
+
+        <h3>E. HSL Colors</h3>
+
+        <p>
+            HSL stands for Hue, Saturation and Lightness.
+            It is another method of defining colors
+            in CSS.
+        </p>
+
+        <p style="color: hsl(120, 100%, 25%);">
+            This text uses HSL color.
+        </p>
+
+        <h2>3. CSS Background Properties</h2>
+
+        <p>
+            CSS background properties are used to
+            set colors and images behind HTML elements.
+        </p>
+
+        <h3>A. Background Color</h3>
+
+        <p>
+            The background-color property is used
+            to set a solid background color.
+        </p>
+
+        <div class="red">
+            This box has a tomato background color.
+        </div>
+
+        <h3>B. Background Image</h3>
+
+        <p>
+            The background-image property is used
+            to set an image as the background
+            of an element.
+        </p>
+
+        <div class="image-bg">
+            Background image example.
+        </div>
+
+        <h3>C. Background Repeat</h3>
+
+        <p>
+            The background-repeat property controls
+            whether a background image repeats.
+        </p>
+
+        <p>
+            repeat - Repeats the image horizontally
+            and vertically.
+        </p>
+
+        <p>
+            repeat-x - Repeats the image horizontally.
+        </p>
+
+        <p>
+            repeat-y - Repeats the image vertically.
+        </p>
+
+        <p>
+            no-repeat - Displays the image only once.
+        </p>
+
+        <h3>D. Background Position</h3>
+
+        <p>
+            The background-position property sets
+            the starting position of a background image.
+        </p>
+
+        <p>
+            Example: center, top, bottom, left and right.
+        </p>
+
+        <h3>E. Background Size</h3>
+
+        <p>
+            The background-size property controls
+            the size of a background image.
+        </p>
+
+        <p>
+            cover - Covers the complete background area.
+        </p>
+
+        <p>
+            contain - Displays the complete image
+            inside the background area.
+        </p>
+
+        <h3>F. Background Attachment</h3>
+
+        <p>
+            The background-attachment property
+            controls whether the background image
+            scrolls with the page or remains fixed.
+        </p>
+
+        <p>
+            scroll - Background moves with the page.
+        </p>
+
+        <p>
+            fixed - Background remains fixed
+            while scrolling.
+        </p>
+
+        <h2>4. CSS Linear Gradient</h2>
+
+        <p>
+            A gradient is a smooth transition
+            between two or more colors.
+            Linear gradient changes colors along
+            a straight direction.
+        </p>
+
+        <div class="gradient">
+            This box shows a linear gradient.
+        </div>
+
+        <h2>5. Example of Background Styling</h2>
+
+        <div style="
+            background-color: lightgreen;
+            border: 3px solid green;
+            padding: 20px;
+            text-align: center;
+        ">
+
+            <h2>Welcome to CSS</h2>
+
+            <p>
+                CSS colors and background properties
+                make webpages attractive and beautiful.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

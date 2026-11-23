@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 5 - Events and Buttons</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #174ea6;
+        }
+
+        h3 {
+            color: #087e8b;
+        }
+
+        p, li {
+            font-size: 17px;
+        }
+
+        pre {
+            background: #172033;
+            color: white;
+            padding: 18px;
+            border-radius: 7px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        button {
+            background: #174ea6;
+            color: white;
+            border: none;
+            padding: 11px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+            max-width: 400px;
+            margin: 8px 0;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        .demo {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .note {
+            background: #e8f2ff;
+            padding: 15px;
+            border-left: 5px solid #174ea6;
+            margin: 20px 0;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>UNIT 4: JAVASCRIPT AND JQUERY</h1>
+
+<h2>TOPIC 5: EVENTS AND BUTTONS</h2>
+
+<hr>
+
+<h2>1. Introduction to Events</h2>
+
+<p>
+An event is something that happens in the browser.
+It can be caused by a user action or by the browser itself.
+</p>
+
+<p>
+For example, when a user clicks a button, types something
+in an input field, submits a form or presses a key,
+an event occurs.
+</p>
+
+<p>
+JavaScript can detect these events and execute
+a function in response.
+</p>
+
+<h3>Examples of Events:</h3>
+
+<ul>
+    <li>Clicking a button.</li>
+    <li>Typing inside an input field.</li>
+    <li>Submitting a form.</li>
+    <li>Pressing a keyboard key.</li>
+    <li>Loading a web page.</li>
+</ul>
+
+<h3>Simple Example:</h3>
+
+<pre>
+<button id="myButton">Click Me</button>
+
+<script>
+
+    document.getElementById("myButton")
+    .addEventListener("click", function() {
+
+        alert("Button was clicked!");
+
+    });
+
+</script>
+</pre>
+
+<p>
+When the user clicks the button, JavaScript detects
+the click event and displays an alert message.
+</p>
+
+<div class="note">
+<b>Remember:</b><br>
+Event = Something that happens in the browser.<br>
+Event handling = Writing code to respond to that event.
+</div>
+
+<hr>
+
+<h2>2. What is Event Handling?</h2>
+
+<p>
+Event handling is the process of detecting an event
+and executing a function when that event occurs.
+</p>
+
+<p>
+JavaScript uses event listeners to connect events
+with functions.
+</p>
+
+<h3>How Event Handling Works:</h3>
+
+<ol>
+    <li>The browser displays an HTML element.</li>
+    <li>JavaScript selects that element.</li>
+    <li>JavaScript attaches an event listener to it.</li>
+    <li>The user performs an action, such as clicking a button.</li>
+    <li>The browser detects the event.</li>
+    <li>The attached function executes.</li>
+</ol>
+
+<h3>Simple Flow:</h3>
+
+<pre>
+     HTML Element
+          |
+          v
+    JavaScript Selects It
+          |
+          v
+    Add Event Listener
+          |
+          v
+      User Action
+          |
+          v
+      Event Occurs
+          |
+          v
+    Function Executes
+</pre>
+
+<hr>
+
+<h2>3. addEventListener() Method</h2>
+
+<p>
+The addEventListener() method is used to attach
+an event listener to an HTML element.
+It tells JavaScript which event to listen for
+and which function to execute when that event occurs.
+</p>
+
+<p>
+It is commonly used for handling button clicks,
+input changes and form submissions.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+element.addEventListener("event", function() {
+
+    // Code to execute
+
+});
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li><b>element:</b> The HTML element on which the event is attached.</li>
+    <li><b>addEventListener():</b> Attaches an event listener.</li>
+    <li><b>event:</b> The event name, such as "click".</li>
+    <li><b>function:</b> The code that runs when the event occurs.</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>
+<button id="btn">Click Here</button>
+
+<script>
+{
+    const button = document.getElementById("btn");
+
+    button.addEventListener("click", function() {
+
+        alert("Welcome!");
+
+    });
+}
+</script>
+</pre>
+
+<h3>Explanation:</h3>
+
+<ol>
+    <li>First, JavaScript selects the button using its ID.</li>
+    <li>addEventListener() attaches a click event.</li>
+    <li>When the button is clicked, the function executes.</li>
+    <li>The alert message displays "Welcome!".</li>
+</ol>
+
+<div class="note">
+<b>Important:</b><br>
+Using addEventListener() keeps JavaScript behaviour
+separate from HTML structure. It also allows several
+event listeners to be attached to an element.
+</div>
+
+<hr>
+
+<h2>4. Types of Events</h2>
+
+<p>
+JavaScript supports different types of browser events.
+Each event is used for a particular action.
+</p>
+
+<h3>1. Click Event</h3>
+
+<p>
+The click event occurs when a user activates an element,
+such as clicking a button.
+Native buttons also support keyboard activation.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+button.addEventListener("click", function() {
+
+    alert("Button clicked!");
+
+});
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+<button id="clickBtn">Click Me</button>
+
+<script>
+
+    document.getElementById("clickBtn")
+    .addEventListener("click", function() {
+
+        document.body.style.backgroundColor = "lightblue";
+
+    });
+
+</script>
+</pre>
+
+<p>
+When the user clicks the button, the background
+colour of the page changes.
+</p>
+
+<h3>2. Input Event</h3>
+
+<p>
+The input event occurs whenever a user changes
+the value of an input field.
+It is useful for real-time validation and displaying
+the entered text immediately.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+input.addEventListener("input", function() {
+
+    // Code to execute
+
+});
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+<input type="text" id="name">
+
+<p id="output"></p>
+
+<script>
+{
+    const input = document.getElementById("name");
+
+    const output = document.getElementById("output");
+
+    input.addEventListener("input", function() {
+
+        output.textContent = input.value;
+
+    });
+}
+</script>
+</pre>
+
+<p>
+Whenever the user types or edits the input,
+the paragraph displays the updated value.
+</p>
+
+<h3>3. Submit Event</h3>
+
+<p>
+The submit event occurs when a form is submitted.
+It is useful for checking form information before
+the form is processed.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+form.addEventListener("submit", function(event) {
+
+    // Code to execute
+
+});
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+<form id="myForm">
+
+    <input type="text" required>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<script>
+{
+    const form = document.getElementById("myForm");
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert("Form submitted!");
+
+    });
+}
+</script>
+</pre>
+
+<p>
+When the form is submitted, the event listener runs.
+preventDefault() stops the browser's normal form
+submission so JavaScript can handle the event.
+</p>
+
+<h3>4. Keyboard Events</h3>
+
+<p>
+Keyboard events occur when a user interacts with
+the keyboard.
+They can be used to detect which key was pressed.
+</p>
+
+<p>
+Two common keyboard events are:
+</p>
+
+<ul>
+    <li><b>keydown:</b> Occurs when a key is pressed down.</li>
+    <li><b>keyup:</b> Occurs when a pressed key is released.</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>
+document.addEventListener("keydown", function(event) {
+
+    console.log("Key pressed:", event.key);
+
+});
+</pre>
+
+<p>
+When the user presses a key, its value is displayed
+in the browser console.
+</p>
+
+<h3>5. Page Load Event</h3>
+
+<p>
+The load event occurs when the page and its dependent
+resources have finished loading.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+window.addEventListener("load", function() {
+
+    console.log("Page fully loaded!");
+
+});
+</pre>
+
+<p>
+This code displays a message in the console
+after the page has finished loading.
+</p>
+
+<hr>
+
+<h2>5. Event Object</h2>
+
+<p>
+When an event occurs, the browser creates an event
+object. This object contains useful information
+about the event.
+</p>
+
+<p>
+It helps JavaScript understand what happened,
+which element received the event and other
+details about the interaction.
+</p>
+
+<h3>Information Provided by the Event Object:</h3>
+
+<ul>
+    <li>Type of event that occurred.</li>
+    <li>Element that received the event.</li>
+    <li>Keyboard key information for keyboard events.</li>
+    <li>Other details related to the event.</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>
+button.addEventListener("click", (event) => {
+
+    console.log("Event type:", event.type);
+
+    console.log("Clicked element:", event.currentTarget);
+
+});
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li><b>event:</b> Contains information about the event.</li>
+    <li><b>event.type:</b> Gives the event name, such as "click".</li>
+    <li><b>event.currentTarget:</b> Gives the element whose listener is currently running.</li>
+</ul>
+
+<p>
+In this example, when the button is clicked,
+the browser console displays the event type
+and the button element.
+</p>
+
+<div class="note">
+<b>Remember:</b><br>
+The event object provides information about
+the event and helps JavaScript decide how to respond.
+</div>
+
+<hr>
+
+<h2>6. Difference Between target and currentTarget</h2>
+
+<p>
+The event object provides two useful properties:
+target and currentTarget.
+</p>
+
+<h3>event.target</h3>
+
+<p>
+It refers to the actual element where the event
+originated.
+</p>
+
+<h3>event.currentTarget</h3>
+
+<p>
+It refers to the element on which the currently
+running event listener is attached.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+<div id="parent">
+    <button id="child">Click Me</button>
+</div>
+
+<script>
+
+    document.getElementById("parent")
+    .addEventListener("click", function(event) {
+
+        console.log("Target:", event.target);
+
+        console.log("Current Target:", event.currentTarget);
+
+    });
+
+</script>
+</pre>
+
+<p>
+If the button is clicked, the event bubbles to
+the parent element. The target is the button,
+while the currentTarget is the parent div.
+</p>
+
+<hr>
+
+<h2>7. Buttons in JavaScript</h2>
+
+<p>
+Buttons are HTML elements used to perform actions
+when users interact with a web page.
+JavaScript can attach event listeners to buttons
+to make them interactive.
+</p>
+
+<h3>HTML Button Syntax:</h3>
+
+<pre>
+<button id="myButton">Click Me</button>
+</pre>
+
+<h3>JavaScript Button Example:</h3>
+
+<pre>
+const button = document.getElementById("myButton");
+
+button.addEventListener("click", function() {
+
+    alert("Button clicked successfully!");
+
+});
+</pre>
+
+<h3>Common Uses of Buttons:</h3>
+
+<ul>
+    <li>Displaying messages.</li>
+    <li>Changing text.</li>
+    <li>Changing background colours.</li>
+    <li>Increasing or decreasing a counter.</li>
+    <li>Submitting forms.</li>
+    <li>Showing or hiding content.</li>
+</ul>
+
+<hr>
+
+<h2>8. Interactive Example: Counter Button</h2>
+
+<p>
+This example shows how a button click can increase
+a counter and update the web page.
+</p>
+
+<div class="demo">
+
+    <h3>Click to Fire an Event Listener</h3>
+
+    <p>Counter Value:</p>
+
+    <h2 id="counter">0</h2>
+
+    <button id="addButton">Add One</button>
+
+    <button id="resetButton">Reset</button>
+
+</div>
+
+<h3>JavaScript Code:</h3>
+
+<pre>
+let count = 0;
+
+const output = document.getElementById("counter");
+
+const addButton = document.getElementById("addButton");
+
+const resetButton = document.getElementById("resetButton");
+
+addButton.addEventListener("click", function(event) {
+
+    console.log("Activated:", event.currentTarget);
+
+    count += 1;
+
+    output.textContent = count;
+
+});
+
+resetButton.addEventListener("click", function() {
+
+    count = 0;
+
+    output.textContent = count;
+
+});
+</pre>
+
+<h3>Explanation:</h3>
+
+<ol>
+    <li>count stores the current counter value.</li>
+    <li>JavaScript selects the counter display and both buttons.</li>
+    <li>The Add One button listens for a click event.</li>
+    <li>Every click increases count by 1.</li>
+    <li>textContent updates the displayed counter.</li>
+    <li>The Reset button sets the counter back to 0.</li>
+</ol>
+
+<hr>
+
+<h2>9. Inline Events and addEventListener()</h2>
+
+<p>
+JavaScript events can be handled in different ways.
+Two common approaches are inline event handlers
+and addEventListener().
+</p>
+
+<h3>1. Inline Event Handler</h3>
+
+<p>
+An inline event handler is written directly
+inside an HTML element using an event attribute.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+<button onclick="showMessage()">
+    Click Me
+</button>
+
+<script>
+
+    function showMessage() {
+
+        alert("Hello!");
+
+    }
+
+</script>
+</pre>
+
+<p>
+Here, onclick directly connects the button click
+to the showMessage() function.
+</p>
+
+<h3>2. Using addEventListener()</h3>
+
+<p>
+With addEventListener(), the event handling code
+is written in JavaScript separately from the HTML.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+<button id="btn">Click Me</button>
+
+<script>
+
+    const button = document.getElementById("btn");
+
+    button.addEventListener("click", function() {
+
+        alert("Hello!");
+
+    });
+
+</script>
+</pre>
+
+<h3>Difference:</h3>
+
+<pre>
+Inline Event Handler:
+- Written inside HTML.
+- Uses attributes like onclick.
+- Mixes behaviour with HTML.
+
+addEventListener():
+- Written in JavaScript.
+- Keeps HTML and behaviour separate.
+- Allows multiple listeners for an event.
+- Preferred for maintainable code.
+</pre>
+
+<hr>
+
+<h2>10. Event Handling and preventDefault()</h2>
+
+<p>
+Some browser events have a default action.
+For example, submitting a form normally sends
+the form data and may load another page.
+</p>
+
+<p>
+The preventDefault() method stops that default
+action. It allows JavaScript to handle the event
+first.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+event.preventDefault();
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    alert("Default submission stopped.");
+
+});
+</pre>
+
+<p>
+In this example, the normal form submission
+is prevented and the alert message is displayed.
+</p>
+
+<hr>
+
+<h2>11. Advantages of Event Handling</h2>
+
+<ul>
+    <li>Makes web pages interactive.</li>
+    <li>Allows pages to respond to user actions.</li>
+    <li>Helps create dynamic user interfaces.</li>
+    <li>Supports form validation.</li>
+    <li>Allows buttons to perform different actions.</li>
+    <li>Helps update page content without reloading it.</li>
+    <li>Keeps behaviour separate from HTML when using event listeners.</li>
+</ul>
+
+<hr>
+
+<h2>12. Important Exam Points</h2>
+
+<ul>
+    <li>An event is an action or occurrence in the browser.</li>
+    <li>Event handling means responding to events using code.</li>
+    <li>addEventListener() attaches an event listener to an element.</li>
+    <li>Click event occurs when an element is activated.</li>
+    <li>Input event occurs when a user edits an input value.</li>
+    <li>Submit event occurs when a form is submitted.</li>
+    <li>Keyboard events include keydown and keyup.</li>
+    <li>Load event occurs when the page and its resources finish loading.</li>
+    <li>The event object contains information about an event.</li>
+    <li>event.type gives the event name.</li>
+    <li>event.target identifies where the event originated.</li>
+    <li>event.currentTarget identifies the element whose listener is running.</li>
+    <li>preventDefault() stops the browser's default action.</li>
+    <li>addEventListener() is preferred for keeping behaviour separate from HTML.</li>
+</ul>
+
+<hr>
+
+<h2>13. Conclusion</h2>
+
+<p>
+Events and buttons are important parts of JavaScript.
+Events allow a web page to respond to user actions
+such as clicking, typing, submitting forms and
+pressing keyboard keys.
+</p>
+
+<p>
+The addEventListener() method connects events
+to JavaScript functions. The event object provides
+information about what happened and which element
+received the event.
+</p>
+
+<p>
+Thus, event handling helps developers create
+interactive and dynamic web pages.
+</p>
+
+</div>
+
+<script>
+{
+let count = 0;
+
+const output = document.getElementById("counter");
+
+const addButton = document.getElementById("addButton");
+
+const resetButton = document.getElementById("resetButton");
+
+addButton.addEventListener("click", function(event) {
+
+    console.log("Activated:", event.currentTarget);
+
+    count += 1;
+
+    output.textContent = count;
+
+});
+
+resetButton.addEventListener("click", function() {
+
+    count = 0;
+
+    output.textContent = count;
+
+});
+}
+</script>
+
+</body>
+</html>

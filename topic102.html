@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 10 - CSS3, Flexbox, Grid and Responsive Design</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #174f78;
+        }
+
+        h2 {
+            color: #174f78;
+            border-bottom: 2px solid #174f78;
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            color: #31765e;
+        }
+
+        pre {
+            background-color: #172033;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .example {
+            background-color: #e8f2f8;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #174f78;
+            border-radius: 8px;
+        }
+
+        .note {
+            background-color: #e8f2f8;
+            border-left: 5px solid #174f78;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Rounded corners example */
+        .rounded {
+            background-color: #31765e;
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        /* Box shadow example */
+        .shadow {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 3px 3px 10px gray;
+        }
+
+        /* Transform and transition example */
+        .motion-demo {
+            display: inline-block;
+            background-color: #174f78;
+            color: white;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+
+        .motion-demo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Flexbox example */
+        .flex-container {
+            display: flex;
+            gap: 10px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #e8f2f8;
+            padding: 15px;
+        }
+
+        .flex-item {
+            background-color: #31765e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+        }
+
+        /* Grid example */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .grid-item {
+            background-color: #174f78;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive example */
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+        }
+
+        .responsive-item {
+            background-color: #31765e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .motion-demo,
+            .motion-demo:hover {
+                transition: none;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>10. CSS3, Flexbox, Grid and Responsive Design</h1>
+
+    <h2>1. Introduction</h2>
+
+    <p>
+        CSS is used to design and style HTML web pages.
+        Modern CSS provides many features that help developers
+        create attractive, flexible and responsive websites.
+    </p>
+
+    <p>
+        CSS3 is commonly used as a classroom term for newer
+        CSS features. Modern CSS is developed through
+        individual modules such as Color, Selectors, Grid
+        and Media Queries.
+    </p>
+
+    <h2>2. What is CSS3?</h2>
+
+    <p>
+        CSS3 is a commonly used term for modern CSS features
+        that improve the design and layout of web pages.
+    </p>
+
+    <p>
+        These features provide better control over colors,
+        backgrounds, layouts, animations and responsive
+        designs.
+    </p>
+
+    <h3>Important Features:</h3>
+
+    <ul>
+        <li>Rounded corners</li>
+        <li>Box shadows</li>
+        <li>Gradients</li>
+        <li>Transforms</li>
+        <li>Transitions</li>
+        <li>Flexbox</li>
+        <li>CSS Grid</li>
+        <li>Media Queries</li>
+    </ul>
+
+    <h2>3. CSS Modules</h2>
+
+    <p>
+        Modern CSS is developed as a collection of separate
+        modules. Each module handles a particular part
+        of CSS.
+    </p>
+
+    <p>
+        Some important CSS modules are:
+    </p>
+
+    <ul>
+        <li>CSS Color</li>
+        <li>CSS Selectors</li>
+        <li>CSS Grid Layout</li>
+        <li>CSS Media Queries</li>
+        <li>CSS Transforms</li>
+    </ul>
+
+    <p>
+        There is no single all-encompassing CSS3 or CSS4
+        release. Individual CSS modules continue to evolve
+        on their own timelines.
+    </p>
+
+    <h2>4. Rounded Corners</h2>
+
+    <p>
+        The border-radius property is used to create
+        rounded corners of HTML elements.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+selector {
+    border-radius: 10px;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+.box {
+    background-color: green;
+    border-radius: 15px;
+}
+    </pre>
+
+    <div class="example">
+        <div class="rounded">
+            This box has rounded corners.
+        </div>
+    </div>
+
+    <h2>5. Box Shadow</h2>
+
+    <p>
+        The box-shadow property is used to add shadow
+        effects around an HTML element.
+    </p>
+
+    <p>
+        It gives a depth effect and makes elements
+        look more attractive.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+selector {
+    box-shadow: horizontal vertical blur color;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+.box {
+    box-shadow: 3px 3px 10px gray;
+}
+    </pre>
+
+    <div class="example">
+        <div class="shadow">
+            This box has a shadow effect.
+        </div>
+    </div>
+
+    <h2>6. CSS Gradients</h2>
+
+    <p>
+        A gradient is a smooth transition between two
+        or more colors.
+    </p>
+
+    <p>
+        CSS gradients are generated images and can be
+        used as backgrounds.
+    </p>
+
+    <h3>Types of Gradients:</h3>
+
+    <h3>A. Linear Gradient</h3>
+
+    <p>
+        A linear gradient changes colors along a straight
+        line.
+    </p>
+
+    <pre>
+.box {
+    background-image:
+    linear-gradient(red, yellow);
+}
+    </pre>
+
+    <h3>B. Radial Gradient</h3>
+
+    <p>
+        A radial gradient spreads colors outward from
+        a central point.
+    </p>
+
+    <pre>
+.box {
+    background-image:
+    radial-gradient(red, yellow, green);
+}
+    </pre>
+
+    <h2>7. CSS Transform</h2>
+
+    <p>
+        The transform property is used to change the
+        position, size, rotation or shape of an element.
+    </p>
+
+    <h3>Common Transform Functions:</h3>
+
+    <ul>
+        <li>translate() - Moves an element.</li>
+        <li>rotate() - Rotates an element.</li>
+        <li>scale() - Changes the size of an element.</li>
+        <li>skew() - Slants an element.</li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+.box {
+    transform: scale(1.1);
+}
+    </pre>
+
+    <div class="example">
+        <div class="motion-demo">
+            Hover over this box
+        </div>
+    </div>
+
+    <h2>8. CSS Transition</h2>
+
+    <p>
+        The transition property is used to make changes
+        in CSS properties happen smoothly over a specified
+        duration.
+    </p>
+
+    <p>
+        For example, when a user moves the mouse over
+        a button, its appearance can change smoothly.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+selector {
+    transition: property duration;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+.box {
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+    </pre>
+
+    <h2>9. Choosing a Layout Method</h2>
+
+    <p>
+        CSS provides different methods to arrange content
+        on a web page.
+    </p>
+
+    <h3>A. Normal Document Flow</h3>
+
+    <p>
+        Normal document flow is the default way in which
+        HTML elements are arranged on a web page.
+    </p>
+
+    <p>
+        Text and block elements generally appear in their
+        normal order without special positioning.
+    </p>
+
+    <h3>B. Flexbox</h3>
+
+    <p>
+        Flexbox is a CSS layout method used to arrange
+        items along one main direction, either horizontally
+        or vertically.
+    </p>
+
+    <p>
+        It is useful for navigation bars, rows of buttons
+        and arranging items in a single direction.
+    </p>
+
+    <h3>Important Flexbox Properties:</h3>
+
+    <ul>
+        <li>display: flex</li>
+        <li>flex-direction</li>
+        <li>justify-content</li>
+        <li>align-items</li>
+        <li>flex-wrap</li>
+        <li>gap</li>
+    </ul>
+
+    <h3>Flexbox Syntax:</h3>
+
+    <pre>
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+    </pre>
+
+    <h3>Flexbox Example:</h3>
+
+    <div class="example">
+        <div class="flex-container">
+            <div class="flex-item">Item A</div>
+            <div class="flex-item">Item B</div>
+            <div class="flex-item">Item C</div>
+        </div>
+    </div>
+
+    <h2>10. CSS Grid</h2>
+
+    <p>
+        CSS Grid is a layout system used to arrange elements
+        in rows and columns.
+    </p>
+
+    <p>
+        It is useful when a web page needs a two-dimensional
+        layout, such as a group of cards or a complete
+        page structure.
+    </p>
+
+    <h3>Important Grid Properties:</h3>
+
+    <ul>
+        <li>display: grid</li>
+        <li>grid-template-columns</li>
+        <li>grid-template-rows</li>
+        <li>gap</li>
+        <li>grid-column</li>
+        <li>grid-row</li>
+    </ul>
+
+    <h3>Grid Syntax:</h3>
+
+    <pre>
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+    </pre>
+
+    <h3>Grid Example:</h3>
+
+    <div class="example">
+        <div class="grid-container">
+            <div class="grid-item">Item 1</div>
+            <div class="grid-item">Item 2</div>
+            <div class="grid-item">Item 3</div>
+            <div class="grid-item">Item 4</div>
+            <div class="grid-item">Item 5</div>
+            <div class="grid-item">Item 6</div>
+        </div>
+    </div>
+
+    <h2>11. Difference Between Flexbox and Grid</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0"
+           width="100%">
+        <tr>
+            <th>Flexbox</th>
+            <th>Grid</th>
+        </tr>
+
+        <tr>
+            <td>One-dimensional layout system.</td>
+            <td>Two-dimensional layout system.</td>
+        </tr>
+
+        <tr>
+            <td>Arranges items in a row or column.</td>
+            <td>Arranges items in rows and columns.</td>
+        </tr>
+
+        <tr>
+            <td>Useful for navigation bars and item rows.</td>
+            <td>Useful for card layouts and page structures.</td>
+        </tr>
+    </table>
+
+    <h2>12. Responsive Web Design</h2>
+
+    <p>
+        Responsive Web Design means creating web pages
+        that adjust their layout according to different
+        screen sizes and devices.
+    </p>
+
+    <p>
+        A responsive website can provide a suitable layout
+        on desktop computers, tablets and mobile phones.
+    </p>
+
+    <h3>Advantages:</h3>
+
+    <ul>
+        <li>Works on different screen sizes.</li>
+        <li>Improves the user experience.</li>
+        <li>Reduces the need for separate layouts.</li>
+        <li>Makes content easier to access on mobile devices.</li>
+    </ul>
+
+    <h2>13. CSS Media Queries</h2>
+
+    <p>
+        Media Queries are used to apply CSS rules only
+        when a particular condition is true.
+    </p>
+
+    <p>
+        For example, we can change the layout when the
+        screen width becomes smaller.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+@media (max-width: 600px) {
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+}
+    </pre>
+
+    <p>
+        In this example, the CSS rule is applied when
+        the viewport width is 600px or less.
+    </p>
+
+    <h2>14. Flexible Grid Layout</h2>
+
+    <p>
+        CSS Grid can use auto-fit and minmax() to create
+        flexible layouts that adjust according to the
+        available space.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+.feature-list {
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 14px;
+}
+    </pre>
+
+    <div class="example">
+        <div class="responsive-grid">
+            <div class="responsive-item">Card 1</div>
+            <div class="responsive-item">Card 2</div>
+            <div class="responsive-item">Card 3</div>
+        </div>
+    </div>
+
+    <h2>15. Reduced Motion</h2>
+
+    <p>
+        Some users prefer reduced motion on websites.
+        CSS provides the prefers-reduced-motion media
+        query to respect this preference.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+@media (prefers-reduced-motion: reduce) {
+    .motion-demo,
+    .motion-demo:hover {
+        transition: none;
+        transform: none;
+    }
+}
+    </pre>
+
+    <p>
+        This example removes the transition and transform
+        effects when the user has requested reduced motion.
+    </p>
+
+    <h2>16. Importance of Modern CSS Features</h2>
+
+    <ul>
+        <li>Make websites attractive and modern.</li>
+        <li>Create flexible layouts.</li>
+        <li>Arrange items using Flexbox and Grid.</li>
+        <li>Add shadows and rounded corners.</li>
+        <li>Create smooth visual transitions.</li>
+        <li>Make websites responsive on different devices.</li>
+        <li>Improve website usability and presentation.</li>
+    </ul>
+
+    <div class="note">
+        <b>Exam Point:</b>
+        Modern CSS features include rounded corners,
+        box shadows, gradients, transforms and transitions.
+        Flexbox is used for one-dimensional layouts,
+        while Grid is used for two-dimensional layouts.
+        Media Queries help create responsive web pages
+        for different screen sizes.
+    </div>
+
+    <h2>17. Conclusion</h2>
+
+    <p>
+        Modern CSS provides powerful tools for designing
+        websites. Flexbox and Grid help arrange elements,
+        while Media Queries make websites responsive.
+        These features help developers create flexible,
+        attractive and user-friendly web pages.
+    </p>
+
+</div>
+
+</body>
+</html>

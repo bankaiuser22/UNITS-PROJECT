@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 7 - Introduction to jQuery</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #174ea6;
+        }
+
+        h3 {
+            color: #087e8b;
+        }
+
+        p, li {
+            font-size: 17px;
+        }
+
+        pre {
+            background: #172033;
+            color: white;
+            padding: 18px;
+            border-radius: 7px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        button {
+            background: #174ea6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .note {
+            background: #e8f2ff;
+            padding: 15px;
+            border-left: 5px solid #174ea6;
+            margin: 20px 0;
+        }
+
+        .demo {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .is-highlighted {
+            background: #174ea6;
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>UNIT 4: JAVASCRIPT AND JQUERY</h1>
+
+<h2>TOPIC 7: INTRODUCTION TO JQUERY</h2>
+
+<hr>
+
+<h2>1. Introduction to jQuery</h2>
+
+<p>
+jQuery is a JavaScript library that makes it easier
+to perform common JavaScript tasks.
+It provides shorter and simpler methods for
+selecting HTML elements, handling events,
+updating the DOM, creating effects and performing AJAX.
+</p>
+
+<p>
+jQuery was especially useful when different
+browsers behaved differently. It provided
+consistent methods for common web development tasks.
+</p>
+
+<p>
+Modern browsers now provide many similar
+features directly through JavaScript.
+However, jQuery is still found in existing websites
+and older projects.
+</p>
+
+<h3>Example:</h3>
+
+<p>
+Suppose we want to select a paragraph and change
+its text when a button is clicked.
+jQuery allows us to do this using shorter code.
+</p>
+
+<div class="note">
+<b>Definition for Exam:</b><br>
+jQuery is a fast and lightweight JavaScript library
+that simplifies HTML document manipulation,
+event handling, animations and AJAX operations.
+</div>
+
+<hr>
+
+<h2>2. Why is jQuery Used?</h2>
+
+<p>
+jQuery is used to make JavaScript programming
+shorter and easier to understand.
+It provides simple methods for working with
+HTML elements and browser events.
+</p>
+
+<h3>Uses of jQuery:</h3>
+
+<ul>
+    <li>Selecting HTML elements.</li>
+    <li>Handling user events such as clicks.</li>
+    <li>Changing text and HTML content.</li>
+    <li>Adding and removing CSS classes.</li>
+    <li>Creating visual effects.</li>
+    <li>Performing AJAX requests.</li>
+</ul>
+
+<h3>Advantages of jQuery:</h3>
+
+<ul>
+    <li>Reduces the amount of code required.</li>
+    <li>Uses simple CSS-style selectors.</li>
+    <li>Makes DOM manipulation easier.</li>
+    <li>Provides convenient event handling methods.</li>
+    <li>Supports method chaining.</li>
+    <li>Was useful for handling browser differences.</li>
+</ul>
+
+<hr>
+
+<h2>3. Basic jQuery Syntax</h2>
+
+<p>
+jQuery uses the dollar sign ($) as a short form
+for the jQuery function.
+It is used to select elements and perform
+operations on them.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+$(selector).action();
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li><b>$:</b> Represents the jQuery function.</li>
+    <li><b>selector:</b> Selects the required HTML element.</li>
+    <li><b>action():</b> Performs an operation on the selected element.</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>
+$("#message").text("Hello World");
+</pre>
+
+<p>
+Explanation:
+</p>
+
+<ul>
+    <li>#message selects the element having ID message.</li>
+    <li>text() changes its text content.</li>
+    <li>Hello World is the new text.</li>
+</ul>
+
+<hr>
+
+<h2>4. Document Ready Function</h2>
+
+<p>
+Before working with HTML elements, the browser
+must create the document elements.
+jQuery provides a ready function that runs
+the given code when the DOM is ready to be used.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+$(function() {
+
+    // jQuery code here
+
+});
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li>$() represents the jQuery function.</li>
+    <li>function() contains the code to execute.</li>
+    <li>The code runs when the DOM is ready.</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>
+$(function() {
+
+    $("#message").text("Document is ready");
+
+});
+</pre>
+
+<p>
+When the DOM becomes ready, the paragraph
+with ID message displays the given text.
+</p>
+
+<div class="note">
+<b>Remember:</b><br>
+$(function() { ... }) is a short jQuery syntax
+for running code when the DOM is ready.
+</div>
+
+<hr>
+
+<h2>5. jQuery Selectors</h2>
+
+<p>
+Selectors are used to select HTML elements
+so that we can perform operations on them.
+jQuery uses CSS-style selector syntax.
+</p>
+
+<h3>1. ID Selector</h3>
+
+<p>
+The ID selector selects an element using its ID.
+It uses the # symbol.
+</p>
+
+<pre>
+$("#message")
+</pre>
+
+<p>
+It selects the element having ID message.
+</p>
+
+<h3>2. Class Selector</h3>
+
+<p>
+The class selector selects elements using
+their class name.
+It uses the dot (.) symbol.
+</p>
+
+<pre>
+$(".notice")
+</pre>
+
+<p>
+It selects all elements having class notice.
+</p>
+
+<h3>3. Element Selector</h3>
+
+<p>
+The element selector selects HTML elements
+using their tag name.
+</p>
+
+<pre>
+$("p")
+</pre>
+
+<p>
+It selects all paragraph elements.
+</p>
+
+<h3>Selector Examples:</h3>
+
+<pre>
+$("#heading")
+$(".box")
+$("p")
+$("button")
+</pre>
+
+<hr>
+
+<h2>6. jQuery DOM Manipulation</h2>
+
+<p>
+DOM manipulation means changing the content,
+attributes or appearance of HTML elements.
+jQuery provides simple methods for these tasks.
+</p>
+
+<h3>1. text() Method</h3>
+
+<p>
+The text() method is used to get or change
+the text content of an element.
+</p>
+
+<pre>
+$("#message").text("Hello World");
+</pre>
+
+<p>
+It changes the text of the selected element.
+</p>
+
+<h3>2. html() Method</h3>
+
+<p>
+The html() method is used to get or change
+the HTML content inside an element.
+</p>
+
+<pre>
+$("#message").html("<b>Hello World</b>");
+</pre>
+
+<p>
+It inserts bold HTML content inside the selected element.
+</p>
+
+<h3>3. val() Method</h3>
+
+<p>
+The val() method is used to get or set the value
+of form elements such as input fields.
+</p>
+
+<pre>
+$("#name").val("Rahul");
+</pre>
+
+<p>
+It sets the input field value to Rahul.
+</p>
+
+<h3>4. attr() Method</h3>
+
+<p>
+The attr() method is used to get or change
+an HTML attribute.
+</p>
+
+<pre>
+$("#myImage").attr("alt", "Sample Image");
+</pre>
+
+<p>
+It changes the alt attribute of the selected image.
+</p>
+
+<h3>5. css() Method</h3>
+
+<p>
+The css() method is used to get or change
+CSS properties of selected elements.
+</p>
+
+<pre>
+$("#message").css("color", "red");
+</pre>
+
+<p>
+It changes the text color to red.
+</p>
+
+<h3>6. addClass() Method</h3>
+
+<p>
+The addClass() method adds a CSS class
+to the selected element.
+</p>
+
+<pre>
+$("#message").addClass("active");
+</pre>
+
+<h3>7. removeClass() Method</h3>
+
+<p>
+The removeClass() method removes a CSS class
+from the selected element.
+</p>
+
+<pre>
+$("#message").removeClass("active");
+</pre>
+
+<h3>8. toggleClass() Method</h3>
+
+<p>
+The toggleClass() method adds a class if it is
+not present and removes it if it is already present.
+</p>
+
+<pre>
+$("#message").toggleClass("active");
+</pre>
+
+<div class="note">
+<b>Important Methods:</b><br>
+text() = Changes text.<br>
+html() = Changes HTML content.<br>
+val() = Changes input value.<br>
+attr() = Changes an attribute.<br>
+css() = Changes CSS properties.<br>
+addClass() = Adds a class.<br>
+removeClass() = Removes a class.<br>
+toggleClass() = Adds or removes a class.
+</div>
+
+<hr>
+
+<h2>7. jQuery Event Handling</h2>
+
+<p>
+An event is an action performed by a user
+or something that happens in the browser.
+Examples include clicking a button, typing
+in an input field and submitting a form.
+</p>
+
+<p>
+jQuery provides methods to handle these events.
+One commonly used method is on().
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+$(selector).on("event", function() {
+
+    // Code to execute
+
+});
+</pre>
+
+<h3>Example: Click Event</h3>
+
+<pre>
+$(function() {
+
+    $("#myButton").on("click", function() {
+
+        $("#message").text("Button Clicked!");
+
+    });
+
+});
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li>#myButton selects the button.</li>
+    <li>on() attaches an event handler.</li>
+    <li>click is the event name.</li>
+    <li>function() contains the code to execute.</li>
+    <li>The paragraph text changes after clicking.</li>
+</ul>
+
+<h3>Common Events:</h3>
+
+<ul>
+    <li>click - Occurs when an element is clicked.</li>
+    <li>input - Occurs when the input value changes.</li>
+    <li>submit - Occurs when a form is submitted.</li>
+    <li>keydown - Occurs when a key is pressed.</li>
+</ul>
+
+<hr>
+
+<h2>8. Method Chaining in jQuery</h2>
+
+<p>
+Method chaining means using multiple jQuery
+methods one after another on the same selected elements.
+</p>
+
+<p>
+It helps write shorter and cleaner code.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+$("#message")
+    .text("Hello World")
+    .addClass("active")
+    .css("font-size", "20px");
+</pre>
+
+<h3>Explanation:</h3>
+
+<ol>
+    <li>Selects the element having ID message.</li>
+    <li>Changes its text to Hello World.</li>
+    <li>Adds the active class.</li>
+    <li>Changes its font size to 20 pixels.</li>
+</ol>
+
+<div class="note">
+<b>Remember:</b><br>
+Method chaining allows multiple operations
+to be written in a single statement.
+</div>
+
+<hr>
+
+<h2>9. jQuery Effects</h2>
+
+<p>
+jQuery provides methods for showing, hiding
+and changing the appearance of HTML elements.
+These methods are called effects.
+</p>
+
+<h3>1. hide()</h3>
+
+<p>
+The hide() method hides the selected element.
+</p>
+
+<pre>
+$("#message").hide();
+</pre>
+
+<h3>2. show()</h3>
+
+<p>
+The show() method displays a hidden element.
+</p>
+
+<pre>
+$("#message").show();
+</pre>
+
+<h3>3. toggle()</h3>
+
+<p>
+The toggle() method switches between showing
+and hiding an element.
+</p>
+
+<pre>
+$("#message").toggle();
+</pre>
+
+<h3>4. fadeIn()</h3>
+
+<p>
+The fadeIn() method gradually displays
+a hidden element.
+</p>
+
+<pre>
+$("#message").fadeIn();
+</pre>
+
+<h3>5. fadeOut()</h3>
+
+<p>
+The fadeOut() method gradually hides
+an element.
+</p>
+
+<pre>
+$("#message").fadeOut();
+</pre>
+
+<h3>6. slideUp()</h3>
+
+<p>
+The slideUp() method hides an element
+with an upward sliding effect.
+</p>
+
+<pre>
+$("#message").slideUp();
+</pre>
+
+<h3>7. slideDown()</h3>
+
+<p>
+The slideDown() method displays an element
+with a downward sliding effect.
+</p>
+
+<pre>
+$("#message").slideDown();
+</pre>
+
+<hr>
+
+<h2>10. jQuery and AJAX</h2>
+
+<p>
+jQuery also provides methods for making
+AJAX requests to a server.
+This allows a web page to request information
+without loading a completely new document.
+</p>
+
+<p>
+jQuery has methods such as $.ajax() for
+working with asynchronous HTTP requests.
+</p>
+
+<h3>Basic Syntax:</h3>
+
+<pre>
+$.ajax({
+
+    url: "/api/data",
+
+    method: "GET",
+
+    success: function(data) {
+
+        console.log(data);
+
+    },
+
+    error: function(error) {
+
+        console.log(error);
+
+    }
+
+});
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li>$.ajax() starts an AJAX request.</li>
+    <li>url specifies the server endpoint.</li>
+    <li>method specifies the HTTP method.</li>
+    <li>success runs when the request succeeds.</li>
+    <li>error handles request failures.</li>
+</ul>
+
+<p>
+The endpoint must exist and return a suitable
+response for this example to work.
+</p>
+
+<hr>
+
+<h2>11. Difference Between JavaScript and jQuery</h2>
+
+<p>
+jQuery is built using JavaScript.
+It provides shorter methods for many common
+JavaScript operations.
+</p>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+    <tr>
+        <th>Task</th>
+        <th>JavaScript</th>
+        <th>jQuery</th>
+    </tr>
+
+    <tr>
+        <td>Select Element</td>
+        <td>document.querySelector("#message")</td>
+        <td>$("#message")</td>
+    </tr>
+
+    <tr>
+        <td>Click Event</td>
+        <td>addEventListener("click", handler)</td>
+        <td>on("click", handler)</td>
+    </tr>
+
+    <tr>
+        <td>Change Text</td>
+        <td>textContent = "Hello"</td>
+        <td>text("Hello")</td>
+    </tr>
+
+    <tr>
+        <td>Toggle Class</td>
+        <td>classList.toggle("active")</td>
+        <td>toggleClass("active")</td>
+    </tr>
+</table>
+
+<h3>Important Differences:</h3>
+
+<ul>
+    <li>JavaScript is a programming language.</li>
+    <li>jQuery is a library written in JavaScript.</li>
+    <li>JavaScript provides native browser APIs.</li>
+    <li>jQuery provides shorter, chain-based methods.</li>
+    <li>jQuery must be included in a project before its methods can be used.</li>
+</ul>
+
+<hr>
+
+<h2>12. Complete Working Example of jQuery</h2>
+
+<p>
+This example demonstrates how jQuery can handle
+a button click, change text and toggle a CSS class.
+</p>
+
+<div class="demo">
+
+    <h3>jQuery Interactive Example</h3>
+
+    <p id="jquery-message">
+        Click the button to change this message.
+    </p>
+
+    <button id="jquery-button">
+        Click Me
+    </button>
+
+</div>
+
+<h3>Complete HTML Code:</h3>
+
+<pre>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>jQuery Example</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        .is-highlighted {
+            background: blue;
+            color: white;
+            padding: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <p id="jquery-message">
+        Click the button to change this message.
+    </p>
+
+    <button id="jquery-button">
+        Click Me
+    </button>
+
+    <script>
+     {
+        $(function () {
+
+            $("#jquery-button").on("click", function () {
+
+                $("#jquery-message")
+                    .text("Updated by a jQuery event handler.")
+                    .toggleClass("is-highlighted");
+
+            });
+
+        });
+    }
+    </script>
+
+</body>
+</html>
+</pre>
+
+<h3>Explanation:</h3>
+
+<ol>
+    <li>The jQuery library is included using a script tag.</li>
+    <li>The paragraph and button are created in HTML.</li>
+    <li>CSS defines the highlighted appearance.</li>
+    <li>$(function() {}) waits until the DOM is ready.</li>
+    <li>$("#jquery-button") selects the button.</li>
+    <li>on("click", function() {}) handles the click event.</li>
+    <li>text() changes the paragraph message.</li>
+    <li>toggleClass() switches the highlighted style on and off.</li>
+</ol>
+
+<div class="note">
+<b>Important:</b><br>
+The example requires an internet connection
+to load the jQuery library from the CDN URL.
+</div>
+
+<hr>
+
+<h2>13. Advantages of jQuery</h2>
+
+<ul>
+    <li>Simple and short syntax.</li>
+    <li>Easy element selection.</li>
+    <li>Easy event handling.</li>
+    <li>Simple DOM manipulation.</li>
+    <li>Provides useful visual effects.</li>
+    <li>Supports AJAX operations.</li>
+    <li>Supports method chaining.</li>
+</ul>
+
+<h2>14. Limitations of jQuery</h2>
+
+<ul>
+    <li>The jQuery library must be included before use.</li>
+    <li>It adds an external dependency to a project.</li>
+    <li>Modern JavaScript already provides many similar features.</li>
+    <li>It may be unnecessary for small projects.</li>
+</ul>
+
+<hr>
+
+<h2>15. Important Exam Points</h2>
+
+<ul>
+    <li>jQuery is a JavaScript library.</li>
+    <li>It simplifies DOM manipulation and event handling.</li>
+    <li>The dollar sign ($) is used as the jQuery function.</li>
+    <li>$(function(){}) runs code when the DOM is ready.</li>
+    <li>$("#id") selects an element using its ID.</li>
+    <li>$(".class") selects elements using their class.</li>
+    <li>text() changes text content.</li>
+    <li>html() changes HTML content.</li>
+    <li>val() gets or sets form values.</li>
+    <li>css() changes CSS properties.</li>
+    <li>on() attaches an event handler.</li>
+    <li>addClass() adds a CSS class.</li>
+    <li>removeClass() removes a CSS class.</li>
+    <li>toggleClass() switches a CSS class.</li>
+    <li>hide() hides an element.</li>
+    <li>show() displays an element.</li>
+    <li>$.ajax() performs an AJAX request.</li>
+</ul>
+
+<hr>
+
+<h2>16. Conclusion</h2>
+
+<p>
+jQuery is a JavaScript library that makes
+web development easier by providing shorter
+methods for selecting elements, handling events,
+updating the DOM and performing AJAX operations.
+</p>
+
+<p>
+It was especially useful for browser compatibility
+and reducing repetitive code.
+Modern JavaScript provides many native alternatives,
+but jQuery is still important for understanding
+and maintaining existing websites.
+</p>
+
+</div>
+
+</body>
+</html>

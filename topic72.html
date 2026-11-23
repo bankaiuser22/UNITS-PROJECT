@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 7 - CSS Background Properties</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #174f78;
+        }
+
+        h2 {
+            color: #174f78;
+            border-bottom: 2px solid #174f78;
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            color: #31765e;
+        }
+
+        pre {
+            background-color: #172033;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .example {
+            padding: 25px;
+            margin: 15px 0;
+            border: 2px solid #174f78;
+            border-radius: 8px;
+        }
+
+        .note {
+            background-color: #e8f2f8;
+            border-left: 5px solid #174f78;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>7. CSS Background Properties</h1>
+
+    <h2>1. Introduction</h2>
+
+    <p>
+        CSS Background Properties are used to set the background
+        of HTML elements. They help us add background colors,
+        images and gradients to web pages.
+    </p>
+
+    <p>
+        Background properties improve the appearance of a website
+        and make its design more attractive.
+    </p>
+
+    <h2>2. Background Color</h2>
+
+    <p>
+        The background-color property is used to set a solid
+        background color for an HTML element.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+selector {
+    background-color: color;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    background-color: lightblue;
+}
+    </pre>
+
+    <div class="example" style="background-color:lightblue;">
+        This is an example of background-color.
+    </div>
+
+    <h2>3. Background Image</h2>
+
+    <p>
+        The background-image property is used to add an image
+        behind the content of an HTML element.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+selector {
+    background-image: url("image.jpg");
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    background-image: url("background.jpg");
+}
+    </pre>
+
+    <p>
+        The image file should be available at the specified
+        location for it to appear.
+    </p>
+
+    <h2>4. Background Repeat</h2>
+
+    <p>
+        The background-repeat property controls how a background
+        image is repeated inside an element.
+    </p>
+
+    <h3>Types of Background Repeat:</h3>
+
+    <ul>
+        <li><b>repeat:</b> Repeats the image horizontally and vertically.</li>
+        <li><b>repeat-x:</b> Repeats the image horizontally.</li>
+        <li><b>repeat-y:</b> Repeats the image vertically.</li>
+        <li><b>no-repeat:</b> Displays the image only once.</li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    background-image: url("image.jpg");
+    background-repeat: no-repeat;
+}
+    </pre>
+
+    <h2>5. Background Position</h2>
+
+    <p>
+        The background-position property is used to set the
+        starting position of a background image inside an element.
+    </p>
+
+    <h3>Common Values:</h3>
+
+    <ul>
+        <li>center</li>
+        <li>top</li>
+        <li>bottom</li>
+        <li>left</li>
+        <li>right</li>
+        <li>right top</li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    background-image: url("image.jpg");
+    background-position: center;
+}
+    </pre>
+
+    <p>
+        In this example, the background image is positioned
+        at the center of the element.
+    </p>
+
+    <h2>6. Background Size</h2>
+
+    <p>
+        The background-size property controls the dimensions
+        of a background image.
+    </p>
+
+    <h3>Important Values:</h3>
+
+    <ul>
+        <li>
+            <b>cover:</b> Scales the image to cover the entire
+            element. Some parts may be cropped.
+        </li>
+
+        <li>
+            <b>contain:</b> Scales the image so the complete
+            image is visible inside the element.
+        </li>
+
+        <li>
+            <b>auto:</b> Displays the image using its original
+            dimensions where possible.
+        </li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    background-image: url("image.jpg");
+    background-size: cover;
+}
+    </pre>
+
+    <h2>7. Background Attachment</h2>
+
+    <p>
+        The background-attachment property controls whether
+        the background image scrolls with the page or stays
+        fixed relative to the viewport.
+    </p>
+
+    <h3>Types:</h3>
+
+    <ul>
+        <li>
+            <b>scroll:</b> The background image scrolls with
+            the element's content.
+        </li>
+
+        <li>
+            <b>fixed:</b> The background image stays fixed
+            relative to the viewport.
+        </li>
+
+        <li>
+            <b>local:</b> The background image scrolls with
+            the element's scrollable content.
+        </li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+body {
+    background-image: url("image.jpg");
+    background-attachment: fixed;
+}
+    </pre>
+
+    <h2>8. CSS Gradients</h2>
+
+    <p>
+        A gradient is a smooth transition between two or more
+        colors. CSS gradients are treated as background images.
+    </p>
+
+    <h3>A. Linear Gradient</h3>
+
+    <p>
+        A linear gradient changes colors along a straight line.
+    </p>
+
+    <pre>
+div {
+    background-image:
+    linear-gradient(red, yellow);
+}
+    </pre>
+
+    <div class="example"
+         style="background-image:linear-gradient(red,yellow);">
+        Linear Gradient Example
+    </div>
+
+    <h3>B. Radial Gradient</h3>
+
+    <p>
+        A radial gradient spreads colors outward from a central
+        point in a circular or elliptical shape.
+    </p>
+
+    <pre>
+div {
+    background-image:
+    radial-gradient(red, yellow, green);
+}
+    </pre>
+
+    <div class="example"
+         style="background-image:radial-gradient(red,yellow,green);">
+        Radial Gradient Example
+    </div>
+
+    <h2>9. Combined Background Example</h2>
+
+    <p>
+        We can use multiple background properties together
+        to create an attractive background.
+    </p>
+
+    <pre>
+.banner {
+    background-color: #174f78;
+
+    background-image:
+    linear-gradient(120deg, #174f78, #31765e);
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size: cover;
+}
+    </pre>
+
+    <div class="example"
+         style="background-color:#174f78;
+         background-image:linear-gradient(120deg,#174f78,#31765e);
+         background-repeat:no-repeat;
+         background-position:center;
+         background-size:cover;
+         color:white;">
+        Combined Background Example
+    </div>
+
+    <h2>10. Importance of Background Properties</h2>
+
+    <ul>
+        <li>Make web pages visually attractive.</li>
+        <li>Apply different background colors.</li>
+        <li>Add images behind content.</li>
+        <li>Control the position and size of images.</li>
+        <li>Create colorful gradients.</li>
+        <li>Improve the overall design of a website.</li>
+    </ul>
+
+    <div class="note">
+        <b>Exam Point:</b>
+        CSS background properties include background-color,
+        background-image, background-repeat, background-position,
+        background-size and background-attachment.
+        They are used to control the appearance of an element's
+        background.
+    </div>
+
+    <h2>11. Conclusion</h2>
+
+    <p>
+        CSS Background Properties help developers control
+        the background of HTML elements. They provide options
+        for colors, images, image positioning, image sizing,
+        repeating and gradients.
+    </p>
+
+</div>
+
+</body>
+</html>

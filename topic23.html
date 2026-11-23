@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 2 - JavaScript Objects and DOM</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #174ea6;
+        }
+
+        h3 {
+            color: #087e8b;
+        }
+
+        p, li {
+            font-size: 17px;
+        }
+
+        pre {
+            background: #172033;
+            color: white;
+            padding: 18px;
+            border-radius: 7px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        button {
+            background: #174ea6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #087e8b;
+        }
+
+        .card {
+            background: #e8f2ff;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .active {
+            background: #087e8b;
+            color: white;
+        }
+
+        .note {
+            background: #e8f2ff;
+            padding: 15px;
+            border-left: 5px solid #174ea6;
+            margin: 20px 0;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>UNIT 4: JAVASCRIPT AND JQUERY</h1>
+
+<h2>TOPIC 2: JAVASCRIPT OBJECTS AND THE DOM</h2>
+
+<hr>
+
+<h2>1. Introduction to JavaScript Objects</h2>
+
+<p>
+An object in JavaScript is a collection of related data
+and behaviour. It stores information in the form of
+properties and methods.
+</p>
+
+<p>
+Properties contain data, while methods are functions
+that perform particular tasks.
+</p>
+
+<p>
+For example, a student object can store the student's
+name, roll number and department. It can also contain
+a method to display student information.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+const student = {
+    name: "Asha",
+    rollNo: 101,
+    department: "Computer Science"
+};
+
+console.log(student.name);
+console.log(student.rollNo);
+</pre>
+
+<p>Output:</p>
+
+<pre>
+Asha
+101
+</pre>
+
+<h2>2. Properties of an Object</h2>
+
+<p>
+Properties are the values stored inside an object.
+Each property has a name and a value.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+const student = {
+    name: "Asha",
+    age: 20,
+    marks: 85
+};
+</pre>
+
+<p>In this example:</p>
+
+<ul>
+    <li>name is a property and Asha is its value.</li>
+    <li>age is a property and 20 is its value.</li>
+    <li>marks is a property and 85 is its value.</li>
+</ul>
+
+<h3>Accessing Object Properties</h3>
+
+<p>
+We can access object properties using dot notation
+or bracket notation.
+</p>
+
+<h3>1. Dot Notation</h3>
+
+<pre>
+const student = {
+    name: "Asha",
+    age: 20
+};
+
+console.log(student.name);
+</pre>
+
+<p>Output: Asha</p>
+
+<h3>2. Bracket Notation</h3>
+
+<pre>
+const student = {
+    name: "Asha",
+    age: 20
+};
+
+console.log(student["age"]);
+</pre>
+
+<p>Output: 20</p>
+
+<h2>3. Methods of an Object</h2>
+
+<p>
+A method is a function stored inside an object.
+It is used to perform an action related to that object.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+const student = {
+    name: "Asha",
+
+    displayInfo: function() {
+        return "Hello " + this.name;
+    }
+};
+
+console.log(student.displayInfo());
+</pre>
+
+<p>Output: Hello Asha</p>
+
+<h3>Understanding the this Keyword</h3>
+
+<p>
+The this keyword refers to the object that is calling
+the method. It helps us access the properties of
+the same object.
+</p>
+
+<pre>
+const student = {
+    name: "Asha",
+
+    introduce() {
+        return "My name is " + this.name;
+    }
+};
+
+console.log(student.introduce());
+</pre>
+
+<p>Output: My name is Asha</p>
+
+<div class="note">
+<b>Remember:</b><br>
+Property = Data stored in an object.<br>
+Method = Function stored inside an object.
+</div>
+
+<hr>
+
+<h2>4. Introduction to DOM</h2>
+
+<p>
+DOM stands for Document Object Model.
+It is a programming interface that represents an
+HTML document as a tree of objects or nodes.
+</p>
+
+<p>
+When a browser loads an HTML page, it creates a DOM
+tree. JavaScript can use this tree to access and
+change HTML elements, text, attributes and classes.
+</p>
+
+<p>
+The DOM allows JavaScript to make web pages dynamic
+and interactive without reloading the entire page.
+</p>
+
+<h3>Why is DOM Used?</h3>
+
+<ul>
+    <li>To select HTML elements.</li>
+    <li>To change text inside an element.</li>
+    <li>To change HTML attributes.</li>
+    <li>To add or remove CSS classes.</li>
+    <li>To create new HTML elements.</li>
+    <li>To add new content to a web page.</li>
+</ul>
+
+<h2>5. DOM Tree Structure</h2>
+
+<p>
+The DOM represents an HTML document in a tree-like
+structure. Every part of the document is represented
+as a node.
+</p>
+
+<p>
+The main document contains the HTML element.
+The HTML element contains the head and body elements.
+The body can contain headings, paragraphs, buttons
+and other elements.
+</p>
+
+<h3>Example HTML:</h3>
+
+<pre>
+<html>
+    <head>
+        <title>My Page</title>
+    </head>
+
+    <body>
+        <h1>Hello World</h1>
+        <p>Welcome to JavaScript</p>
+    </body>
+</html>
+</pre>
+
+<h3>Simple DOM Tree:</h3>
+
+<pre>
+             Document
+                 |
+               HTML
+              /    \
+           HEAD    BODY
+            |       |
+          TITLE    H1
+                    |
+                    P
+</pre>
+
+<p>
+The browser creates this structure so JavaScript
+can access different parts of the HTML document.
+</p>
+
+<h3>Important DOM Terms</h3>
+
+<ul>
+    <li><b>Document:</b> Represents the complete HTML document.</li>
+    <li><b>Element:</b> Represents an HTML element such as h1, p or div.</li>
+    <li><b>Parent:</b> An element that contains another element.</li>
+    <li><b>Child:</b> An element present inside another element.</li>
+    <li><b>Node:</b> A part of the DOM tree.</li>
+</ul>
+
+<hr>
+
+<h2>6. Selecting HTML Elements</h2>
+
+<p>
+JavaScript must first select an HTML element before
+it can read or change that element.
+</p>
+
+<p>
+The DOM provides different methods to select elements.
+</p>
+
+<h3>1. getElementById()</h3>
+
+<p>
+This method selects an HTML element using its unique ID.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+document.getElementById("idName");
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+let heading = document.getElementById("title");
+
+console.log(heading);
+</pre>
+
+<h3>2. getElementsByClassName()</h3>
+
+<p>
+This method selects all elements having the given
+class name.
+</p>
+
+<pre>
+document.getElementsByClassName("box");
+</pre>
+
+<h3>3. getElementsByTagName()</h3>
+
+<p>
+This method selects all elements having the specified
+HTML tag name.
+</p>
+
+<pre>
+document.getElementsByTagName("p");
+</pre>
+
+<h3>4. querySelector()</h3>
+
+<p>
+The querySelector() method selects the first element
+that matches the given CSS selector.
+</p>
+
+<pre>
+document.querySelector("#title");
+document.querySelector(".box");
+document.querySelector("p");
+</pre>
+
+<h3>5. querySelectorAll()</h3>
+
+<p>
+The querySelectorAll() method selects all elements
+that match the given CSS selector.
+</p>
+
+<pre>
+document.querySelectorAll(".box");
+</pre>
+
+<h3>Difference Between querySelector() and querySelectorAll()</h3>
+
+<pre>
+querySelector():
+Selects only the first matching element.
+
+querySelectorAll():
+Selects all matching elements.
+</pre>
+
+<div class="note">
+<b>Important:</b><br>
+# is used for an ID selector.<br>
+. is used for a class selector.<br>
+The tag name can be used directly.
+</div>
+
+<hr>
+
+<h2>7. Changing HTML Content Using DOM</h2>
+
+<p>
+JavaScript can change the text displayed inside
+an HTML element using the textContent property.
+</p>
+
+<h3>What is textContent?</h3>
+
+<p>
+textContent is a DOM property used to read or change
+the text content of an HTML element.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+element.textContent = "New Text";
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+let heading = document.getElementById("title");
+
+heading.textContent = "Welcome to JavaScript";
+</pre>
+
+<h3>Working Example:</h3>
+
+<h3 id="demoHeading">Original Heading</h3>
+
+<button onclick="changeText()">
+Change Heading
+</button>
+
+<script>
+function changeText() {
+    document.getElementById("demoHeading").textContent =
+    "Welcome to JavaScript!";
+}
+</script>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li>First, JavaScript selects the heading using its ID.</li>
+    <li>Then, textContent accesses its text.</li>
+    <li>Finally, the original text is replaced with new text.</li>
+</ul>
+
+<h2>8. Changing CSS Classes Using classList</h2>
+
+<p>
+JavaScript can add, remove or toggle CSS classes
+using the classList property.
+</p>
+
+<p>
+This allows us to change the appearance of an
+HTML element without directly changing its CSS.
+</p>
+
+<h3>Important classList Methods</h3>
+
+<h3>1. add()</h3>
+
+<p>
+The add() method adds a CSS class to an element.
+</p>
+
+<pre>
+element.classList.add("active");
+</pre>
+
+<h3>2. remove()</h3>
+
+<p>
+The remove() method removes a CSS class from
+an element.
+</p>
+
+<pre>
+element.classList.remove("active");
+</pre>
+
+<h3>3. toggle()</h3>
+
+<p>
+The toggle() method adds a class if it is not present
+and removes it if it is already present.
+</p>
+
+<pre>
+element.classList.toggle("active");
+</pre>
+
+<h3>4. contains()</h3>
+
+<p>
+The contains() method checks whether an element
+has a particular class.
+</p>
+
+<pre>
+element.classList.contains("active");
+</pre>
+
+<h3>Working Example:</h3>
+
+<div class="card" id="myCard">
+    <h3>JavaScript DOM Card</h3>
+    <p>Click the button to change my appearance.</p>
+</div>
+
+<button onclick="toggleCard()">
+Toggle Class
+</button>
+
+<script>
+function toggleCard() {
+    document.getElementById("myCard").classList.toggle("active");
+}
+</script>
+
+<h3>Explanation:</h3>
+
+<p>
+When the button is clicked, JavaScript selects the card
+and toggles the active class. The CSS rules of that
+class change the card's appearance.
+</p>
+
+<hr>
+
+<h2>9. Creating and Adding New HTML Elements</h2>
+
+<p>
+JavaScript can create new HTML elements dynamically
+and add them to an existing web page.
+</p>
+
+<p>
+The createElement() method creates a new element.
+The append() method adds the new element to a parent.
+</p>
+
+<h3>Step 1: Create an Element</h3>
+
+<pre>
+let newElement = document.createElement("p");
+</pre>
+
+<p>
+This creates a new paragraph element.
+</p>
+
+<h3>Step 2: Add Text</h3>
+
+<pre>
+newElement.textContent = "This is a new paragraph.";
+</pre>
+
+<p>
+This adds text inside the paragraph.
+</p>
+
+<h3>Step 3: Add It to the Page</h3>
+
+<pre>
+document.body.append(newElement);
+</pre>
+
+<p>
+This adds the paragraph at the end of the body.
+</p>
+
+<h3>Complete Example:</h3>
+
+<pre>
+let newElement = document.createElement("p");
+
+newElement.textContent = "New paragraph added!";
+
+document.body.append(newElement);
+</pre>
+
+<h3>Working Example:</h3>
+
+<div id="newContent">
+    <p>Existing paragraph.</p>
+</div>
+
+<button onclick="addParagraph()">
+Add New Paragraph
+</button>
+
+<script>
+function addParagraph() {
+    let newElement = document.createElement("p");
+
+    newElement.textContent = "New paragraph added using JavaScript!";
+
+    document.getElementById("newContent").append(newElement);
+}
+</script>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li>createElement() creates a new HTML element.</li>
+    <li>textContent adds text inside that element.</li>
+    <li>append() inserts the new element into the selected parent.</li>
+</ul>
+
+<hr>
+
+<h2>10. Common DOM Operations</h2>
+
+<p>
+JavaScript provides several DOM operations to
+work with HTML elements.
+</p>
+
+<h3>1. Select an Element</h3>
+
+<pre>
+const notice = document.querySelector(".notice");
+</pre>
+
+<p>
+It selects the first element having the notice class.
+</p>
+
+<h3>2. Read or Set Text</h3>
+
+<pre>
+element.textContent = "Updated";
+</pre>
+
+<p>
+It changes the text inside an element.
+</p>
+
+<h3>3. Change a Class</h3>
+
+<pre>
+element.classList.toggle("active");
+</pre>
+
+<p>
+It adds or removes the active class.
+</p>
+
+<h3>4. Create and Add an Element</h3>
+
+<pre>
+const newItem = document.createElement("li");
+
+newItem.textContent = "New Item";
+
+list.append(newItem);
+</pre>
+
+<p>
+It creates a new list item and adds it to the list.
+</p>
+
+<hr>
+
+<h2>11. Complete JavaScript Object and DOM Example</h2>
+
+<p>
+This example combines a JavaScript object with
+DOM selection and manipulation.
+</p>
+
+<pre>
+const learner = {
+    name: "Asha",
+    unit: 4,
+
+    introduce() {
+        return `${this.name} is studying Unit ${this.unit}.`;
+    }
+};
+
+const message = document.querySelector("#message");
+
+message.textContent = learner.introduce();
+</pre>
+
+<h3>Output:</h3>
+
+<div class="card">
+    <p id="message">The message will appear here.</p>
+</div>
+
+<button onclick="showLearner()">
+Display Student Information
+</button>
+
+<script>
+{    
+function showLearner() {
+
+    const learner = {
+        name: "Asha",
+        unit: 4,
+
+        introduce() {
+            return `${this.name} is studying Unit ${this.unit}.`;
+        }
+    };
+
+    const message = document.querySelector("#message");
+
+    message.textContent = learner.introduce();
+}
+}
+</script>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li>First, an object named learner is created.</li>
+    <li>It contains name and unit properties.</li>
+    <li>The introduce() method returns a message.</li>
+    <li>querySelector() selects the HTML element with ID message.</li>
+    <li>textContent displays the returned message on the page.</li>
+</ul>
+
+<hr>
+
+<h2>12. Advantages of DOM</h2>
+
+<ul>
+    <li>It makes web pages dynamic and interactive.</li>
+    <li>It allows JavaScript to access HTML elements.</li>
+    <li>It allows content to be changed without reloading the page.</li>
+    <li>It helps in updating styles and classes.</li>
+    <li>It allows new elements to be created and added.</li>
+    <li>It helps developers build interactive web applications.</li>
+</ul>
+
+<h2>13. Important Exam Points</h2>
+
+<ul>
+    <li>An object is a collection of related properties and methods.</li>
+    <li>Properties store data inside an object.</li>
+    <li>Methods are functions stored inside an object.</li>
+    <li>The this keyword refers to the object calling the method.</li>
+    <li>DOM stands for Document Object Model.</li>
+    <li>DOM represents an HTML document as a tree of nodes.</li>
+    <li>JavaScript uses the DOM to access and update HTML elements.</li>
+    <li>querySelector() selects the first matching element.</li>
+    <li>textContent is used to read or change text.</li>
+    <li>classList.toggle() adds or removes a CSS class.</li>
+    <li>createElement() creates a new HTML element.</li>
+    <li>append() adds content to an element.</li>
+</ul>
+
+<h2>14. Conclusion</h2>
+
+<p>
+JavaScript objects are used to store related data
+and methods. The Document Object Model represents
+an HTML document as a tree of nodes.
+</p>
+
+<p>
+Using the DOM, JavaScript can select HTML elements,
+change their text, update CSS classes and create
+new elements. These features help developers create
+dynamic and interactive web pages without reloading
+the complete document.
+</p>
+
+</div>
+
+</body>
+</html>

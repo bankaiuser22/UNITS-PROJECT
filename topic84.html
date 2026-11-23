@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XML Schema (XSD)</title>
+</head>
+<body>
+
+    <h1>XML Schema (XSD)</h1>
+
+    <h2>1. Introduction</h2>
+    <p>
+        XSD stands for XML Schema Definition.
+        It is used to define the structure and rules
+        of an XML document.
+    </p>
+
+    <p>
+        XML Schema describes which elements and
+        attributes are allowed in an XML document.
+        It also defines their data types and constraints.
+    </p>
+
+    <h2>2. Purpose of XML Schema</h2>
+    <ul>
+        <li>It defines the structure of XML documents.</li>
+        <li>It specifies allowed elements and attributes.</li>
+        <li>It defines data types of elements.</li>
+        <li>It checks the order of child elements.</li>
+        <li>It helps validate XML documents.</li>
+    </ul>
+
+    <h2>3. Features of XSD</h2>
+    <ul>
+        <li>XSD is written using XML syntax.</li>
+        <li>It supports built-in data types.</li>
+        <li>It supports namespaces.</li>
+        <li>It supports reusable type definitions.</li>
+        <li>It provides detailed constraints.</li>
+        <li>It is more expressive and strongly typed than DTD.</li>
+    </ul>
+
+    <h2>4. Common Data Types in XSD</h2>
+    <ul>
+        <li>xs:string - Used for text values.</li>
+        <li>xs:decimal - Used for decimal numbers.</li>
+        <li>xs:integer - Used for whole numbers.</li>
+        <li>xs:boolean - Used for true or false values.</li>
+        <li>xs:date - Used for date values.</li>
+        <li>xs:ID - Used for unique identifiers.</li>
+    </ul>
+
+    <h2>5. Important XSD Elements</h2>
+
+    <h3>A. xs:schema</h3>
+    <p>
+        It is the root element of an XML Schema document.
+    </p>
+
+    <h3>B. xs:element</h3>
+    <p>
+        It declares an element in the XML document.
+    </p>
+
+    <h3>C. xs:complexType</h3>
+    <p>
+        It defines an element that contains
+        other elements or attributes.
+    </p>
+
+    <h3>D. xs:sequence</h3>
+    <p>
+        It specifies the order in which child
+        elements must appear.
+    </p>
+
+    <h3>E. xs:attribute</h3>
+    <p>
+        It declares an attribute for an element.
+    </p>
+
+    <h2>6. XML Schema Example</h2>
+
+    <p>
+        Consider a catalog containing products.
+        Each product has a name, price and ID.
+        We can describe this structure using XSD.
+    </p>
+
+    <h3>catalog.xsd</h3>
+
+    <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xs:schema xmlns:xs=
+"http://www.w3.org/2001/XMLSchema"&gt;
+
+    &lt;xs:element name="catalog"&gt;
+        &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+
+                &lt;xs:element name="product"
+                maxOccurs="unbounded"&gt;
+
+                    &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+
+                            &lt;xs:element name="name"
+                            type="xs:string"/&gt;
+
+                            &lt;xs:element name="price"
+                            type="xs:decimal"/&gt;
+
+                        &lt;/xs:sequence&gt;
+
+                        &lt;xs:attribute name="id"
+                        type="xs:ID"
+                        use="required"/&gt;
+
+                    &lt;/xs:complexType&gt;
+
+                &lt;/xs:element&gt;
+
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+
+&lt;/xs:schema&gt;
+    </pre>
+
+    <h2>7. Explanation of the Example</h2>
+    <ul>
+        <li>xs:schema defines the XML Schema document.</li>
+        <li>catalog is the root element.</li>
+        <li>xs:complexType defines complex content.</li>
+        <li>xs:sequence specifies the order of elements.</li>
+        <li>product represents each product.</li>
+        <li>maxOccurs="unbounded" allows multiple products.</li>
+        <li>name uses the xs:string data type.</li>
+        <li>price uses the xs:decimal data type.</li>
+        <li>id uses the xs:ID data type.</li>
+        <li>use="required" makes the ID attribute compulsory.</li>
+    </ul>
+
+    <h2>8. Connecting XML with XSD</h2>
+
+    <p>
+        To validate an XML document using XSD,
+        use the schema location in the XML root element.
+    </p>
+
+    <h3>XML Header</h3>
+
+    <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;catalog
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="catalog.xsd"&gt;
+
+    &lt;product id="p101"&gt;
+        &lt;name&gt;Notebook&lt;/name&gt;
+        &lt;price&gt;45.50&lt;/price&gt;
+    &lt;/product&gt;
+
+&lt;/catalog&gt;
+    </pre>
+
+    <h2>9. Validating XML using XSD</h2>
+
+    <p>
+        XML documents can be validated using
+        the xmllint utility provided by libxml2.
+    </p>
+
+    <h3>Command:</h3>
+
+    <pre>
+xmllint --noout --schema catalog.xsd catalog.xml
+    </pre>
+
+    <p>
+        If the XML document follows the rules
+        defined in the XSD file, validation succeeds.
+    </p>
+
+    <h2>10. Advantages of XSD</h2>
+    <ul>
+        <li>It supports different data types.</li>
+        <li>It provides detailed validation rules.</li>
+        <li>It supports XML namespaces.</li>
+        <li>It defines the order of elements.</li>
+        <li>It is written in XML syntax.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        XML Schema (XSD) defines the structure,
+        data types and constraints of an XML document.
+        It provides strong validation and supports
+        namespaces and reusable type definitions.
+    </p>
+
+</body>
+</html>

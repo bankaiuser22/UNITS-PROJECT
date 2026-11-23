@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 9 - CSS Box Model and Positioning</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #174f78;
+        }
+
+        h2 {
+            color: #174f78;
+            border-bottom: 2px solid #174f78;
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            color: #31765e;
+        }
+
+        pre {
+            background-color: #172033;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .example {
+            background-color: #e8f2f8;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #174f78;
+            border-radius: 8px;
+        }
+
+        .note {
+            background-color: #e8f2f8;
+            border-left: 5px solid #174f78;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .box-demo {
+            width: 250px;
+            padding: 20px;
+            border: 5px solid #174f78;
+            margin: 20px;
+            background-color: #dceef7;
+        }
+
+        .position-area {
+            position: relative;
+            height: 180px;
+            background-color: #e8f2f8;
+            border: 2px dashed #174f78;
+            margin: 20px 0;
+        }
+
+        .position-box {
+            width: 120px;
+            padding: 10px;
+            background-color: #31765e;
+            color: white;
+            text-align: center;
+        }
+
+        .relative-box {
+            position: relative;
+            left: 35px;
+            top: 15px;
+        }
+
+        .absolute-parent {
+            position: relative;
+            height: 140px;
+            background-color: #e8f2f8;
+            border: 2px dashed #174f78;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+        }
+
+        .fixed-demo {
+            position: relative;
+            height: 100px;
+            background-color: #e8f2f8;
+            border: 2px dashed #174f78;
+        }
+
+        .sticky-demo {
+            position: sticky;
+            top: 0;
+            background-color: #31765e;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>9. CSS Box Model and Positioning</h1>
+
+    <h2>1. Introduction</h2>
+
+    <p>
+        CSS Box Model and Positioning are important concepts
+        in web designing.
+    </p>
+
+    <p>
+        The Box Model explains how space is arranged around
+        HTML elements. CSS Positioning controls where an
+        element appears on a web page.
+    </p>
+
+    <h2>2. CSS Box Model</h2>
+
+    <p>
+        Every HTML element is treated as a rectangular box
+        by CSS. The CSS Box Model describes the structure
+        of this box.
+    </p>
+
+    <p>
+        The Box Model consists of four main parts:
+    </p>
+
+    <ul>
+        <li>Content</li>
+        <li>Padding</li>
+        <li>Border</li>
+        <li>Margin</li>
+    </ul>
+
+    <h2>3. Parts of the Box Model</h2>
+
+    <h3>A. Content</h3>
+
+    <p>
+        Content is the innermost part of the box. It contains
+        text, images and other information.
+    </p>
+
+    <h3>B. Padding</h3>
+
+    <p>
+        Padding is the space between the content and the border.
+        It creates space inside the border.
+    </p>
+
+    <h3>C. Border</h3>
+
+    <p>
+        Border is the line that surrounds the content and padding.
+        It can have different widths, styles and colors.
+    </p>
+
+    <h3>D. Margin</h3>
+
+    <p>
+        Margin is the space outside the border. It separates
+        one HTML element from other elements.
+    </p>
+
+    <h3>Box Model Example:</h3>
+
+    <pre>
+div {
+    width: 250px;
+    padding: 20px;
+    border: 5px solid blue;
+    margin: 20px;
+}
+    </pre>
+
+    <div class="example">
+        <div class="box-demo">
+            Content Area
+            <br>
+            This is an example of the CSS Box Model.
+        </div>
+    </div>
+
+    <h2>4. Box Model Structure</h2>
+
+    <p>
+        The four parts of the Box Model are arranged
+        from inside to outside in the following order:
+    </p>
+
+    <ol>
+        <li>Content - Text and images are placed here.</li>
+        <li>Padding - Space around the content.</li>
+        <li>Border - Surrounds the padding and content.</li>
+        <li>Margin - Space outside the border.</li>
+    </ol>
+
+    <pre>
+        +-----------------------------+
+        |            Margin           |
+        |   +---------------------+   |
+        |   |       Border        |   |
+        |   |  +---------------+  |   |
+        |   |  |    Padding    |  |   |
+        |   |  |  +---------+  |  |   |
+        |   |  |  | Content |  |  |   |
+        |   |  |  +---------+  |  |   |
+        |   |  +---------------+  |   |
+        |   +---------------------+   |
+        +-----------------------------+
+    </pre>
+
+    <h2>5. Content-box</h2>
+
+    <p>
+        By default, CSS uses box-sizing: content-box.
+        In this model, the declared width applies only
+        to the content.
+    </p>
+
+    <p>
+        Padding and border are added outside the declared
+        content width. Therefore, the total rendered width
+        becomes larger.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    box-sizing: content-box;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+}
+    </pre>
+
+    <h3>Width Calculation:</h3>
+
+    <p>
+        Given:
+    </p>
+
+    <ul>
+        <li>Content width = 300px</li>
+        <li>Left and right padding = 20px each</li>
+        <li>Left and right border = 5px each</li>
+    </ul>
+
+    <p>
+        Total width =
+        Content + Left padding + Right padding
+        + Left border + Right border
+    </p>
+
+    <pre>
+Total Width = 300 + 20 + 20 + 5 + 5
+
+Total Width = 350px
+    </pre>
+
+    <p>
+        Therefore, the rendered width is 350px.
+        Margin is added outside this measurement.
+    </p>
+
+    <h2>6. Border-box</h2>
+
+    <p>
+        The box-sizing: border-box property makes the declared
+        width include the content, padding and border.
+    </p>
+
+    <p>
+        This makes the total width easier to calculate
+        because padding and border are included in the
+        declared width.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+div {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+}
+    </pre>
+
+    <p>
+        In this example, the total width remains 300px.
+        The content area becomes smaller to make room
+        for padding and border.
+    </p>
+
+    <h3>Common Global Rule:</h3>
+
+    <pre>
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+    </pre>
+
+    <h2>7. Difference Between Content-box and Border-box</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0"
+           width="100%">
+        <tr>
+            <th>Content-box</th>
+            <th>Border-box</th>
+        </tr>
+
+        <tr>
+            <td>Width applies only to content.</td>
+            <td>Width includes content, padding and border.</td>
+        </tr>
+
+        <tr>
+            <td>Padding and border increase total width.</td>
+            <td>Padding and border are included in total width.</td>
+        </tr>
+
+        <tr>
+            <td>Default box-sizing value.</td>
+            <td>Useful for predictable layouts.</td>
+        </tr>
+    </table>
+
+    <h2>8. Margin Collapse</h2>
+
+    <p>
+        In normal block flow, vertical margins of adjacent
+        block elements can collapse into one margin instead
+        of adding together.
+    </p>
+
+    <p>
+        This means the space between two block elements may
+        be equal to the larger of their adjoining vertical
+        margins rather than their sum.
+    </p>
+
+    <h2>9. CSS Positioning</h2>
+
+    <p>
+        CSS Positioning is used to control the location
+        of HTML elements on a web page.
+    </p>
+
+    <p>
+        The position property specifies the positioning
+        method used for an element.
+    </p>
+
+    <h2>10. Types of CSS Positioning</h2>
+
+    <h3>A. Static Positioning</h3>
+
+    <p>
+        Static is the default position value of HTML elements.
+        Elements appear in their normal document flow.
+    </p>
+
+    <p>
+        Top, right, bottom and left offsets do not apply
+        to statically positioned elements.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+div {
+    position: static;
+}
+    </pre>
+
+    <div class="example">
+        <div class="position-box">
+            Static Box
+        </div>
+    </div>
+
+    <h3>B. Relative Positioning</h3>
+
+    <p>
+        Relative positioning moves an element from its
+        normal position.
+    </p>
+
+    <p>
+        The element remains in the normal document flow
+        and its original space is still reserved.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+div {
+    position: relative;
+    top: 15px;
+    left: 35px;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <div class="position-area">
+        <div class="position-box relative-box">
+            Relative Box
+        </div>
+    </div>
+
+    <h3>C. Absolute Positioning</h3>
+
+    <p>
+        Absolute positioning removes an element from the
+        normal document flow.
+    </p>
+
+    <p>
+        It uses the nearest positioned ancestor as its
+        containing block. If there is no positioned ancestor,
+        it is positioned relative to the initial containing
+        block.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <div class="absolute-parent">
+        <div class="position-box absolute-box">
+            Absolute Box
+        </div>
+    </div>
+
+    <p>
+        Here, the parent has position: relative.
+        Therefore, the absolute child is positioned
+        using the parent box as its containing block.
+    </p>
+
+    <h3>D. Fixed Positioning</h3>
+
+    <p>
+        Fixed positioning removes an element from the normal
+        document flow and positions it relative to the viewport.
+    </p>
+
+    <p>
+        It generally remains in the same place on the screen
+        when the page is scrolled.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+div {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+    </pre>
+
+    <div class="fixed-demo">
+        Fixed positioning example:
+        <br>
+        A fixed element can stay at the same viewport
+        position while scrolling.
+    </div>
+
+    <h3>E. Sticky Positioning</h3>
+
+    <p>
+        Sticky positioning behaves like relative positioning
+        until a specified scrolling threshold is reached.
+        After that, the element sticks within its scrolling
+        container.
+    </p>
+
+    <h3>Syntax:</h3>
+
+    <pre>
+div {
+    position: sticky;
+    top: 0;
+}
+    </pre>
+
+    <h3>Example:</h3>
+
+    <div class="sticky-demo">
+        Sticky Position Example
+    </div>
+
+    <p>
+        When the sticky element reaches its specified
+        position during scrolling, it stays there within
+        its scrolling container.
+    </p>
+
+    <h2>11. Difference Between Position Values</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0"
+           width="100%">
+        <tr>
+            <th>Position</th>
+            <th>Working</th>
+        </tr>
+
+        <tr>
+            <td>Static</td>
+            <td>Default position in normal document flow.</td>
+        </tr>
+
+        <tr>
+            <td>Relative</td>
+            <td>Moves from its normal position and keeps its original space.</td>
+        </tr>
+
+        <tr>
+            <td>Absolute</td>
+            <td>Leaves normal flow and uses the nearest positioned ancestor.</td>
+        </tr>
+
+        <tr>
+            <td>Fixed</td>
+            <td>Leaves normal flow and is positioned relative to the viewport.</td>
+        </tr>
+
+        <tr>
+            <td>Sticky</td>
+            <td>Acts relative until a scroll threshold, then sticks.</td>
+        </tr>
+    </table>
+
+    <h2>12. Importance of CSS Box Model and Positioning</h2>
+
+    <ul>
+        <li>Controls the size of HTML elements.</li>
+        <li>Creates proper spacing between elements.</li>
+        <li>Helps arrange content on web pages.</li>
+        <li>Controls the position of elements.</li>
+        <li>Makes website layouts easier to manage.</li>
+        <li>Helps create organized and attractive designs.</li>
+    </ul>
+
+    <div class="note">
+        <b>Exam Point:</b>
+        The CSS Box Model consists of content, padding,
+        border and margin. CSS positioning has five main
+        values: static, relative, absolute, fixed and sticky.
+        These properties control the size, spacing and
+        placement of HTML elements.
+    </div>
+
+    <h2>13. Conclusion</h2>
+
+    <p>
+        CSS Box Model explains how an element's content,
+        padding, border and margin are arranged.
+        CSS Positioning helps control the location of
+        elements on a web page. Both concepts are important
+        for creating proper web layouts.
+    </p>
+
+</div>
+
+</body>
+</html>

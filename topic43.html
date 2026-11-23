@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic 4 - DHTML</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #174ea6;
+        }
+
+        h3 {
+            color: #087e8b;
+        }
+
+        p, li {
+            font-size: 17px;
+        }
+
+        pre {
+            background: #172033;
+            color: white;
+            padding: 18px;
+            border-radius: 7px;
+            overflow-x: auto;
+            font-size: 15px;
+        }
+
+        .note {
+            background: #e8f2ff;
+            padding: 15px;
+            border-left: 5px solid #174ea6;
+            margin: 20px 0;
+        }
+
+        .demo {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        button {
+            background: #174ea6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+
+        .dhtml-card {
+            padding: 20px;
+            background: #f1f5f5;
+            color: #222;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .dhtml-card.is-active {
+            color: white;
+            background: #087e78;
+        }
+
+        .dhtml-card.is-active h3 {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>UNIT 4: JAVASCRIPT AND JQUERY</h1>
+
+<h2>TOPIC 4: DHTML – HTML, CSS AND JAVASCRIPT TOGETHER</h2>
+
+<hr>
+
+<h2>1. Introduction to DHTML</h2>
+
+<p>
+DHTML stands for Dynamic HTML.
+It is a descriptive term for using HTML, CSS and
+JavaScript together to make web pages dynamic
+and interactive.
+</p>
+
+<p>
+DHTML allows a web page to respond to user actions
+and changes without reloading the entire page.
+It helps developers change the content, appearance
+and behaviour of a web page while it is open.
+</p>
+
+<p>
+DHTML is not a separate programming language,
+browser feature or software package. It is a
+combination of three web technologies:
+HTML, CSS and JavaScript.
+</p>
+
+<h3>Example:</h3>
+
+<p>
+Suppose there is a button on a web page.
+When the user clicks that button, the background
+colour of a card changes.
+</p>
+
+<p>
+This interaction uses:
+</p>
+
+<ul>
+    <li>HTML to create the card and button.</li>
+    <li>CSS to define the normal and highlighted appearance.</li>
+    <li>JavaScript to detect the click and change the card's state.</li>
+</ul>
+
+<div class="note">
+<b>Remember:</b><br>
+DHTML = HTML + CSS + JavaScript<br>
+It makes web pages dynamic and interactive.
+</div>
+
+<hr>
+
+<h2>2. Main Components of DHTML</h2>
+
+<p>
+DHTML uses three main technologies.
+Each technology has a different responsibility.
+They work together to create an interactive web page.
+</p>
+
+<h3>1. HTML – Structure and Meaning</h3>
+
+<p>
+HTML stands for HyperText Markup Language.
+It is used to create the basic structure and
+content of a web page.
+</p>
+
+<p>
+HTML creates elements such as:
+</p>
+
+<ul>
+    <li>Headings</li>
+    <li>Paragraphs</li>
+    <li>Buttons</li>
+    <li>Forms</li>
+    <li>Images</li>
+    <li>Cards and other page elements</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>
+<div>
+    <h2>Welcome</h2>
+
+    <p>This is my web page.</p>
+
+    <button>Click Me</button>
+</div>
+</pre>
+
+<p>
+In this example, HTML creates a heading,
+paragraph and button.
+</p>
+
+<h3>2. CSS – Presentation and Design</h3>
+
+<p>
+CSS stands for Cascading Style Sheets.
+It is used to control the appearance and design
+of HTML elements.
+</p>
+
+<p>
+CSS controls:
+</p>
+
+<ul>
+    <li>Colours</li>
+    <li>Backgrounds</li>
+    <li>Fonts and text sizes</li>
+    <li>Spacing</li>
+    <li>Layout</li>
+    <li>Different visual states of elements</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>
+<style>
+    p {
+        color: blue;
+        font-size: 20px;
+    }
+
+    button {
+        background: green;
+        color: white;
+    }
+</style>
+</pre>
+
+<p>
+In this example, CSS makes the paragraph blue
+and gives the button a green background.
+</p>
+
+<h3>3. JavaScript – Behaviour and Interaction</h3>
+
+<p>
+JavaScript is used to add behaviour and interaction
+to a web page.
+It allows the page to respond to user actions.
+</p>
+
+<p>
+JavaScript can:
+</p>
+
+<ul>
+    <li>Respond to button clicks.</li>
+    <li>Change text on a web page.</li>
+    <li>Change CSS classes.</li>
+    <li>Show or hide elements.</li>
+    <li>Update the DOM.</li>
+    <li>Perform calculations and validation.</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>
+document.querySelector("button")
+.addEventListener("click", function() {
+
+    alert("Button clicked!");
+
+});
+</pre>
+
+<p>
+In this example, JavaScript detects when the
+button is clicked and displays an alert message.
+</p>
+
+<div class="note">
+<b>Easy Difference:</b><br>
+HTML = What is on the page?<br>
+CSS = How does it look?<br>
+JavaScript = What happens when we interact with it?
+</div>
+
+<hr>
+
+<h2>3. How DHTML Works</h2>
+
+<p>
+DHTML works by combining HTML, CSS and JavaScript.
+The browser processes these technologies and
+updates the web page when an interaction occurs.
+</p>
+
+<h3>Steps of DHTML Working:</h3>
+
+<ol>
+    <li>
+        <b>HTML creates the structure:</b>
+        The browser reads the HTML code and creates
+        a DOM tree of elements.
+    </li>
+
+    <li>
+        <b>CSS applies the design:</b>
+        The browser applies CSS rules to decide
+        how the elements should look.
+    </li>
+
+    <li>
+        <b>JavaScript finds elements:</b>
+        JavaScript selects the required elements
+        and registers event listeners.
+    </li>
+
+    <li>
+        <b>User performs an action:</b>
+        For example, the user clicks a button.
+    </li>
+
+    <li>
+        <b>DOM gets updated:</b>
+        JavaScript changes the DOM, such as adding
+        or removing a CSS class.
+    </li>
+
+    <li>
+        <b>Browser updates the appearance:</b>
+        The browser applies the changed CSS styles
+        and renders the updated result.
+    </li>
+</ol>
+
+<h3>Simple Flow:</h3>
+
+<pre>
+        HTML
+          |
+          v
+    Creates Structure
+          |
+          v
+        CSS
+          |
+          v
+    Applies Design
+          |
+          v
+     JavaScript
+          |
+          v
+    Handles User Action
+          |
+          v
+      Updates DOM
+          |
+          v
+   Browser Renders Changes
+</pre>
+
+<div class="note">
+<b>Important:</b><br>
+A targeted DHTML update can change only the
+required part of the page without reloading
+the entire document.
+</div>
+
+<hr>
+
+<h2>4. Role of DOM in DHTML</h2>
+
+<p>
+DOM stands for Document Object Model.
+It represents an HTML document as a tree of objects.
+JavaScript uses the DOM to access and update
+the elements of a web page.
+</p>
+
+<p>
+In DHTML, JavaScript uses the DOM to change
+content, attributes and CSS classes.
+</p>
+
+<h3>Example:</h3>
+
+<pre>
+<p id="message">Hello Student</p>
+
+<button id="changeButton">Change Text</button>
+
+<script>
+
+    const message =
+    document.querySelector("#message");
+
+    const button =
+    document.querySelector("#changeButton");
+
+    button.addEventListener("click", function() {
+
+        message.textContent = "Welcome Student";
+
+    });
+
+</script>
+</pre>
+
+<h3>Explanation:</h3>
+
+<ul>
+    <li>HTML creates a paragraph and a button.</li>
+    <li>JavaScript selects both elements using querySelector().</li>
+    <li>addEventListener() waits for a button click.</li>
+    <li>textContent changes the paragraph text.</li>
+</ul>
+
+<p>
+Therefore, the DOM helps JavaScript update
+the web page dynamically.
+</p>
+
+<hr>
+
+<h2>5. CSS Classes and JavaScript in DHTML</h2>
+
+<p>
+In DHTML, JavaScript can change the appearance
+of an HTML element by adding or removing CSS classes.
+</p>
+
+<p>
+The classList property provides methods to
+manage CSS classes.
+</p>
+
+<h3>Important Method: classList.toggle()</h3>
+
+<p>
+The toggle() method adds a class if it is not
+already present. If the class is already present,
+it removes that class.
+</p>
+
+<h3>Syntax:</h3>
+
+<pre>
+element.classList.toggle("class-name");
+</pre>
+
+<h3>Example:</h3>
+
+<pre>
+<div id="box" class="normal">
+    Hello Student
+</div>
+
+<button id="btn">Change Style</button>
+
+<script>
+
+    const box = document.querySelector("#box");
+
+    const btn = document.querySelector("#btn");
+
+    btn.addEventListener("click", function() {
+
+        box.classList.toggle("active");
+
+    });
+
+</script>
+</pre>
+
+<p>
+Here, JavaScript toggles the active class
+whenever the button is clicked.
+CSS can define a different appearance for
+the active class.
+</p>
+
+<hr>
+
+<h2>6. One Example Using Three Technologies</h2>
+
+<p>
+The following example demonstrates how HTML,
+CSS and JavaScript work together in DHTML.
+</p>
+
+<h3>Part 1: HTML Creates the Elements</h3>
+
+<pre>
+<div class="dhtml-card" id="dhtml-card">
+
+    <h3>Interactive Course Card</h3>
+
+    <p>Press the button to highlight this card.</p>
+
+</div>
+
+<button type="button" id="dhtml-toggle">
+    Toggle Highlight
+</button>
+</pre>
+
+<p>
+HTML creates a card containing a heading and
+a paragraph. It also creates a button.
+</p>
+
+<h3>Part 2: CSS Defines the Appearance</h3>
+
+<pre>
+.dhtml-card {
+    padding: 16px;
+    background: #f1f5f5;
+}
+
+.dhtml-card.is-active {
+    color: white;
+    background: #087e78;
+}
+</pre>
+
+<p>
+The first CSS rule defines the normal appearance.
+The second rule defines the highlighted appearance
+when the card has the is-active class.
+</p>
+
+<h3>Part 3: JavaScript Handles the Click</h3>
+
+<pre>
+const card =
+document.querySelector("#dhtml-card");
+
+const toggleButton =
+document.querySelector("#dhtml-toggle");
+
+toggleButton.addEventListener("click", () => {
+
+    card.classList.toggle("is-active");
+
+});
+</pre>
+
+<p>
+JavaScript selects the card and button.
+It listens for a click on the button.
+When the click happens, it toggles the
+is-active class on the card.
+</p>
+
+<h3>Complete Working Example:</h3>
+
+<div class="demo">
+
+    <div class="dhtml-card" id="dhtml-card">
+
+        <h3>Interactive Course Card</h3>
+
+        <p>
+            Its appearance changes when JavaScript
+            toggles a class.
+        </p>
+
+    </div>
+
+    <button type="button" id="dhtml-toggle">
+        Toggle Highlight
+    </button>
+
+    <p id="state">Current state: normal</p>
+
+</div>
+
+<p>
+Click the button to see how all three technologies
+work together.
+</p>
+
+<h3>Complete Explanation:</h3>
+
+<ol>
+    <li>HTML creates the interactive course card and button.</li>
+    <li>CSS gives the card its normal appearance.</li>
+    <li>CSS also defines the highlighted appearance.</li>
+    <li>JavaScript detects the button click.</li>
+    <li>classList.toggle() changes the card's class.</li>
+    <li>The browser applies the matching CSS style.</li>
+</ol>
+
+<hr>
+
+<h2>7. Advantages of DHTML</h2>
+
+<ul>
+    <li>It makes web pages interactive and dynamic.</li>
+    <li>It allows content to change without reloading the entire page.</li>
+    <li>It improves the user experience.</li>
+    <li>It allows developers to change styles dynamically.</li>
+    <li>It responds to user actions such as clicks.</li>
+    <li>It helps create interactive web applications.</li>
+</ul>
+
+<hr>
+
+<h2>8. Good Practices in DHTML</h2>
+
+<p>
+Good practices help developers write clean,
+understandable and maintainable code.
+</p>
+
+<ul>
+    <li>Keep the content and structure in HTML.</li>
+    <li>Keep visual design rules in CSS.</li>
+    <li>Keep interaction logic in JavaScript.</li>
+    <li>Use classList to manage CSS classes.</li>
+    <li>Use addEventListener() to handle events.</li>
+    <li>Use semantic HTML elements such as real buttons.</li>
+    <li>Keep the code easy to read and maintain.</li>
+</ul>
+
+<p>
+A real button is better than using a normal text
+element as a button because native buttons support
+keyboard activation.
+</p>
+
+<hr>
+
+<h2>9. Difference Between Static and Dynamic Web Pages</h2>
+
+<h3>Static Web Page</h3>
+
+<p>
+A static web page displays fixed content.
+Its content does not automatically change
+in response to user interactions.
+</p>
+
+<h3>Dynamic Web Page</h3>
+
+<p>
+A dynamic web page can respond to user actions
+and update its content or appearance.
+DHTML is one way to create such interactions.
+</p>
+
+<h3>Difference:</h3>
+
+<pre>
+Static Web Page:
+- Displays fixed content.
+- Limited interaction.
+- Content generally stays the same.
+
+Dynamic Web Page:
+- Responds to user actions.
+- Can update content and appearance.
+- Provides interactive features.
+</pre>
+
+<hr>
+
+<h2>10. Applications of DHTML</h2>
+
+<p>
+DHTML concepts can be used to create different
+interactive features on websites.
+</p>
+
+<ul>
+    <li>Interactive buttons.</li>
+    <li>Highlighted cards.</li>
+    <li>Show and hide content.</li>
+    <li>Dynamic menus.</li>
+    <li>Interactive forms.</li>
+    <li>Tabs and expandable sections.</li>
+    <li>Changes in page content and appearance.</li>
+</ul>
+
+<hr>
+
+<h2>11. Important Exam Points</h2>
+
+<ul>
+    <li>DHTML stands for Dynamic HTML.</li>
+    <li>DHTML combines HTML, CSS and JavaScript.</li>
+    <li>It is not a separate programming language.</li>
+    <li>HTML provides structure and meaning.</li>
+    <li>CSS controls presentation and appearance.</li>
+    <li>JavaScript provides behaviour and interaction.</li>
+    <li>DOM stands for Document Object Model.</li>
+    <li>The DOM represents an HTML document as a tree of objects.</li>
+    <li>JavaScript uses the DOM to update page content and state.</li>
+    <li>addEventListener() connects an event to a function.</li>
+    <li>classList.toggle() adds or removes a CSS class.</li>
+    <li>DHTML can update part of a page without reloading the entire document.</li>
+</ul>
+
+<hr>
+
+<h2>12. Conclusion</h2>
+
+<p>
+DHTML is a combination of HTML, CSS and JavaScript
+used to create dynamic and interactive web pages.
+HTML creates the structure, CSS controls the
+appearance, and JavaScript handles user interactions.
+</p>
+
+<p>
+JavaScript uses the DOM to update page content
+and CSS classes. The browser then applies the
+changed styles and displays the updated page.
+</p>
+
+<p>
+Thus, DHTML helps developers create interactive
+web pages that respond to user actions without
+reloading the entire page.
+</p>
+
+</div>
+
+<script>
+{
+const card = document.querySelector("#dhtml-card");
+
+const toggleButton = document.querySelector("#dhtml-toggle");
+
+const state = document.querySelector("#state");
+
+toggleButton.addEventListener("click", () => {
+
+    card.classList.toggle("is-active");
+
+    if (card.classList.contains("is-active")) {
+
+        state.textContent = "Current state: highlighted";
+
+    } else {
+
+        state.textContent = "Current state: normal";
+
+    }
+
+});
+}
+</script>
+
+</body>
+</html>

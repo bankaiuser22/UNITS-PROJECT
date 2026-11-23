@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Links and Hyperlinks</title>
+</head>
+<body>
+
+    <h1>HTML Links and Hyperlinks</h1>
+
+    <hr>
+
+    <h2>1. Introduction to HTML Links</h2>
+
+    <p>
+        HTML links are used to connect one webpage
+        to another webpage or external website.
+        They are also called hyperlinks.
+    </p>
+
+    <p>
+        HTML links are defined using the &lt;a&gt; tag.
+    </p>
+
+    <h3>Basic Syntax:</h3>
+
+    <pre>
+&lt;a href="URL"&gt;Link Text&lt;/a&gt;
+    </pre>
+
+    <h3>Example:</h3>
+
+    <pre>
+&lt;a href="https://www.itmbu.ac.in"&gt;
+Visit ITM University
+&lt;/a&gt;
+    </pre>
+
+    <p>
+        <a href="https://www.itmbu.ac.in">
+            Visit ITM University
+        </a>
+    </p>
+
+    <hr>
+
+    <h2>2. The href Attribute</h2>
+
+    <p>
+        The href attribute specifies the destination
+        address of a hyperlink.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+&lt;a href="https://www.google.com"&gt;
+Google
+&lt;/a&gt;
+    </pre>
+
+    <p>
+        <a href="https://www.google.com">Google</a>
+    </p>
+
+    <hr>
+
+    <h2>3. The target Attribute</h2>
+
+    <p>
+        The target attribute specifies where to open
+        the linked document.
+    </p>
+
+    <h3>Types of target Attribute:</h3>
+
+    <ul>
+        <li>_self : Opens the link in the same tab.</li>
+        <li>_blank : Opens the link in a new tab.</li>
+        <li>_parent : Opens the link in the parent frame.</li>
+        <li>_top : Opens the link in the full body of the window.</li>
+    </ul>
+
+    <h3>Example:</h3>
+
+    <pre>
+&lt;a href="https://www.google.com"
+   target="_blank"&gt;
+Visit Google
+&lt;/a&gt;
+    </pre>
+
+    <p>
+        <a href="https://www.google.com" target="_blank">
+            Visit Google in New Tab
+        </a>
+    </p>
+
+    <hr>
+
+    <h2>4. Absolute URLs</h2>
+
+    <p>
+        An absolute URL uses a complete web address
+        to point to an external website or resource.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+&lt;a href="https://www.google.com"&gt;
+Google
+&lt;/a&gt;
+    </pre>
+
+    <p>
+        <a href="https://www.google.com">Google</a>
+    </p>
+
+    <hr>
+
+    <h2>5. Relative URLs</h2>
+
+    <p>
+        A relative URL points to a page or folder
+        within the current website.
+        It does not contain the complete website address.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+&lt;a href="html_images.asp"&gt;
+HTML Images
+&lt;/a&gt;
+    </pre>
+
+    <p>
+        This link points to a page in the current website.
+    </p>
+
+    <hr>
+
+    <h2>6. Default Link States</h2>
+
+    <p>
+        HTML links have different default styles:
+    </p>
+
+    <ul>
+        <li>Unvisited Link: Blue and underlined.</li>
+        <li>Visited Link: Purple and underlined.</li>
+        <li>Active Link: Red and underlined.</li>
+    </ul>
+
+    <hr>
+
+    <h2>7. Image as a Link</h2>
+
+    <p>
+        To use an image as a link, place the
+        &lt;img&gt; tag inside the &lt;a&gt; tag.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+&lt;a href="https://www.google.com"&gt;
+    &lt;img src="image.jpg"
+         alt="Sample Image"
+         width="100"
+         height="100"&gt;
+&lt;/a&gt;
+    </pre>
+
+    <p>
+        The image becomes clickable and opens
+        the destination when clicked.
+    </p>
+
+    <hr>
+
+    <h2>8. Link to an Email Address</h2>
+
+    <p>
+        The mailto: value is used inside the href
+        attribute to create an email link.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+&lt;a href="mailto:someone@example.com"&gt;
+Send Email
+&lt;/a&gt;
+    </pre>
+
+    <p>
+        <a href="mailto:someone@example.com">
+            Send Email
+        </a>
+    </p>
+
+    <hr>
+
+    <h2>9. Link Titles</h2>
+
+    <p>
+        The title attribute provides extra information
+        about a link. It is usually shown as a tooltip
+        when the mouse moves over the link.
+    </p>
+
+    <h3>Example:</h3>
+
+    <pre>
+&lt;a href="https://www.itmbu.ac.in"
+   title="Visit ITM University"&gt;
+Visit Website
+&lt;/a&gt;
+    </pre>
+
+    <p>
+        <a href="https://www.itmbu.ac.in"
+           title="Visit ITM University">
+            Visit Website
+        </a>
+    </p>
+
+    <hr>
+
+    <h2>Conclusion</h2>
+
+    <p>
+        HTML links help users navigate between
+        webpages and websites. The &lt;a&gt; tag
+        and href attribute are used to create hyperlinks.
+    </p>
+
+</body>
+</html>

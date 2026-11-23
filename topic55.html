@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP Conditions, Loops and Functions</title>
+</head>
+<body>
+
+    <h1>05. PHP Conditions, Loops and Functions</h1>
+
+    <h2>1. Introduction</h2>
+    <p>
+        Conditions, loops and functions are important concepts
+        in PHP programming. Conditions are used to make decisions,
+        loops are used to repeat statements, and functions are used
+        to organize reusable blocks of code.
+    </p>
+
+    <h2>2. PHP Conditional Statements</h2>
+    <p>
+        Conditional statements are used to execute different
+        blocks of code depending on whether a condition is true
+        or false.
+    </p>
+
+    <h2>3. If Statement</h2>
+    <p>
+        The if statement executes a block of code only when
+        the given condition is true.
+    </p>
+
+    <pre>
+&lt;?php
+$age = 20;
+
+if ($age >= 18) {
+    echo "You are eligible to vote.";
+}
+?&gt;
+    </pre>
+
+    <h2>4. If-Else Statement</h2>
+    <p>
+        The if-else statement executes one block when
+        the condition is true and another block when
+        the condition is false.
+    </p>
+
+    <pre>
+&lt;?php
+$marks = 35;
+
+if ($marks >= 40) {
+    echo "Pass";
+} else {
+    echo "Fail";
+}
+?&gt;
+    </pre>
+
+    <h2>5. If-Elseif-Else Statement</h2>
+    <p>
+        This statement is used when we need to check
+        multiple conditions one by one.
+    </p>
+
+    <pre>
+&lt;?php
+$marks = 85;
+
+if ($marks >= 90) {
+    echo "Grade A";
+} elseif ($marks >= 75) {
+    echo "Grade B";
+} elseif ($marks >= 40) {
+    echo "Grade C";
+} else {
+    echo "Fail";
+}
+?&gt;
+    </pre>
+
+    <h2>6. PHP Loops</h2>
+    <p>
+        A loop is used to execute a block of code repeatedly.
+        Loops help reduce repeated statements and make
+        programs easier to manage.
+    </p>
+
+    <h2>7. Foreach Loop</h2>
+    <p>
+        The foreach loop is used to access each element
+        of an array one by one. It is useful for working
+        with indexed and associative arrays.
+    </p>
+
+    <pre>
+&lt;?php
+$subjects = ["PHP", "HTML", "CSS"];
+
+foreach ($subjects as $subject) {
+    echo $subject . "&lt;br&gt;";
+}
+?&gt;
+    </pre>
+
+    <h2>8. Foreach Loop with Index</h2>
+    <p>
+        The foreach loop can also access the index and
+        value of each array element.
+    </p>
+
+    <pre>
+&lt;?php
+$topics = ["Variables", "Arrays", "Functions"];
+
+foreach ($topics as $index => $topic) {
+    echo ($index + 1) . ". " . $topic . "&lt;br&gt;";
+}
+?&gt;
+    </pre>
+
+    <h2>9. PHP Functions</h2>
+    <p>
+        A function is a reusable block of code that performs
+        a particular task. Functions help avoid writing
+        the same code again and again.
+    </p>
+
+    <pre>
+&lt;?php
+function greet() {
+    echo "Welcome to PHP Programming!";
+}
+
+greet();
+?&gt;
+    </pre>
+
+    <h2>10. Functions with Parameters</h2>
+    <p>
+        Parameters are values passed to a function.
+        They allow a function to work with different inputs.
+    </p>
+
+    <pre>
+&lt;?php
+function add($a, $b) {
+    $sum = $a + $b;
+    echo "Sum = " . $sum;
+}
+
+add(10, 20);
+?&gt;
+    </pre>
+
+    <h2>11. Functions with Return Value</h2>
+    <p>
+        The return statement sends a result back from
+        a function to the place where it was called.
+    </p>
+
+    <pre>
+&lt;?php
+function square($number) {
+    return $number * $number;
+}
+
+$result = square(5);
+
+echo "Square = " . $result;
+?&gt;
+    </pre>
+
+    <h2>12. Function with Parameter and Return Type</h2>
+    <p>
+        PHP allows us to specify parameter types and
+        return types. This makes the expected input
+        and output of a function clear.
+    </p>
+
+    <pre>
+&lt;?php
+function resultLabel(int $marks): string {
+    if ($marks >= 40) {
+        return "Pass";
+    }
+
+    return "Needs more practice";
+}
+
+echo resultLabel(75);
+?&gt;
+    </pre>
+
+    <h2>13. Advantages of Functions</h2>
+    <ul>
+        <li>Functions make code reusable.</li>
+        <li>They reduce code repetition.</li>
+        <li>They make programs easier to understand.</li>
+        <li>They divide large programs into smaller parts.</li>
+        <li>They make program maintenance easier.</li>
+    </ul>
+
+    <h2>14. Conclusion</h2>
+    <p>
+        Conditions help a program make decisions.
+        Loops repeat statements, and functions organize
+        reusable code. These concepts are essential
+        for developing PHP applications.
+    </p>
+
+</body>
+</html>

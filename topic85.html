@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regular Expressions in PHP</title>
+</head>
+<body>
+
+    <h1>08. Regular Expressions in PHP</h1>
+
+    <h2>1. Introduction to Regular Expressions</h2>
+    <p>
+        A Regular Expression (Regex) is a pattern used to
+        search, match, and replace text. It helps programmers
+        find specific patterns inside strings.
+    </p>
+
+    <p>
+        PHP uses PCRE (Perl Compatible Regular Expressions)
+        through its preg_* functions.
+    </p>
+
+    <h2>2. Uses of Regular Expressions</h2>
+    <ul>
+        <li>Finding a particular pattern in text.</li>
+        <li>Checking whether text matches a pattern.</li>
+        <li>Extracting matching text.</li>
+        <li>Replacing matched text.</li>
+        <li>Checking common input formats.</li>
+    </ul>
+
+    <h2>3. preg_match() Function</h2>
+    <p>
+        The preg_match() function checks whether a string
+        matches a regular expression pattern.
+    </p>
+
+    <p>It returns:</p>
+    <ul>
+        <li>1 – If a match is found.</li>
+        <li>0 – If no match is found.</li>
+        <li>false – If an error occurs.</li>
+    </ul>
+
+    <pre>
+&lt;?php
+$text = "Hello PHP";
+
+$pattern = "/PHP/";
+
+$result = preg_match($pattern, $text);
+
+if ($result === 1) {
+    echo "Pattern found";
+} elseif ($result === 0) {
+    echo "Pattern not found";
+} else {
+    echo "An error occurred";
+}
+?&gt;
+    </pre>
+
+    <h2>4. preg_replace() Function</h2>
+    <p>
+        The preg_replace() function searches for text
+        matching a regular expression and replaces it
+        with another value.
+    </p>
+
+    <pre>
+&lt;?php
+$text = "Hello 123 World";
+
+$result = preg_replace("/[0-9]+/", "", $text);
+
+if ($result !== null) {
+    echo $result;
+}
+?&gt;
+    </pre>
+
+    <h2>5. Regular Expression Delimiters</h2>
+    <p>
+        Regular expression patterns are written between
+        delimiters. PHP commonly uses forward slashes (/).
+    </p>
+
+    <pre>
+&lt;?php
+$text = "Hello PHP";
+
+$pattern = "/PHP/";
+
+echo preg_match($pattern, $text);
+?&gt;
+    </pre>
+
+    <h2>6. Case-Insensitive Matching</h2>
+    <p>
+        The i modifier makes a pattern case-insensitive.
+        It matches uppercase and lowercase letters.
+    </p>
+
+    <pre>
+&lt;?php
+$text = "hello php";
+
+$pattern = "/PHP/i";
+
+if (preg_match($pattern, $text) === 1) {
+    echo "Match found";
+} else {
+    echo "No match";
+}
+?&gt;
+    </pre>
+
+    <h2>7. Important Regex Symbols</h2>
+    <ul>
+        <li>^ – Matches the beginning of a string.</li>
+        <li>$ – Matches the end of a string.</li>
+        <li>+ – Matches one or more occurrences.</li>
+        <li>* – Matches zero or more occurrences.</li>
+        <li>. – Matches a character.</li>
+        <li>\. – Matches a literal dot.</li>
+        <li>\D – Matches any non-digit character.</li>
+        <li>[A-Z] – Matches uppercase letters from A to Z.</li>
+        <li>[0-9] – Matches digits from 0 to 9.</li>
+    </ul>
+
+    <h2>8. Email Pattern Example</h2>
+    <p>
+        A regular expression can check whether text has
+        a common email-like format.
+    </p>
+
+    <pre>
+&lt;?php
+$email = "learner@example.edu";
+
+$pattern = '/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i';
+
+$result = preg_match($pattern, $email);
+
+if ($result === 1) {
+    echo "Email-like format found";
+} elseif ($result === 0) {
+    echo "Invalid email-like format";
+} else {
+    echo "Pattern error";
+}
+?&gt;
+    </pre>
+
+    <h2>9. Removing Non-Digit Characters</h2>
+    <p>
+        The preg_replace() function can remove characters
+        that are not digits using the \D pattern.
+    </p>
+
+    <pre>
+&lt;?php
+$phone = "(555) 123-4567";
+
+$digits = preg_replace('/\D+/', '', $phone);
+
+if ($digits !== null) {
+    echo "Digits only: " . $digits;
+}
+?&gt;
+    </pre>
+
+    <h2>10. Understanding an Email Regex Pattern</h2>
+    <p>
+        Consider the following pattern:
+    </p>
+
+    <pre>
+/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+    </pre>
+
+    <ul>
+        <li>/ / – Delimiters of the pattern.</li>
+        <li>^ – Beginning of the string.</li>
+        <li>[A-Z0-9._%+-]+ – One or more allowed characters.</li>
+        <li>@ – Matches the @ symbol.</li>
+        <li>[A-Z0-9.-]+ – Matches domain characters.</li>
+        <li>\. – Matches a literal dot.</li>
+        <li>[A-Z]{2,} – Matches at least two letters.</li>
+        <li>$ – End of the string.</li>
+        <li>i – Makes matching case-insensitive.</li>
+    </ul>
+
+    <h2>11. Difference Between preg_match() and preg_replace()</h2>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>preg_match()</th>
+            <th>preg_replace()</th>
+        </tr>
+        <tr>
+            <td>Checks for a pattern.</td>
+            <td>Replaces matching text.</td>
+        </tr>
+        <tr>
+            <td>Returns 1, 0 or false.</td>
+            <td>Returns modified text or null.</td>
+        </tr>
+        <tr>
+            <td>Used for matching.</td>
+            <td>Used for replacing.</td>
+        </tr>
+    </table>
+
+    <h2>12. Important Note About Email Validation</h2>
+    <p>
+        A regular expression can check a common email format,
+        but it cannot prove that an email address exists
+        or is deliverable.
+    </p>
+
+    <p>
+        PHP also provides filter_var() with
+        FILTER_VALIDATE_EMAIL for basic email validation.
+    </p>
+
+    <pre>
+&lt;?php
+$email = "learner@example.edu";
+
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Valid email format";
+} else {
+    echo "Invalid email format";
+}
+?&gt;
+    </pre>
+
+    <h2>13. Important Points</h2>
+    <ul>
+        <li>Regex describes patterns in text.</li>
+        <li>PHP uses PCRE for regular expressions.</li>
+        <li>preg_match() is used to find a pattern.</li>
+        <li>preg_replace() is used to replace a pattern.</li>
+        <li>Regex can help check common input formats.</li>
+        <li>Input validation and output encoding are still important.</li>
+    </ul>
+
+    <h2>14. Conclusion</h2>
+    <p>
+        Regular expressions are useful for searching,
+        matching and replacing text. PHP provides
+        preg_match() and preg_replace() functions to
+        perform these operations. They make text processing
+        easier when working with patterns.
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Well-Formed XML vs Valid XML</title>
+</head>
+<body>
+
+    <h1>Well-Formed XML vs Valid XML</h1>
+
+    <h2>Introduction</h2>
+    <p>
+        XML documents must follow certain rules to be
+        processed correctly. Two important concepts are
+        Well-Formed XML and Valid XML.
+    </p>
+
+    <h2>1. What is Well-Formed XML?</h2>
+    <p>
+        A well-formed XML document follows all the basic
+        XML syntax rules. It must have properly opened
+        and closed tags, correct nesting and quoted
+        attribute values.
+    </p>
+
+    <h3>Rules of Well-Formed XML</h3>
+    <ul>
+        <li>There must be exactly one root element.</li>
+        <li>Every opened element must be closed.</li>
+        <li>Elements must be properly nested.</li>
+        <li>Attribute values must be written in quotes.</li>
+        <li>Element names are case-sensitive.</li>
+        <li>Reserved characters must be escaped.</li>
+    </ul>
+
+    <h3>Example of Well-Formed XML</h3>
+    <pre>
+<?xml version="1.0" encoding="UTF-8"?>
+<student>
+    <name>Rahul</name>
+    <rollno>101</rollno>
+    <course>B.Tech</course>
+</student>
+    </pre>
+
+    <h2>2. What is Valid XML?</h2>
+    <p>
+        A valid XML document is a well-formed XML document
+        that also follows a declared grammar such as
+        a DTD or XML Schema (XSD).
+    </p>
+    <p>
+        DTD and XSD define which elements, attributes
+        and structures are allowed in an XML document.
+    </p>
+
+    <h3>Example of Valid XML</h3>
+    <p>
+        The following XML document is connected to an
+        external DTD named student.dtd.
+    </p>
+
+    <pre>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student SYSTEM "student.dtd">
+<student>
+    <name>Rahul</name>
+    <rollno>101</rollno>
+    <course>B.Tech</course>
+</student>
+    </pre>
+
+    <h2>3. Difference Between Well-Formed and Valid XML</h2>
+    <table border="1">
+        <tr>
+            <th>Well-Formed XML</th>
+            <th>Valid XML</th>
+        </tr>
+        <tr>
+            <td>Follows basic XML syntax rules.</td>
+            <td>Follows syntax and declared grammar.</td>
+        </tr>
+        <tr>
+            <td>Requires one root element.</td>
+            <td>Requires one root element and grammar rules.</td>
+        </tr>
+        <tr>
+            <td>Checks proper tag structure.</td>
+            <td>Checks structure against DTD or XSD.</td>
+        </tr>
+        <tr>
+            <td>Does not require a DTD or XSD.</td>
+            <td>Requires a declared grammar for validation.</td>
+        </tr>
+        <tr>
+            <td>Checks basic syntax.</td>
+            <td>Checks whether the document follows defined rules.</td>
+        </tr>
+    </table>
+
+    <h2>4. XML Validation</h2>
+    <p>
+        XML validation is the process of checking whether
+        an XML document follows the rules defined in
+        a DTD or XML Schema.
+    </p>
+    <p>
+        An XML processor can check basic well-formedness.
+        Validation checks whether the document follows
+        its declared grammar.
+    </p>
+
+    <h2>5. Importance of XML Validation</h2>
+    <ul>
+        <li>It helps maintain correct document structure.</li>
+        <li>It checks whether required elements are present.</li>
+        <li>It helps detect invalid data structures.</li>
+        <li>It improves consistency of XML documents.</li>
+        <li>It helps applications process data correctly.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        Well-Formed XML follows basic XML syntax rules,
+        whereas Valid XML follows both syntax rules and
+        a declared grammar such as DTD or XSD.
+        Both concepts are important for creating
+        properly structured XML documents.
+    </p>
+
+</body>
+</html>

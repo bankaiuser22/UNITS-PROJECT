@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XML Key Components</title>
+</head>
+<body>
+
+    <h1>XML Key Components</h1>
+
+    <h2>Introduction</h2>
+    <p>
+        An XML document is made up of different components.
+        These components organize information in a structured
+        tree format.
+    </p>
+
+    <h2>1. XML Declaration</h2>
+    <p>
+        The XML declaration is an optional first line of an
+        XML document. It identifies the XML version and
+        character encoding.
+    </p>
+
+    <h3>Example:</h3>
+    <pre>
+<?xml version="1.0" encoding="UTF-8"?>
+    </pre>
+
+    <h2>2. Element</h2>
+    <p>
+        An element is a named unit of data in an XML document.
+        It can contain text, attributes, other elements or
+        a combination of these.
+    </p>
+
+    <h3>Example:</h3>
+    <pre>
+<name>Mira Shah</name>
+    </pre>
+
+    <h2>3. Root Element</h2>
+    <p>
+        The root element is the single outermost element
+        of an XML document. It contains all other elements.
+    </p>
+
+    <h3>Example:</h3>
+    <pre>
+<student>
+    <name>Mira Shah</name>
+    <programme>B.Tech CSE</programme>
+</student>
+    </pre>
+
+    <h2>4. Attribute</h2>
+    <p>
+        An attribute provides additional information about
+        an element. It is written inside the starting tag
+        as a name and value pair.
+    </p>
+    <p>
+        Attribute values must always be written inside
+        quotation marks.
+    </p>
+
+    <h3>Example:</h3>
+    <pre>
+<student id="s-204" status="active">
+    <name>Mira Shah</name>
+</student>
+    </pre>
+
+    <h2>5. Text Node</h2>
+    <p>
+        A text node is the character data written between
+        the starting tag and its matching ending tag.
+    </p>
+
+    <h3>Example:</h3>
+    <pre>
+<marks subject="XML">88</marks>
+    </pre>
+    <p>
+        In this example, 88 is the text node.
+    </p>
+
+    <h2>6. Comment</h2>
+    <p>
+        A comment is used to add notes for readers.
+        Comments are not considered part of the document's
+        data content.
+    </p>
+
+    <h3>Example:</h3>
+    <pre>
+<!-- A student record -->
+    </pre>
+
+    <h2>Complete XML Example</h2>
+    <pre>
+<?xml version="1.0" encoding="UTF-8"?>
+<student id="s-204" status="active">
+    <name>Mira Shah</name>
+    <programme>B.Tech CSE</programme>
+    <marks subject="XML">88</marks>
+    <!-- A student record -->
+</student>
+    </pre>
+
+    <h2>Summary of XML Components</h2>
+    <table border="1">
+        <tr>
+            <th>Component</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>XML Declaration</td>
+            <td>Identifies XML version and encoding.</td>
+        </tr>
+        <tr>
+            <td>Element</td>
+            <td>Represents a named unit of data.</td>
+        </tr>
+        <tr>
+            <td>Root Element</td>
+            <td>Contains all other elements.</td>
+        </tr>
+        <tr>
+            <td>Attribute</td>
+            <td>Provides additional information.</td>
+        </tr>
+        <tr>
+            <td>Text Node</td>
+            <td>Contains character data.</td>
+        </tr>
+        <tr>
+            <td>Comment</td>
+            <td>Adds notes for readers.</td>
+        </tr>
+    </table>
+
+    <h2>Conclusion</h2>
+    <p>
+        XML components help organize information in a
+        structured way. Declaration, elements, attributes,
+        text nodes and comments are important parts of
+        an XML document.
+    </p>
+
+</body>
+</html>

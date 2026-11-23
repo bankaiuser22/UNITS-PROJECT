@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XML Namespaces</title>
+</head>
+<body>
+
+    <h1>XML Namespaces</h1>
+
+    <h2>Introduction</h2>
+    <p>
+        XML allows users to create their own element names.
+        Sometimes two XML documents use the same element names
+        for different purposes.
+    </p>
+    <p>
+        XML Namespaces are used to avoid naming conflicts
+        when XML documents from different sources are combined.
+    </p>
+
+    <h2>What is an XML Namespace?</h2>
+    <p>
+        An XML Namespace is a method used to identify
+        elements and attributes uniquely in an XML document.
+    </p>
+    <p>
+        It helps distinguish elements that have the same name
+        but belong to different vocabularies.
+    </p>
+
+    <h2>Why are XML Namespaces Used?</h2>
+    <ul>
+        <li>To prevent naming collisions.</li>
+        <li>To combine XML data from different sources.</li>
+        <li>To identify elements uniquely.</li>
+        <li>To organize XML documents properly.</li>
+        <li>To distinguish elements with similar names.</li>
+    </ul>
+
+    <h2>Namespace Declaration</h2>
+    <p>
+        A namespace is declared using the xmlns attribute.
+        A prefix is connected to a namespace URI.
+    </p>
+
+    <h3>Syntax:</h3>
+    <pre>
+xmlns:prefix="namespace-URI"
+    </pre>
+
+    <h2>Example of XML Namespace</h2>
+    <pre>
+<course xmlns:lib="https://example.edu/library">
+    <title>Web Technologies</title>
+    <lib:title>XML for Libraries</lib:title>
+</course>
+    </pre>
+
+    <h2>Explanation of Example</h2>
+    <p>
+        In the above example, the course element declares
+        a namespace using the prefix lib.
+    </p>
+    <p>
+        The xmlns:lib attribute connects the prefix lib
+        to the namespace URI.
+    </p>
+    <p>
+        The first title element is an ordinary title element.
+        The second lib:title element belongs to the
+        library namespace.
+    </p>
+    <p>
+        Both elements have the same local name, but they
+        represent different names because one uses
+        a namespace prefix.
+    </p>
+
+    <h2>Namespace Components</h2>
+    <table border="1">
+        <tr>
+            <th>Component</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>xmlns</td>
+            <td>Used to declare a namespace.</td>
+        </tr>
+        <tr>
+            <td>Prefix</td>
+            <td>A short name used before an element name.</td>
+        </tr>
+        <tr>
+            <td>URI</td>
+            <td>Identifies the namespace vocabulary.</td>
+        </tr>
+    </table>
+
+    <h2>Important Points</h2>
+    <ul>
+        <li>Namespaces prevent naming conflicts.</li>
+        <li>Namespaces use the xmlns attribute.</li>
+        <li>A prefix is connected to a URI.</li>
+        <li>The URI identifies the vocabulary.</li>
+        <li>The URI does not have to be a working web page.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        XML Namespaces help avoid naming collisions when
+        different XML vocabularies are combined.
+        They make XML documents more organized and
+        uniquely identify elements using prefixes and URIs.
+    </p>
+
+</body>
+</html>

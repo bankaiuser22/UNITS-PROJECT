@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handling HTML Forms in PHP</title>
+</head>
+<body>
+
+    <h1>06. Handling HTML Forms in PHP</h1>
+
+    <h2>1. Introduction to PHP Form Handling</h2>
+    <p>
+        PHP Form Handling is used to collect information
+        entered by users through HTML forms.
+        PHP processes the submitted data on the server
+        and generates a suitable response.
+    </p>
+
+    <h2>2. What is an HTML Form?</h2>
+    <p>
+        An HTML form is used to collect information
+        from users. It contains input fields, buttons,
+        text areas and other form elements.
+    </p>
+
+    <pre>
+&lt;form method="post"&gt;
+    &lt;label&gt;Enter Your Name:&lt;/label&gt;
+    &lt;input type="text" name="name"&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+
+    <h2>3. GET Method</h2>
+    <p>
+        The GET method sends form data through the URL.
+        The submitted information appears in the address bar.
+        It is generally used for searching and retrieving data.
+    </p>
+
+    <pre>
+&lt;form method="get"&gt;
+    &lt;label&gt;Enter Your Name:&lt;/label&gt;
+    &lt;input type="text" name="name"&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+
+    <h2>4. POST Method</h2>
+    <p>
+        The POST method sends form data in the request body
+        instead of displaying it in the URL.
+        It is commonly used when submitting information
+        to the server.
+    </p>
+
+    <pre>
+&lt;form method="post"&gt;
+    &lt;label&gt;Enter Your Email:&lt;/label&gt;
+    &lt;input type="email" name="email"&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+
+    <h2>5. Difference Between GET and POST</h2>
+    <ul>
+        <li>GET sends data through the URL.</li>
+        <li>POST sends data in the request body.</li>
+        <li>GET is useful for searching information.</li>
+        <li>POST is commonly used for submitting data.</li>
+        <li>POST does not automatically make data secure.</li>
+    </ul>
+
+    <h2>6. Accessing Form Data Using $_GET</h2>
+    <p>
+        PHP provides the $_GET superglobal array
+        to access information submitted using the GET method.
+    </p>
+
+    <pre>
+&lt;?php
+if (isset($_GET["name"])) {
+    $name = $_GET["name"];
+    echo "Welcome " . htmlspecialchars($name);
+}
+?&gt;
+    </pre>
+
+    <h2>7. Accessing Form Data Using $_POST</h2>
+    <p>
+        PHP provides the $_POST superglobal array
+        to access information submitted using the POST method.
+    </p>
+
+    <pre>
+&lt;?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = $_POST["name"] ?? "";
+
+    echo "Welcome " . htmlspecialchars($name);
+}
+?&gt;
+    </pre>
+
+    <h2>8. Complete PHP Form Example</h2>
+    <p>
+        The following example collects a user's name
+        and displays a welcome message after submission.
+    </p>
+
+    <pre>
+&lt;?php
+$name = "";
+$message = "";
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $name = trim($_POST["name"] ?? "");
+
+    if ($name === "") {
+        $error = "Please enter your name.";
+    } elseif (
+        preg_match('/\A[^\r\n]{1,60}\z/u', $name) !== 1
+    ) {
+        $error = "Name must be 60 characters or fewer.";
+    } else {
+        $message = "Welcome, " . $name . "!";
+    }
+}
+
+function e(string $value): string {
+    return htmlspecialchars(
+        $value,
+        ENT_QUOTES | ENT_SUBSTITUTE,
+        "UTF-8"
+    );
+}
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+    &lt;h2&gt;Student Greeting Form&lt;/h2&gt;
+
+    &lt;form method="post"&gt;
+        &lt;label&gt;Enter Your Name:&lt;/label&gt;
+        &lt;input type="text" name="name"
+               maxlength="60" required
+               value="&lt;?= e($name) ?&gt;"&gt;
+
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;p&gt;&lt;?= e($message) ?&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;?= e($error) ?&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h2>9. Input Validation</h2>
+    <p>
+        Input validation means checking whether the
+        information entered by a user follows the
+        required rules before processing it.
+    </p>
+
+    <ul>
+        <li>Check whether required fields are empty.</li>
+        <li>Check the length of entered information.</li>
+        <li>Check whether the data follows the expected format.</li>
+        <li>Validate submitted data on the server.</li>
+    </ul>
+
+    <h2>10. Output Escaping</h2>
+    <p>
+        User input should not be displayed directly as HTML.
+        The htmlspecialchars() function converts special
+        characters into safe HTML entities.
+    </p>
+
+    <pre>
+&lt;?php
+$name = "&lt;Student&gt;";
+
+echo htmlspecialchars(
+    $name,
+    ENT_QUOTES | ENT_SUBSTITUTE,
+    "UTF-8"
+);
+?&gt;
+    </pre>
+
+    <h2>11. Important PHP Form Functions</h2>
+    <ul>
+        <li>$_GET – Reads GET request data.</li>
+        <li>$_POST – Reads POST request data.</li>
+        <li>isset() – Checks whether a variable is set.</li>
+        <li>trim() – Removes extra whitespace at the ends.</li>
+        <li>htmlspecialchars() – Encodes special HTML characters.</li>
+        <li>preg_match() – Checks whether text matches a pattern.</li>
+    </ul>
+
+    <h2>12. Conclusion</h2>
+    <p>
+        PHP form handling allows websites to collect and
+        process user information. GET and POST methods
+        transfer form data to the server. Input validation
+        and output escaping help handle submitted data safely.
+    </p>
+
+</body>
+</html>

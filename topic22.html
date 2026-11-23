@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Syntax and Selectors</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightyellow;
+            margin: 20px;
+        }
+
+        h1 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        h2 {
+            color: darkred;
+        }
+
+        p {
+            font-size: 18px;
+            color: darkgreen;
+        }
+
+        .box {
+            background-color: lightblue;
+            padding: 15px;
+            border: 2px solid blue;
+            margin: 10px;
+        }
+
+        #heading {
+            color: purple;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS SYNTAX AND SELECTORS</h1>
+
+    <div class="box">
+
+        <h2>1. Introduction to CSS Syntax</h2>
+
+        <p>
+            CSS syntax defines how CSS rules are written.
+            A CSS rule consists of a selector and a
+            declaration block.
+        </p>
+
+        <h2>2. CSS Rule Structure</h2>
+
+        <p>
+            A CSS rule contains a selector followed
+            by declarations inside curly brackets.
+            Each declaration contains a property
+            and a value.
+        </p>
+
+        <h3>Example:</h3>
+
+        <p>
+            p {
+                color: red;
+                font-size: 20px;
+            }
+        </p>
+
+        <p>
+            Here, p is the selector, color and
+            font-size are properties, and red and
+            20px are their values.
+        </p>
+
+        <h2>3. Types of CSS Selectors</h2>
+
+        <h3>1. Element Selector</h3>
+
+        <p>
+            Element selector selects HTML elements
+            using their tag names.
+        </p>
+
+        <p>
+            Example: p { color: green; }
+        </p>
+
+        <h3>2. Class Selector</h3>
+
+        <p class="box">
+            Class selector selects elements using
+            their class attribute. It starts with
+            a dot (.) symbol.
+        </p>
+
+        <p>
+            Example: .box { color: blue; }
+        </p>
+
+        <h3>3. ID Selector</h3>
+
+        <h2 id="heading">
+            This heading uses ID Selector.
+        </h2>
+
+        <p>
+            ID selector selects an element using
+            its unique ID. It starts with the
+            hash (#) symbol.
+        </p>
+
+        <p>
+            Example: #heading { color: purple; }
+        </p>
+
+        <h3>4. Universal Selector</h3>
+
+        <p>
+            Universal selector selects all HTML
+            elements. It is represented by an
+            asterisk (*) symbol.
+        </p>
+
+        <p>
+            Example: * { box-sizing: border-box; }
+        </p>
+
+        <h3>5. Grouping Selector</h3>
+
+        <p>
+            Grouping selector applies the same
+            CSS style to multiple HTML elements.
+        </p>
+
+        <p>
+            Example: h1, h2, p { color: blue; }
+        </p>
+
+        <h3>6. Descendant Selector</h3>
+
+        <p>
+            Descendant selector selects elements
+            present inside another element.
+        </p>
+
+        <p>
+            Example: div p { color: red; }
+        </p>
+
+        <h3>7. Child Selector</h3>
+
+        <p>
+            Child selector selects only the direct
+            child elements of a parent element.
+        </p>
+
+        <p>
+            Example: div > p { color: blue; }
+        </p>
+
+        <h3>8. Pseudo-Class Selector</h3>
+
+        <p>
+            Pseudo-class selector is used to define
+            a special state of an element.
+        </p>
+
+        <p>
+            Example: a:hover { color: red; }
+        </p>
+
+        <h3>9. Pseudo-Element Selector</h3>
+
+        <p>
+            Pseudo-element selector is used to
+            style a specific part of an element.
+        </p>
+
+        <p>
+            Example: p::first-line {
+                font-weight: bold;
+            }
+        </p>
+
+        <h3>10. Attribute Selector</h3>
+
+        <p>
+            Attribute selector selects HTML
+            elements based on their attributes.
+        </p>
+
+        <p>
+            Example: input[type="text"] {
+                border: 2px solid blue;
+            }
+        </p>
+
+        <h2>4. CSS Properties and Values</h2>
+
+        <p>
+            A property defines what style we want
+            to change, and a value defines how
+            that property should appear.
+        </p>
+
+        <p>
+            Example: color: red;
+        </p>
+
+        <h2>5. CSS Units</h2>
+
+        <p>
+            CSS uses different units to define
+            sizes and distances.
+        </p>
+
+        <p>
+            px - Fixed CSS pixel unit.
+        </p>
+
+        <p>
+            em - Relative to the element's font size.
+        </p>
+
+        <p>
+            rem - Relative to the root font size.
+        </p>
+
+        <p>
+            % - Used for percentage-based sizing.
+        </p>
+
+        <p>
+            vw - Relative to viewport width.
+        </p>
+
+        <p>
+            vh - Relative to viewport height.
+        </p>
+
+        <h2>6. CSS Comments</h2>
+
+        <p>
+            CSS comments are used to explain
+            code. They are not displayed on
+            the webpage.
+        </p>
+
+        <p>
+            Example: /* This is a CSS comment */
+        </p>
+
+    </div>
+
+</body>
+</html>
